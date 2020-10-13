@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js" defer></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../public/css/output.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/index.css">
+    <title>Document</title>
+</head>
+<body x-data="{ open: false }">
+    <header class="h-16 w-full bg-blue-purple flex justify-center">
+        <div class="grid grid-cols-12 lg:hidden">
+            <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
+                <i class="material-icons h-16 w-16 flex justify-center items-center text-white text-3xl btn-blue-purple">sort</i>
+                <ul class="w-64 bg-white text-sm font-medium text-gray-800 shadow-bottom b-radi-4 relative left-64 duration-300 z-50">
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">today</i><span>Sản Phẩm & Dịch Vụ</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">person_outline</i><span>Đăng Nhập</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">people_outline</i><span>Đăng Ký</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">rss_feed</i><span>HR Insider</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">date_range</i><span>Giới Thiệu</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">search</i><span>Tìm Việc</span></li>
+                </ul>
+            </div>
+            <div class="col-span-8 h-16 flex items-center justify-center py-2">
+                <img src="../public/img/vnw_logo_white.png" class="h-full object-cover">
+            </div>
+            <div class="col-span-2 h-16">
+    
+            </div>
+        </div>
+        <div class="w-10/12 h-16 hidden grid-cols-12 gap-4 lg:grid">
+            <div class="col-span-9 h-16 flex text-white">
+                <img src="../public/img/vnw_logo_white.png" class="h-full object-cover py-2 mr-12">
+                <a href="#" class="flex items-center mr-8 hover:underline">Sản Phẩm</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">HR Insider</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Giới Thiệu</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Tìm Việc</a>
+            </div>
+            <div class="col-span-3 h-16 flex justify-end items-center text-white">
+                <a class="px-2 border-r border-white text-sm font-medium hover:underline cursor-pointer">Đăng Ký</a>
+                <a class="px-2 text-sm font-medium hover:underline cursor-pointer">Đăng Nhập</a>
+            </div>
+        </div>
+    </header>
+    <main class="relative">
+        <section class="absolute right-0 w-full">
+            <input id="file-bg" type="file" class="hidden" onchange="preview(this, 'preview-bg')"/>
+            <label for="file-bg" class="absolute px-4 py-2 flex justify-center items-center bg-black-fade text-white mt-4 ml-4 cursor-pointer z-40 radius-2">
+                <i class="material-icons pr-2">add_a_photo</i>
+                <span class="font-medium">Cập nhật ảnh bìa</span>
+            </label>
+            <div class="relative z-0 w-full">
+                <img src="../public/img/bg.jpg" class="h-300 w-full object-cover" id="preview-bg"/>
+            </div>
+        </section>
+        <section class="flex justify-center mb-8 px-4 pt-56 z-10 relative">
+            <div class="lg:w-10/12 w-full bg-white shadow-bottom b-radi-4">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200">
+                    <i class="material-icons mr-4">content_paste</i>
+                    <span class="text-xl font-medium">Thông tin chung</span>
+                </div>
+                <div class="grid lg:grid-cols-10 gap-4">
+                    <div class="lg:col-span-4">
+                        <div class="lg:col-span-4 px-4 pt-4 lg:p-4">
+                            <div class="flex justify-center mb-4">
+                                <img src="../public/img/google.png" width="160" height="160" class="p-1 rounded-full border-4 border-white shadow-bottom object-cover"/>
+                            </div>
+                            <div class="text-center text-2xl font-medium">
+                                <span class="pr-2">Bbv Vietnam Co., Ltd</span>
+                                <i title="Chỉnh sửa thông tin" @click="open = true" class="material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600">edit</i>
+                            </div>
+                            <p class="text-center mt-1 italic text-gray-700">With LG, It’s All Possible. When It’s All Possible, Life’s Good</p>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="lg:col-span-8 p-4">
+                            <div class="grid grid-cols-12 gap-4">
+                                <button class="col-span-8 p-2 b-radi-4 btn-blue-purple text-white outline-none">Ứng Tuyển</button>
+                                <button class="col-span-4 p-2 b-radi-4 bg-gray-200 outline-none flex items-center justify-center hover:bg-gray-300">
+                                    <p class="truncate flex items-center">
+                                        <i class="material-icons pr-1">bookmark_border</i> <span>Lưu DN</span>
+                                    </p>
+                                </button>
+                            </div>
+                            <div class="mt-4 text-gray-800">
+                                <div class="flex items-center py-1">
+                                    <i class="material-icons text-gray-600 pr-4">business</i>
+                                    <div class="limit-row-1 overflow-hidden">
+                                        <span class="text-17 pr-2">Thành lập</span><span class="font-medium">ngày 17 tháng 1 năm 2020</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <i class="material-icons text-gray-600 pr-4">public</i>
+                                    <div class="limit-row-1 overflow-hidden">
+                                        <span class="text-17 pr-2">Quốc gia</span><span class="font-medium">Việt Nam</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <i class="material-icons text-gray-600 pr-4">pin_drop</i>
+                                    <div class="limit-row-1 overflow-hidden">
+                                        <span class="text-17 pr-2">Địa điểm</span><span class="font-medium">Thành Phố Hồ Chí Minh</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <i class="material-icons text-gray-600 pr-4">person</i>
+                                    <div class="limit-row-1 overflow-hidden">
+                                        <span class="text-17 pr-2">Nhân viên đại diện</span><span class="font-medium">Nguyễn Thanh Tiên</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <i class="material-icons text-gray-600 pr-4">call</i>
+                                    <div class="limit-row-1 overflow-hidden">
+                                        <span class="text-17 pr-2">Liên hệ</span><span class="font-medium">0868958898</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <i class="material-icons text-gray-600 pr-4">email</i>
+                                    <div class="limit-row-1 overflow-hidden">
+                                        <span class="text-17 pr-2">Email</span><span class="font-medium">tienntps1144@fpt.edu.vn</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center py-1">
+                                    <i class="material-icons text-gray-600 pr-4">group</i>
+                                    <span class="text-17 pr-2">Quy mô</span>
+                                    <div class="font-medium text-17">
+                                        <span>100 - 300 nhân viên</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center py-1">
+                                    <i class="material-icons text-gray-600 pr-4">work</i>
+                                    <div class="limit-row-1 overflow-hidden">
+                                        <span class="text-17 pr-2">Lĩnh vực</span><span class="text-17 font-medium">Bất Động Sản</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex justify-center my-8 px-4">
+            <div class="lg:w-10/12 w-full bg-white shadow-bottom b-radi-4">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200">
+                    <i class="material-icons mr-4">format_list_bulleted</i>
+                    <span class="text-xl font-medium">Giới thiệu ngắn</span>
+                </div>
+                <div class="p-4">
+                    <p class="py-1">
+                        📣📣📣 NGÀY 05/10 TỚI ĐÂY CÓ SỰ KIỆN GÌ HOT?
+                    </p>
+                    <p class="py-1">
+                        ✔️ Sinh viên Fpoly có cơ hội giao lưu với “thánh livestream” Lê Dương Bảo Lâm.
+                    </p>
+                    <p class="py-1">
+                        ✔️ Nắm trọn bí kíp chốt sales, kỹ năng quảng bá sản phẩm.
+                    </p>
+                    <p class="py-1">
+                        ✔️ Bỏ túi cực nhiều kinh nghiệm bán hàng đỉnh cao.
+                    </p>
+                    <p class="py-1">
+                        🔔🔔🔔 Cùng chờ đón livestream “Đẳng cấp bán hàng” do bộ môn Kinh tế - FPT Polytechnic cơ sở Hồ Chí Minh tổ chức nhé!
+                    </p>
+                    <p class="py-1">
+                        🔹 Thời gian: 8h30 ngày 05/10/2020
+                    </p>
+                    <p class="py-1">
+                        🔹 Địa điểm: Hội trường lầu 4 – FPT Polytechnic cơ sở 2
+                    </p>
+                    <p class="py-1">
+                        🔹 Livestream trực tiếp trên fanpage Cao đẳng thực hành FPT Polytechnic.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="flex justify-center my-8 px-4">
+            <div class="lg:w-10/12 w-full gap-4 bg-white bg-white shadow-bottom b-radi-4">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200">
+                    <i class="material-icons mr-4">info_outline</i>
+                    <span class="text-xl font-medium">Việc làm</span>
+                </div>
+                <div>
+                    <div class="py-4 w-full px-4 overflow-hidden border-b border-gray-200">
+                        <div class="absolute">
+                            <img src="../public/img/google.png" class="rounded-full" width="50" height="50">
+                        </div>
+                        <div class="w-full pl-70 overflow-hidden">
+                            <div class="float-left">
+                                <p class="font-medium text-black text-lg">Python Developers (Salary Up to $2000 Gross / $1700 Net)</p>
+                                <p class="text-sm font-medium text-gray-700">Bbv Vietnam Co., Ltd</p>
+                                <div class="mt-1 text-gray-700">
+                                    <span class="pr-2">Mức lương:</span><span class="font-medium">5.000.000 VND</span>
+                                </div>
+                                <div class="text-gray-700 flex items-center mb-1">
+                                    <span class="pr-2">Địa điểm:</span>
+                                    <p class="font-medium text-sm">
+                                        <span>Hồ Chí Minh</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="float-right h-full">
+                                <button class="px-5 py-1 radius-2 bg-green-500 text-white outline-none font-medium text-sm hover:bg-green-600">Ứng tuyển</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-4 w-full px-4 overflow-hidden border-b border-gray-200">
+                        <div class="absolute">
+                            <img src="../public/img/google.png" class="rounded-full" width="50" height="50">
+                        </div>
+                        <div class="w-full pl-70 overflow-hidden">
+                            <div class="float-left">
+                                <p class="font-medium text-black text-lg">Python Developers (Salary Up to $2000 Gross / $1700 Net)</p>
+                                <p class="text-sm font-medium text-gray-700">Bbv Vietnam Co., Ltd</p>
+                                <div class="mt-1 text-gray-700">
+                                    <span class="pr-2">Mức lương:</span><span class="font-medium">5.000.000 VND</span>
+                                </div>
+                                <div class="text-gray-700 flex items-center mb-1">
+                                    <span class="pr-2">Địa điểm:</span>
+                                    <p class="font-medium text-sm">
+                                        <span>Hồ Chí Minh</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="float-right h-full">
+                                <button class="px-5 py-1 radius-2 bg-green-500 text-white outline-none font-medium text-sm hover:bg-green-600">Ứng tuyển</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50" x-show="open" @click.away="open = false">
+            <div class="bg-white w-screen h-screen lg:w-1/2 overflow-scroll scroll-w-0 maw-700">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200 cursor-pointer" @click="open = false">
+                    <i class="material-icons mr-4">chevron_left</i>
+                    <span class="text-xl font-medium">Chỉnh sửa thông tin</span>
+                </div>
+                <div class="p-12">
+                    <div class="flex justify-center mb-4">
+                        <div class="relative">
+                            <img src="../public/img/google.png" class="p-1 rounded-full border-4 border-white shadow-bottom w-160 h-160" id="preview-avatar">
+                            <input id="file-avatar" type="file" id="file-avatar" class="hidden" accept="image/*" onchange="preview(this, 'preview-avatar')">
+                            <label for="file-avatar" title="Cập nhật hình ảnh" class="absolute material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600 bottom-0 right-20px-plus">edit</label>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2 font-medium mb-2">Tên Doanh Nghiệp</p>
+                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Nhập tên doanh nghiệp">
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2 font-medium">Lĩnh Vực</p>
+                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer">
+                            <option>Chọn lĩnh vực</option>
+                            <option>CNTT</option>
+                            <option>Thiet Ke Web</option>
+                        </select>
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2 font-medium mb-2">Địa Điểm</p>
+                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer">
+                            <option>Quốc gia</option>
+                            <option>CNTT</option>
+                            <option>Thiet Ke Web</option>
+                        </select>
+                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer mt-4">
+                            <option>Tỉnh/Thành Phố</option>
+                            <option>CNTT</option>
+                            <option>Thiet Ke Web</option>
+                        </select>
+                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer mt-4">
+                            <option>Quận Huyện</option>
+                            <option>CNTT</option>
+                            <option>Thiet Ke Web</option>
+                        </select>
+                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700 mt-4" placeholder="Số nhà, đường">
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2 font-medium mb-2">Ngày Thành Lập</p>
+                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700 cursor-pointer" type="date">
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2 font-medium mb-2">Quy Mô</p>
+                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer">
+                            <option>100-- nhân viên</option>
+                            <option>100-200 nhân viên</option>
+                            <option>300-500 nhân viên</option>
+                            <option>600-800 nhân viên</option>
+                            <option>900++ nhân viên</option>
+                        </select>
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2 font-medium mb-2">Sologan Doanh Nghiệp</p>
+                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Nhập sologan của doanh nghiệp">
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-2 font-medium mb-2">Bài giới thiệu ngắn</p>
+                        <div id="description" class="h-160"></div>
+                    </div>
+                    <div class="mt-4 flex justify-end">
+                        <button class="px-10 py-2 radius-2 text-gray-600 bg-gray-300 mr-4 outline-none hover:bg-gray-400" @click="open = false">Cancel</button>
+                        <button class="px-10 py-2 radius-2 text-white bg-green-500 outline-none hover:bg-green-600">Save</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white flex justify-center">
+        <div class="grid grid-cols-12 gap-4 py-6 px-4 w-full lg:w-10/12">
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Về FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Giới Thiệu</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Bảo Mật Thông Tin</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Tư Vấn Tuyển Dụng</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Quy Định Sử Dụng</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Về FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Giới Thiệu</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Bảo Mật Thông Tin</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Tư Vấn Tuyển Dụng</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Quy Định Sử Dụng</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Kết Nối FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Facebook</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Zalo</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">FptWork App</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Appstore</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Google Play</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="../public/js/index.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="../public/js/quill.js"></script>
+</html>

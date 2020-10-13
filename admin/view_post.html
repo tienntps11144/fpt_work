@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js" defer></script>
+    
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/output.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="bg-gray-200 relative min-h-screen" x-data="{ add: false, edit: false, slide: false }">
+        <div class="w-full s2m:pl-16 duration-300">
+            <!--header-->
+            <section class="w-full h-16 bg-white" x-data="{ open: false }">
+                <!--Search desktop-->
+                <div class="float-left h-full hidden md:block">
+                    <div class="w-full h-full flex items-center">
+                        <div class="h-10 lg:w-450f relative ml-5 bg-gray-200 rounded-full border-b border-gray-400">
+                            <button class="material-icons h-full w-10 outline-none absolute text-gray-500 float-left">search</button><input placeholder="Tìm Kiếm..." class="h-full w-full outline-none float-left text-sm pl-10 bg-transparent">
+                        </div>
+                    </div>
+                    <div class="lg:w-full w-64 flex z-50 relative hidden">
+                        <div class="w-450f ml-5 b-radi-4 shadow bg-white">
+                            <div class="w-full pr-4 hover:bg-gray-200 cursor-pointer text-gray-600">
+                                <div class="h-9 w-9 float-left flex items-center justify-center">
+                                    <i class="material-icons text-lg">search</i>
+                                </div>
+                                <div class="w-full h-9 pl-10 text-sm leading-9">
+                                    <span class="truncate block">Amazon</span>
+                                </div>
+                            </div>
+                            <div class="w-full pr-4 hover:bg-gray-200 cursor-pointer text-gray-600">
+                                <div class="h-9 w-9 float-left flex items-center justify-center">
+                                    <i class="material-icons text-base">access_time</i>
+                                </div>
+                                <div class="w-full h-9 pl-10 text-sm leading-9">
+                                    <span class="truncate block">Agoda AgodaAgodaAgodaAgodaAgodaAgodaAgodaAgo daAgodaAgodaAgoda</span>
+                                </div>
+                            </div>
+                            <div class="w-full pr-4 hover:bg-gray-200 cursor-pointer text-gray-600">
+                                <div class="h-9 w-9 float-left flex items-center justify-center">
+                                    <i class="material-icons text-base">access_time</i>
+                                </div>
+                                <div class="w-full h-9 pl-10 text-sm leading-9">
+                                    <span class="truncate block">Acb online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Menu Mobile-->
+                <div class="w-16 h-16 flex items-center justify-center text-gray-600 float-left relative s2m:hidden" x-data="{ open: false }">
+                    <i class="material-icons cursor-pointer w-full h-full flex items-center justify-center" @click="open = !open">reorder</i>
+                    <div class="w-screen bg-white absolute top-100-p left-0 text-sm border-t z-50" x-show="open" @click.away="open = false">
+                        <div class="cursor-pointer py-1">
+                            <div class="w-16 h-10 float-left flex items-center justify-center">
+                                <i class="material-icons text-gray-600 text-xl2">home</i>
+                            </div>
+                            <div class="w-full h-10 pl-16 leading-10 text-gray-600">Dashboard</div>
+                        </div>
+                        <!--<div class="cursor-pointer py-1">
+                            <div class="w-16 h-10 float-left flex items-center justify-center">
+                                <i class="material-icons text-gray-600 text-xl2">poll</i>
+                            </div>
+                            <div class="w-full h-10 pl-16 leading-10 text-gray-600">Thống Kê</div>
+                        </div>-->
+                        <div class="cursor-pointer py-1" x-data="{ open: false }">
+                            <div class="w-16 h-10 float-left flex items-center justify-center">
+                                <i class="material-icons text-gray-600 text-xl2">person</i>
+                            </div>
+                            <div class="w-full h-10 pl-16 leading-10 text-gray-600" @click="open = !open">
+                                <div class="w-full h-full">
+                                    <span class="float-left hover:text-gray-700">Users</span>
+                                <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600" x-show="! open">keyboard_arrow_right</i>
+                                <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600" x-show="open">keyboard_arrow_down</i>
+                            </div>
+                            </div>
+                            <ul class="w-full overflow-hidden" x-show="open" @click.away="open = false">
+                                <li class="w-full h-10 hover:text-gray-700 leading-10 pl-16 py-1"> 
+                                    <span class="float-left hover:text-gray-700">Sinh Viên</span>
+                                </li>
+                                <li class="w-full h-10 hover:text-gray-700 leading-10 pl-16 py-1">
+                                    <span class="float-left hover:text-gray-700">Doanh Nghiệp</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cursor-pointer py-1" x-data="{ open: false }">
+                            <div class="w-16 h-10 float-left flex items-center justify-center">
+                                <i class="material-icons text-gray-600 text-xl2">apps</i>
+                            </div>
+                            <div class="w-full h-10 pl-16 leading-10 text-gray-600" @click="open = !open">
+                                <div class="w-full h-full">
+                                    <span class="float-left hover:text-gray-700">Tiện Ích</span>
+                                <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600" x-show="! open">keyboard_arrow_right</i>
+                                <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600" x-show="open">keyboard_arrow_down</i>
+                            </div>
+                            </div>
+                            <ul class="w-full overflow-hidden" x-show="open" @click.away="open = false">
+                                <li class="w-full h-10 hover:text-gray-700 leading-10 pl-16 py-1"> 
+                                    <span class="float-left hover:text-gray-700">Tag</span>
+                                </li>
+                                <li class="w-full h-10 hover:text-gray-700 leading-10 pl-16 py-1">
+                                    <span class="float-left hover:text-gray-700">Category</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="cursor-pointer py-1" x-data="{ open: false }">
+                            <div class="w-16 h-10 float-left flex items-center justify-center">
+                                <i class="material-icons text-gray-600 text-xl2">assignment</i>
+                            </div>
+                            <div class="w-full h-10 pl-16 leading-10 text-gray-600" @click="open = !open">
+                                <div class="w-full h-full">
+                                    <span class="float-left hover:text-gray-700">Quản Lý Bài Đăng</span>
+                                <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600" x-show="! open">keyboard_arrow_right</i>
+                                <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600" x-show="open">keyboard_arrow_down</i>
+                            </div>
+                            </div>
+                            <ul class="w-full overflow-hidden" x-show="open" @click.away="open = false">
+                                <li class="w-full h-10 hover:text-gray-700 leading-10 pl-16 py-1"> 
+                                    <span class="float-left hover:text-gray-700">Xem Toàn Bộ</span>
+                                </li>
+                                <li class="w-full h-10 hover:text-gray-700 leading-10 pl-16 py-1">
+                                    <span class="float-left hover:text-gray-700">Tạo Tin Mới</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="cursor-pointer py-1">
+                            <div class="w-16 h-10 float-left flex items-center justify-center">
+                                <i class="material-icons text-gray-600 text-xl2">supervisor_account</i>
+                            </div>
+                            <div class="w-full h-10 pl-16 leading-10 text-gray-600">
+                                <div class="w-full h-full">
+                                    <span class="float-left hover:text-gray-700">Quản Lý Thực Tập</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="cursor-pointer py-1">
+                            <div class="w-16 h-10 float-left flex items-center justify-center">
+                                <i class="material-icons text-gray-600 text-xl2">receipt</i>
+                            </div>
+                            <div class="w-full h-10 pl-16 leading-10 text-gray-600">
+                                <div class="w-full h-full">
+                                    <span class="float-left hover:text-gray-700">Gói</span>
+                                </div>
+                            </div>
+                        </div>-->
+
+                    </div>
+                </div>
+                <!--Option bên phải header-->
+                    <!--Tài Khoản-->
+                    <div @click.away="open = false" class="w-16 h-16 flex items-center justify-center text-gray-600 float-right mr-1 relative" x-data="{ open: false }">
+                        <img src="avatar-1.jpg" class="rounded-full w-8 h-8 object-cover cursor-pointer" @click="open = !open"/>
+                        <div x-show="open" class="w-screen bg-white absolute top-100-p right-0 border-t b-radi-4 s2m:w-400f s2m:border s2m:mr-3 z-50">
+                            <div class="py-4 h-full">
+                                <div>
+                                    <div class="px-4 w-full">
+                                        <div class="float-left h-9 w-9 text-white bg-blue-500 rounded-full flex items-center justify-center">
+                                            <i class="material-icons text-base">border_color</i>
+                                        </div>
+                                        <div class="pl-12 h-9">
+                                            <span class="block text-sm text-gray-600 truncate cursor-pointer">Tài Khoản</span>
+                                            <span class="block text-xs truncate">Thông tin cá nhân</span>
+                                        </div>
+                                    </div>
+        
+                                    <div class="px-4 w-full pt-4">
+                                        <div class="float-left h-9 w-9 text-white bg-red-500 rounded-full flex items-center justify-center">
+                                            <i class="material-icons text-base">power_settings_new</i>
+                                        </div>
+                                        <div class="pl-12 h-9">
+                                            <span class="block text-sm text-gray-600 truncate cursor-pointer">Đăng Xuất</span>
+                                            <span class="block text-xs truncate">Có chắc bạn muốn thoát không?</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!--Thông Báo-->
+                     <div @click.away="open = false" class="w-12 h-16 flex items-center justify-center text-gray-600 float-right relative" x-data="{ open: false }">
+                        <i class="material-icons cursor-pointer" @click="open = !open">notifications</i>
+                        <div x-show="open" class="w-screen bg-white absolute top-100-p right-4-r- border-t b-radi-4 s2m:w-400f s2m:border s2m:mr-3 z-50">
+                            <div class="py-4 h-full">
+                                <div class="px-4 w-full overflow-hidden">
+                                    <h1 class="float-left text-sm font-medium">Thông báo</h1>
+                                    <span class="float-right text-sm">Xóa tất cả</span>
+                                </div>
+                                <div>
+                                    <div class="px-4 w-full pt-4">
+                                        <div class="float-left h-9 w-9 text-white bg-indigo-700 rounded-full flex items-center justify-center">
+                                            <i class="material-icons text-base">access_alarm</i>
+                                        </div>
+                                        <div class="pl-12 h-9">
+                                            <span class="block text-sm text-gray-600 truncate">Caleb Flakelar commented on AdminCaleb Flakelar commented on Admin</span>
+                                            <span class="block text-xs truncate">1 min ago</span>
+                                        </div>
+                                    </div>
+        
+                                    <div class="px-4 w-full pt-4">
+                                        <div class="float-left h-9 w-9 text-white bg-green-500 rounded-full flex items-center justify-center">
+                                            <i class="material-icons text-base">airplanemode_active</i>
+                                        </div>
+                                        <div class="pl-12 h-9">
+                                            <span class="block text-sm text-gray-600 truncate">Karen Robinson</span>
+                                            <span class="block text-xs truncate">Hi, How are you? What about our next meeting</span>
+                                        </div>
+                                    </div>
+        
+                                    <div class="px-4 w-full pt-4">
+                                        <div class="float-left h-9 w-9 text-white bg-blue-500 rounded-full flex items-center justify-center">
+                                            <i class="material-icons text-base">border_color</i>
+                                        </div>
+                                        <div class="pl-12 h-9">
+                                            <span class="block text-sm text-gray-600 truncate">Caleb Flakelar commented on Admin</span>
+                                            <span class="block text-xs truncate">1 min ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!--Search Mobile-->
+                     <div @click.away="open = false" class="w-12 h-16 flex items-center justify-center text-gray-600 float-right relative md:hidden" x-data="{ open: false }">
+                        <i class="material-icons cursor-pointer" @click="open = !open">search</i>
+                        <div x-show="open" class="w-screen bg-white absolute top-100-p right-7-r- border-t border-gray-300 b-radi-4 s2m:w-400f s2m:border s2m:mr-3 z-50" data-status="false">
+                            <div class="w-full p-4 relative flex items-center">
+                                <i class="material-icons absolute pl-2 text-gray-600 text-lg">search</i>
+                                <input placeholder="Tìm kiếm" class="w-full h-8 bg-gray-200 rounded-full px-10 text-sm outline-none text-gray-600"/>
+                            </div>  
+                            <div class="w-full">
+                                <div class="w-full px-4 hover:bg-gray-200 cursor-pointer text-gray-600">
+                                    <div class="h-9 w-9 pl-2 float-left flex items-center">
+                                        <i class="material-icons text-lg">search</i>
+                                    </div>
+                                    <div class="w-full h-9 pl-10 text-sm leading-9">
+                                        <span class="truncate block">Amazon</span>
+                                    </div>
+                                </div>
+                                <div class="w-full px-4 hover:bg-gray-200 cursor-pointer text-gray-600">
+                                    <div class="h-9 w-9 pl-2 float-left flex items-center">
+                                        <i class="material-icons text-base">access_time</i>
+                                    </div>
+                                    <div class="w-full h-9 pl-10 text-sm leading-9">
+                                        <span class="truncate block">Agoda AgodaAgodaAgodaAgodaAgodaAgodaAgodaAgo daAgodaAgodaAgoda</span>
+                                    </div>
+                                </div>
+                                <div class="w-full px-4 hover:bg-gray-200 cursor-pointer text-gray-600">
+                                    <div class="h-9 w-9 pl-2 float-left flex items-center">
+                                        <i class="material-icons text-base">access_time</i>
+                                    </div>
+                                    <div class="w-full h-9 pl-10 text-sm leading-9">
+                                        <span class="truncate block">Acb online</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <!--Phần Nội Dung (Danh Sách Doanh Nghiệp)-->
+            <section class="w-full mt-4 px-4 pb-4 text-gray-600 overflow-hidden">
+                <h1 class="font-medium text-lg">Quản Lý Bài Đăng</h1>
+                <button class="block mt-4 w-32 h-8 bg-green-500 text-xs font-medium text-white shadow-green rounded-sm outline-none">Tạo bài viết mới</button>
+                <div class="w-full mt-4 grid gap-4 grid-cols-1 md:grid-cols-2">
+                    <div class="h-32 p-4 box-content bg-white shadow-bottom b-radi-4">
+                        <div class="w-32 h-full float-left">
+                            <img src="img/avatar-1.jpg" class="w-full h-full object-cover b-radi-4"/>
+                        </div>
+                        <div class="w-full h-full pl-32">
+                            <div class="h-full">
+                                <div class="pl-4">
+                                    <h1 class="truncate font-medium text-lg text-gray-600">Responsive and pseudo-class variants</h1>
+                                    <p class="pt-2 text-sm limit-row-3 overflow-hidden">
+                                        By default, only responsive variants are generated for word break utilities.
+
+                                        You can control which variants are generated for the word break utilities by modifying the wordBreak property in the variants section of your tailwind.config.js file.
+                                        
+                                        For example, this config will also generate hover and focus variants:
+                                    </p>
+                                    <div class="overflow-hidden">
+                                        <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
+                                        <div class="float-right pt-2 text-white">
+                                            <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
+                                            <button class="w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full">mode_edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="h-32 p-4 box-content bg-white shadow-bottom b-radi-4">
+                        <div class="w-32 h-full float-left">
+                            <img src="img/Lam.jpg" class="w-full h-full object-cover b-radi-4"/>
+                        </div>
+                        <div class="w-full h-full pl-32">
+                            <div class="h-full">
+                                <div class="pl-4">
+                                    <h1 class="truncate font-medium text-lg text-gray-600">
+                                        Loạt câu hỏi làm khó thí sinh ‘Đường lên đỉnh Olympia’
+                                        Thiên Nhi16:47 09/09/2020Câu hỏi "chia 7 quả táo cho 8 người" hay "17 tuổi thì có bao nhiêu ngày sinh" từng khiến các nhà leo núi không tìm ra đáp án.</h1>
+                                    <p class="pt-2 text-sm limit-row-3 overflow-hidden">
+                                        Tại cuộc thi tuần cuối cùng của Olympia 2020, thí sinh Phan Nguyễn Hồng Lam (Phú Yên) nhận được câu hỏi Về đích 10 điểm thuộc lĩnh vực Sinh học như trong hình. Sau 10 giây suy nghĩ, Hồng Lam trả lời “con la” và không ghi điểm. Thí sinh Đăng Dương (Hà Nội) sau đó giành điểm nhờ đưa ra đáp án đúng là “con la không thể có con”
+                                    </p>
+                                    <div class="overflow-hidden">
+                                        <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
+                                        <div class="float-right pt-2 text-white">
+                                            <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
+                                            <button class="w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full">mode_edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-32 p-4 box-content bg-white shadow-bottom b-radi-4">
+                        <div class="w-32 h-full float-left">
+                            <img src="img/z2066016694623_8ccb5e1fdad8041d943165ef64aa78d1.jpg" class="w-full h-full object-cover b-radi-4"/>
+                        </div>
+                        <div class="w-full h-full pl-32">
+                            <div class="h-full">
+                                <div class="pl-4">
+                                    <h1 class="truncate font-medium text-lg text-gray-600">iPhone 7 Plus cũ giá 4 triệu tại Việt Nam</h1>
+                                    <p class="pt-2 text-sm limit-row-3 overflow-hidden">
+                                        Hiện tại, một số trang web chào bán iPhone 7 Plus qua sử dụng với giá 4,1 triệu đồng và quảng cáo là hàng 99%.
+                                    </p>
+                                    <div class="overflow-hidden">
+                                        <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
+                                        <div class="float-right pt-2 text-white">
+                                            <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
+                                            <button class="w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full">mode_edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="h-32 p-4 box-content bg-white shadow-bottom b-radi-4">
+                        <div class="w-32 h-full float-left">
+                            <img src="img/DSC_9926_zing.jpg" class="w-full h-full object-cover b-radi-4"/>
+                        </div>
+                        <div class="w-full h-full pl-32">
+                            <div class="h-full">
+                                <div class="pl-4">
+                                    <h1 class="truncate font-medium text-lg text-gray-600">Thêm 5 người nhập cảnh nhiễm nCoV</h1>
+                                    <p class="pt-2 text-sm limit-row-3 overflow-hidden">
+                                        18h ngày 9/9, Bộ Y tế thông báo Việt Nam có 1.059 ca mắc Covid-19. Các bệnh nhân có kết quả dương tính với SARS-CoV-2 được cách ly ngay khi nhập cảnh tại Bà Rịa - Vũng Tàu.
+                                    </p>
+                                    <div class="overflow-hidden">
+                                        <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
+                                        <div class="float-right pt-2 text-white">
+                                            <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
+                                            <button class="w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full">mode_edit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--Menu bên trái-->
+        <div class="hidden s2m:block s2m:fixed s2m:top-0 h-screen bg-blue-1000 text-gray-600 overflow-hidden w-16 duration-300 text-15f" x-bind:class="{'w-64': slide}" >
+            <div class="w-full h-16  cursor-pointer hover:text-gray-600" @click="slide = ! slide">
+                <i class="material-icons float-left block w-16 h-16 flex items-center justify-center duration-200 rotate-0">keyboard_arrow_right</i>
+                <div class="w-full h-16 bg-blue-1000 text-gray-600 pl-16">
+                    <div class="w-full h-full overflow-hidden">
+                        <span class="float-left block h-full flex items-center truncate">Restore Down</span>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full cursor-pointer">
+                <i class="material-icons float-left block w-16 h-12 flex items-center justify-center">home</i>
+                <div class="w-full h-12 bg-blue-1000 text-gray-600 pl-16">
+                    <div class="w-full h-full overflow-hidden">
+                        <span class="float-left block h-full flex items-center truncate">Dashboard</span>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="w-full cursor-pointer">
+                <i class="material-icons float-left w-16 h-12 flex items-center justify-center">poll</i>
+                <div class="w-full h-12 bg-blue-1000 text-gray-600 pl-16">
+                    <div class="w-full h-full overflow-hidden">
+                        <span class="float-left block h-full flex items-center truncate">Thống Kê</span>
+                    </div>
+                </div>
+            </div>-->
+            <div class="w-full cursor-pointer" x-data="{ open: false }"  @click="open = true">
+                <i class="material-icons float-left w-16 h-12 flex items-center justify-center">person</i>
+                <div class="w-full h-12 bg-blue-1000 text-gray-600 pl-16">
+                    <div class="w-full h-full overflow-hidden">
+                        <span class="float-left block h-full flex items-center truncate">Users</span>
+                        <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600 duration-200 rotate-0" x-show="! open">keyboard_arrow_right</i>
+                        <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600 duration-200 rotate-0" x-show="open">keyboard_arrow_down</i>                    
+                    </div>
+                </div>
+                <ul class="w-full overflow-hidden" x-show="open" @click.away="open = false">
+                    <li class="w-full h-12 hover:text-gray-700 pl-16"> 
+                        <span class="float-left hover:text-gray-700 block h-full flex items-center truncate">Sinh Viên</span>
+                    </li>
+                    <li class="w-full h-12 hover:text-gray-700 pl-16">
+                        <span class="float-left hover:text-gray-700 block h-full flex items-center truncate">Doanh Nghiệp</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full cursor-pointer" x-data="{ open: false }"  @click="open = true">
+                <i class="material-icons float-left w-16 h-12 flex items-center justify-center">apps</i>
+                <div class="w-full h-12 bg-blue-1000 text-gray-600 pl-16">
+                    <div class="w-full h-full overflow-hidden">
+                        <span class="float-left block h-full flex items-center truncate">Tiện Ích</span>
+                        <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600 duration-200 rotate-0" x-show="! open">keyboard_arrow_right</i>
+                        <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600 duration-200 rotate-0" x-show="open">keyboard_arrow_down</i>                    
+                    </div>
+                </div>
+                <ul class="w-full overflow-hidden" x-show="open" @click.away="open = false">
+                    <li class="w-full h-12 hover:text-gray-700 pl-16"> 
+                        <span class="float-left hover:text-gray-700 block h-full flex items-center truncate">Tag</span>
+                    </li>
+                    <li class="w-full h-12 hover:text-gray-700 pl-16">
+                        <span class="float-left hover:text-gray-700 block h-full flex items-center truncate">Category</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full cursor-pointer" x-data="{ open: false }"  @click="open = true">
+                <i class="material-icons float-left w-16 h-12 flex items-center justify-center">assignment</i>
+                <div class="w-full h-12 bg-blue-1000 text-gray-600 pl-16">
+                    <div class="w-full h-full overflow-hidden">
+                        <span class="float-left block h-full flex items-center truncate">Quản Lý Bài Đăng</span>
+                        <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600 duration-200 rotate-0" x-show="! open">keyboard_arrow_right</i>
+                        <i class="material-icons float-right w-12 h-full block flex items-center justify-center text-gray-600 duration-200 rotate-0" x-show="open">keyboard_arrow_down</i>
+                    </div>
+                </div>
+                <ul class="w-full overflow-hidden" x-show="open" @click.away="open = false">
+                    <li class="w-full h-12 hover:text-gray-700 pl-16"> 
+                        <span class="float-left hover:text-gray-700 block h-full flex items-center truncate">Xem Toàn Bộ</span>
+                    </li>
+                    <li class="w-full h-12 hover:text-gray-700 pl-16">
+                        <span class="float-left hover:text-gray-700 block h-full flex items-center truncate">Tạo Tin Mới</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full cursor-pointer">
+                <i class="material-icons float-left w-16 h-12 flex items-center justify-center">supervisor_account</i>
+                <div class="w-full h-12 bg-blue-1000 text-gray-600 pl-16">
+                    <div class="w-full h-full overflow-hidden">
+                        <span class="float-left block h-full flex items-center truncate">Quản Lý Thực Tập</span>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="w-full cursor-pointer">
+                <i class="material-icons float-left w-16 h-12 flex items-center justify-center">receipt</i>
+                <div class="w-full h-12 bg-blue-1000 text-gray-600 pl-16">
+                    <div class="w-full h-full overflow-hidden">
+                        <span class="float-left block h-full flex items-center truncate">Gói</span>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+
+
+        <!--Modal-->
+        <div class="w-screen h-screen bg-modal fixed top-0 flex items-center justify-center" x-show="edit">
+            <div class="p-8 w-screen s2m:w-450f bg-white b-radi-4 m-2 shadow relative">
+                <h1 class="text-xl font-medium text-gray-700">Chỉnh sửa thông tin doanh nghiệp</h1>
+                <input placeholder="Tên doanh nghiệp" class="block mt-4 w-full h-12 border-r-8 border-l-8 border-white b-radi-4 text-sm outline-none shadow">
+                <input placeholder="Địa chỉ " class="block mt-4 w-full h-12 border-r-8 border-l-8 border-white b-radi-4 text-sm outline-none shadow">
+                <select class="w-full mt-4 h-12 outline-none border-r-8 border-l-8 border-white b-radi-4 text-sm text-gray-600 cursor-pointer block shadow">
+                    <option>Tình trạng doanh nghiệp</option>
+                    <option>Đóng cửa</option>
+                    <option>Hoạt động</option>
+                </select>
+                <button class="h-12 w-full text-white b-radi-4 block mt-4 bg-green-500 outline-none shadow hover:bg-green-600">Lưu thay đổi</button>
+                <i @click="edit = false" class="material-icons absolute top-0 right-0 text-gray-600 cursor-pointer hover:text-gray-500 text-md">close</i>
+            </div>
+        </div>
+    </section>
+    <script src="js/index.js"></script>
+</body>
+</html>
