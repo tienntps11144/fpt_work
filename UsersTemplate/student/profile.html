@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../public/css/index.css">
     <title>Document</title>
 </head>
-<body x-data="{ open: false, zoom: false, projectAdd: false, projectEdit:false}">
+<body>
     <header class="h-16 w-full bg-blue-purple flex justify-center">
         <div class="grid grid-cols-12 lg:hidden">
             <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
@@ -45,7 +45,7 @@
             </div>
         </div>
     </header>
-    <main class="relative">
+    <main class="relative" x-data="{zoom: false}">
         <section class="absolute right-0 w-full">
             <input id="file-bg" type="file" class="hidden" onchange="preview(this, 'preview-bg')"/>
             <label for="file-bg" class="absolute px-4 py-2 flex justify-center items-center bg-black-fade text-white mt-4 ml-4 cursor-pointer z-40 radius-2">
@@ -70,7 +70,6 @@
                             </div>
                             <div class="text-center text-2xl font-medium">
                                 <span class="pr-2">Nguyễn Thanh Tiến</span>
-                                <i title="Chỉnh sửa thông tin" @click="open = true" class="material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600">edit</i>
                             </div>
     
                         </div>
@@ -197,8 +196,31 @@
                     <i class="material-icons mr-4">attach_file</i>
                     <span class="text-xl font-medium">Hồ sơ ứng tuyển</span>
                 </div>
-                <div class="p-4">
-                    <iframe src="../public/img/test.pdf" class="w-full overflow-hidden" height="650"></iframe>
+                <div class="w-full">
+                    <div class="b-radi-b-4 grid grid-cols-12 overflow-hidden">
+                        <a href="#" class="block duration-200 col-span-12 md:col-span-6 grid grid-cols-12 gap-4 sm:gap-0 bg-white h-70 px-4 py-4 cursor-pointer border-b border-r">
+                            <div class="col-span-12 flex items-center relative">
+                                <div class="rounded-full p-2 bg-white">
+                                    <img src="../public/img/pdflogo.png" class="rounded-full size-50x">
+                                </div>
+                                <div class="ml-4 mr-6">
+                                    <p class="font-medium flex items-center">Hồ sơ CV tiếng việt</p>
+                                </div>
+                                <i class="material-icons text-green-500 absolute right-0">check_circle</i>
+                            </div>
+                        </a>
+                        <a href="#" class="block duration-200 col-span-12 md:col-span-6 grid grid-cols-12 gap-4 sm:gap-0 bg-white h-70 px-4 py-4 cursor-pointer border-b border-r">
+                            <div class="col-span-12 flex items-center relative">
+                                <div class="rounded-full p-2 bg-white">
+                                    <img src="../public/img/pdflogo.png" class="rounded-full size-50x">
+                                </div>
+                                <div class="ml-4 mr-6">
+                                    <p class="font-medium flex items-center">Hồ sơ CV tiếng anh</p>
+                                </div>
+                                <i class="material-icons text-green-500 absolute right-0">check_circle</i>
+                            </div>
+                        </a>
+                    </div>                    
                 </div>
             </div>
         </section>
@@ -222,27 +244,12 @@
                 <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200 relative">
                     <i class="material-icons mr-4">star</i>
                     <span class="text-xl font-medium">Dự án đã tham gia</span>
-                    <i title="Thêm dự án mới" class="material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600 absolute top-0 right-20px top-20px" @click="projectAdd = true">add</i>                
                 </div>
                 <div class="w-full grid grid-cols-12 p-4 gap-4 bg-white b-radi-4">
                     <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 radius-2 product poshadow-effect shadow-bottom">
                         <div class="overflow-hidden b-radi-4">
                             <div class="w-full bg-white relative">
                                 <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png" class="w-full h-220 object-cover">
-                                <div class="absolute top-0 cursor-pointer w-full h-full hover-card">
-                                   <div class="absolute top-0 right-0 hidden show-card">
-                                        <div class="float-right hover-drop-menu">
-                                            <div class="text-right">
-                                                <i class="material-icons pr-1 text-white">more_horiz</i>
-                                            </div>
-                                            <ul class="bg-white b-radi-4 overflow-hidden hidden">
-                                                <li class="px-8 py-2 hover:bg-gray-200 text-sm" @click="projectEdit = true">Chỉnh sửa</li>
-                                                <li class="px-8 py-2 hover:bg-gray-200 text-sm">Xóa</li>
-                                            </ul>
-                                        </div>
-                                        
-                                   </div>
-                                </div>
                             </div>
                             <div class="w-full bg-white p-4">
                                 <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục hướng nghiệp</a></p>
@@ -255,25 +262,11 @@
                         <div class="overflow-hidden b-radi-4">
                             <div class="w-full bg-white relative">
                                 <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png" class="w-full h-220 object-cover">
-                                <div class="absolute top-0 cursor-pointer w-full h-full hover-card">
-                                   <div class="absolute top-0 right-0 hidden show-card">
-                                        <div class="float-right hover-drop-menu">
-                                            <div class="text-right">
-                                                <i class="material-icons pr-1 text-white">more_horiz</i>
-                                            </div>
-                                            <ul class="bg-white b-radi-4 overflow-hidden hidden">
-                                                <li class="px-8 py-2 hover:bg-gray-200 text-sm" @click="projectEdit = true">Chỉnh sửa</li>
-                                                <li class="px-8 py-2 hover:bg-gray-200 text-sm">Xóa</li>
-                                            </ul>
-                                        </div>
-                                        
-                                   </div>
-                                </div>
                             </div>
                             <div class="w-full bg-white p-4">
                                 <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục hướng nghiệp</a></p>
                                 <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ lập trình C++.</p>
-                                <p class="mt-2 font-medium text-green-500">Leader</p>
+                                <p class="mt-2 font-medium text-green-500">Designer</p>
                             </div>
                         </div>
                     </div>
@@ -281,25 +274,11 @@
                         <div class="overflow-hidden b-radi-4">
                             <div class="w-full bg-white relative">
                                 <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png" class="w-full h-220 object-cover">
-                                <div class="absolute top-0 cursor-pointer w-full h-full hover-card">
-                                   <div class="absolute top-0 right-0 hidden show-card">
-                                        <div class="float-right hover-drop-menu">
-                                            <div class="text-right">
-                                                <i class="material-icons pr-1 text-white">more_horiz</i>
-                                            </div>
-                                            <ul class="bg-white b-radi-4 overflow-hidden hidden">
-                                                <li class="px-8 py-2 hover:bg-gray-200 text-sm" @click="projectEdit = true">Chỉnh sửa</li>
-                                                <li class="px-8 py-2 hover:bg-gray-200 text-sm">Xóa</li>
-                                            </ul>
-                                        </div>
-                                        
-                                   </div>
-                                </div>
                             </div>
                             <div class="w-full bg-white p-4">
                                 <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục hướng nghiệp</a></p>
                                 <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ lập trình C++.</p>
-                                <p class="mt-2 font-medium text-green-500">Front-end</p>
+                                <p class="mt-2 font-medium text-green-500">Designer</p>
                             </div>
                         </div>
                     </div>
@@ -307,28 +286,15 @@
                         <div class="overflow-hidden b-radi-4">
                             <div class="w-full bg-white relative">
                                 <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png" class="w-full h-220 object-cover">
-                                <div class="absolute top-0 cursor-pointer w-full h-full hover-card">
-                                   <div class="absolute top-0 right-0 hidden show-card">
-                                        <div class="float-right hover-drop-menu">
-                                            <div class="text-right">
-                                                <i class="material-icons pr-1 text-white">more_horiz</i>
-                                            </div>
-                                            <ul class="bg-white b-radi-4 overflow-hidden hidden">
-                                                <li class="px-8 py-2 hover:bg-gray-200 text-sm" @click="projectEdit = true">Chỉnh sửa</li>
-                                                <li class="px-8 py-2 hover:bg-gray-200 text-sm">Xóa</li>
-                                            </ul>
-                                        </div>
-                                        
-                                   </div>
-                                </div>
                             </div>
                             <div class="w-full bg-white p-4">
                                 <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục hướng nghiệp</a></p>
                                 <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ lập trình C++.</p>
-                                <p class="mt-2 font-medium text-green-500">Database</p>
+                                <p class="mt-2 font-medium text-green-500">Designer</p>
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </section>
@@ -365,192 +331,10 @@
                 </div>
             </div>
         </section>
-        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50" x-show="open">
-            <div class="bg-white w-screen h-screen lg:w-1/2 overflow-scroll scroll-w-0 maw-700">
-                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200 cursor-pointer" @click="open = false">
-                    <i class="material-icons mr-4">chevron_left</i>
-                    <span class="text-xl font-medium">Chỉnh sửa thông tin</span>
-                </div>
-                <div class="p-12">
-                    <div class="flex justify-center mb-4">
-                        <div class="relative">
-                            <img src="../public/img/avatar-1.jpg" class="p-1 rounded-full border-4 border-white shadow-bottom w-160 h-160" id="preview-avatar">
-                            <input id="file-avatar" type="file" id="file-avatar" class="hidden" accept="image/*" onchange="preview(this, 'preview-avatar')">
-                            <label for="file-avatar" title="Cập nhật hình ảnh" class="absolute material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600 bottom-0 right-20px-plus">edit</label>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Họ Tên</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Nhập họ và tên">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium">Ngành Nghề</p>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer">
-                            <option>Chọn ngành nghề</option>
-                            <option>CNTT</option>
-                            <option>Thiet Ke Web</option>
-                        </select>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Nơi đang sống</p>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer">
-                            <option>Quốc gia</option>
-                            <option>CNTT</option>
-                            <option>Thiet Ke Web</option>
-                        </select>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer mt-4">
-                            <option>Tỉnh/Thành Phố</option>
-                            <option>CNTT</option>
-                            <option>Thiet Ke Web</option>
-                        </select>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer mt-4">
-                            <option>Quận Huyện</option>
-                            <option>CNTT</option>
-                            <option>Thiet Ke Web</option>
-                        </select>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700 mt-4" placeholder="Số nhà, đường">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Ngày sinh</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700 cursor-pointer" type="date">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Giới tính</p>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer">
-                            <option>Tất cả</option>
-                            <option>Nam</option>
-                            <option>Nữ</option>
-                        </select>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Mức lương mong muốn</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Mức lương">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Tag</p>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer" onchange="appendTag(this.value, 'tag')">
-                            <option value="-1">Vui lòng chọn tag</option>
-                            <option>C++</option>
-                            <option>PHP</option>
-                        </select>
-                        <div class="overflow-hidden mt-2 hidden" id="tag"></div>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Bài giới thiệu ngắn</p>
-                        <div id="description" class="h-160"></div>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Kỹ năng của bạn</p>
-                        <div id="skill" class="h-160"></div>
-                    </div>
-                    <div class="mt-4 overflow-hidden">
-                        <p class="mb-2 font-medium mb-2">Hồ sơ ứng tuyển - CV</p>
-                        <input type="file" id="file-cv" class="hidden" accept="application/pdf" onchange="preview(this, 'preview-cv')">
-                        <label for="file-cv" class="float-left h-24 mr-4 text-gray-600 w-24 block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer material-icons flex items-center justify-center">add</label>
-                    </div>
-                    <div class="mt-4 relative">
-                        <iframe id="preview-cv" class="w-full hidden" height="500"></iframe>
-                    </div>
-                    <div class="mt-4 overflow-hidden">
-                        <p class="mb-2 font-medium mb-2">Chứng chỉ & bằng cấp - Tối đa 4</p>
-                        <input type="file" id="file-cc" class="hidden" accept="image/*">
-                        <label for="file-cc" class="float-left h-10 mr-4 w-full block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer flex items-center justify-center text-gray-500">+ Thêm bằng cấp & chứng chỉ</label>
-                    </div>
-                    <div id="cert" class="mt-4 grid grid-cols-12 gap-2">
-                        <div class="col-span-3 p-2 relative hover-icon">
-                            <img src="../public/img/toeic.jpg"/>
-                            <input value="Chứng chỉ Toeic" class="w-full outline-none mt-3 font-medium text-sm"/>
-                            <i class="material-icons absolute top-0 right-0 text-base border-2 border-white cursor-pointer shadow-bottom bg-red-500 rounded-full text-white hidden">close</i>
-                        </div>
-                    </div>
-                    <div class="mt-4 flex justify-end">
-                        <button class="px-10 py-2 radius-2 text-gray-600 bg-gray-300 mr-4 outline-none hover:bg-gray-400" @click="open = false">Cancel</button>
-                        <button class="px-10 py-2 radius-2 text-white bg-green-500 outline-none hover:bg-green-600">Save</button>
-                    </div>
-                </div>
-            </div>
-        </section>
         <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50" x-show="zoom">
             <i class="material-icons text-white absolute top-0 right-0 cursor-pointer p-4" @click="zoom = false">close</i>
             <div class="flex items-center">
                 <img id="zoom-in" class="object-contain" @click.away="zoom = false"/>
-            </div>
-        </section>
-        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50" x-show="projectAdd">
-            <div class="bg-white w-screen h-screen lg:w-1/2 overflow-scroll scroll-w-0 maw-700">
-                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200 cursor-pointer" @click="projectAdd = false">
-                    <i class="material-icons mr-4">chevron_left</i>
-                    <span class="text-xl font-medium">Thêm dự án</span>
-                </div>
-                <div class="p-12">
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Tên dự án</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Nhập tên dự án bạn đã tham gia">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Liên kết</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Liên kết đến trang mô tả chi tiết hơn...">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Hình ảnh mô tả</p>
-                        <div class="overflow-hidden mt-2">
-                            <input id="file-project" type="file" class="hidden" onchange="preview(this, 'preview-project')" accept="image/*">
-                            <label for="file-project" class="float-left h-24 mr-4 text-gray-600 w-24 block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer material-icons flex items-center justify-center">add</label>
-                            <img id="preview-project" class="float-left h-24 w-24 object-cover hidden" src="">
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Vai trò của bạn</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Vai trò của bạn">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Mô tả ngắn</p>
-                        <textarea class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Một tả ngắn về dự án..."></textarea>
-                    </div>
-                    <div class="mt-4 flex justify-end">
-                        <button class="px-10 py-2 radius-2 text-gray-600 bg-gray-300 mr-4 outline-none hover:bg-gray-400" @click="projectAdd = false">Cancel</button>
-                        <button class="px-10 py-2 radius-2 text-white bg-green-500 outline-none hover:bg-green-600">Save</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50" x-show="projectEdit">
-            <div class="bg-white w-screen h-screen lg:w-1/2 overflow-scroll scroll-w-0 maw-700">
-                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200 cursor-pointer" @click="projectEdit = false">
-                    <i class="material-icons mr-4">chevron_left</i>
-                    <span class="text-xl font-medium">Chỉnh sửa dự án</span>
-                </div>
-                <div class="p-12">
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Tên dự án</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Nhập tên dự án bạn đã tham gia">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Liên kết</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Liên kết đến trang mô tả chi tiết hơn...">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Hình ảnh mô tả</p>
-                        <div class="overflow-hidden mt-2">
-                            <input id="file-project" type="file" class="hidden" onchange="preview(this, 'preview-project')" accept="image/*">
-                            <label for="file-project" class="float-left h-24 mr-4 text-gray-600 w-24 block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer material-icons flex items-center justify-center">add</label>
-                            <img id="preview-project" class="float-left h-24 w-24 object-cover hidden" src="">
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Vai trò của bạn</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Vai trò của bạn">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Mô tả ngắn</p>
-                        <textarea class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Một tả ngắn về dự án..."></textarea>
-                    </div>
-                    <div class="mt-4 flex justify-end">
-                        <button class="px-10 py-2 radius-2 text-gray-600 bg-gray-300 mr-4 outline-none hover:bg-gray-400" @click="projectEdit = false">Cancel</button>
-                        <button class="px-10 py-2 radius-2 text-white bg-green-500 outline-none hover:bg-green-600">Save</button>
-                    </div>
-                </div>
             </div>
         </section>
     </main>

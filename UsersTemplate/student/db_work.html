@@ -50,7 +50,11 @@
                     <div class="w-full shadow-bottom bg-white b-radi-4">
                         <div class="p-4 border-b-2 border-gray-200">
                             <div class="flex justify-center">
-                                <img src="../public/img/avatar-1.jpg" class="rounded-full p-2 shadow-bottom"/>
+                                <div class="relative">
+                                    <img src="../public/img/avatar-1.jpg" class="rounded-full p-2 shadow-bottom size-165x" id="preview-avatar"/>
+                                    <input id="file-avatar" type="file" class="hidden" accept="image/*" onchange="preview(this, 'preview-avatar')">
+                                    <label for="file-avatar" title="Cập nhật hình ảnh" class="absolute material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600 bottom-0 right-20px-plus">edit</label>
+                                </div>
                             </div>
                             <p class="font-medium text-xl text-center mt-4">Nguyễn Thanh Tiến</p>
                         </div>
@@ -167,23 +171,85 @@
                         </div>
                         <div class="p-8">
                             <div class="mt-4 overflow-hidden">
-                                <p class="mb-2 font-medium mb-2">Hồ sơ ứng tuyển - CV</p>
-                                <input type="file" id="file-cv" class="hidden" accept="application/pdf" onchange="preview(this, 'preview-cv')">
-                                <label for="file-cv" class="float-left h-24 mr-4 text-gray-600 w-24 block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer material-icons flex items-center justify-center">add</label>
+                                <p class="mb-2 font-medium mb-2">Hồ sơ CV tiếng việt</p>
+                                <input type="file" id="file-cv-vn" class="hidden" accept="application/pdf" onchange="preview(this, 'preview-cv-vn')">
+                                <label for="file-cv-vn" class="float-left h-16 mr-4 w-full block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer flex items-center justify-center text-gray-500"><i class="material-icons pr-1">attach_file</i>Nhấn vào đây để tải file lên</label>
                             </div>
                             <div class="mt-4 relative">
-                                <iframe id="preview-cv" class="w-full hidden" height="500"></iframe>
+                                <iframe id="preview-cv-vn" class="w-full hidden" height="500"></iframe>
                             </div>
                             <div class="mt-4 overflow-hidden">
-                                <p class="mb-2 font-medium mb-2">Chứng chỉ &amp; bằng cấp - Tối đa 4</p>
-                                <input type="file" id="file-cc" class="hidden" accept="image/*">
-                                <label for="file-cc" class="float-left h-10 mr-4 w-full block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer flex items-center justify-center text-gray-500">+ Thêm bằng cấp &amp; chứng chỉ</label>
+                                <p class="mb-2 font-medium mb-2">Hồ sơ CV tiếng anh</p>
+                                <input type="file" id="file-cv-en" class="hidden" accept="application/pdf" onchange="preview(this, 'preview-cv-en')">
+                                <label for="file-cv-en" class="float-left h-16 mr-4 w-full block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer flex items-center justify-center text-gray-500"><i class="material-icons pr-1">attach_file</i>Nhấn vào đây để tải file lên</label>
                             </div>
-                            <div id="cert" class="mt-4 grid grid-cols-12 gap-2">
-                                <div class="col-span-3 p-2 relative hover-icon">
-                                    <img src="../public/img/toeic.jpg">
-                                    <input value="Chứng chỉ Toeic" class="w-full outline-none mt-3 font-medium text-sm">
-                                    <i class="material-icons absolute top-0 right-0 text-base border-2 border-white cursor-pointer shadow-bottom bg-red-500 rounded-full text-white hidden">close</i>
+                            <div class="mt-4 relative">
+                                <iframe id="preview-cv-en" class="w-full hidden" height="500"></iframe>
+                            </div>
+                            <div class="mt-4 flex justify-center">
+                                <button class="w-64 py-2 radius-2 text-white bg-green-500 outline-none hover:bg-green-600">Lưu hồ sơ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white b-radi-4 shadow-bottom mt-8">
+                        <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200">
+                            <i class="material-icons mr-4">attach_file</i>
+                            <span class="text-xl font-medium">Chứng chỉ & bằng cấp</span>
+                        </div>
+                        <div class="p-8">
+                            <div class="mt-4 overflow-hidden">
+                                <p class="mb-2 font-medium mb-2">Chứng chỉ & bằng cấp</p>
+                                <input type="file" id="file-cv-vn" class="hidden" accept="application/pdf" onchange="preview(this, 'preview-cv-vn')">
+                                <label for="file-cv-vn" class="float-left h-16 mr-4 w-full block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer flex items-center justify-center text-gray-500"><i class="material-icons pr-1">attach_file</i>Nhấn vào đây để tải file lên</label>
+                            </div>
+                            <div class="mt-4 grid grid-cols-12 gap-2">
+                                <div class="col-span-6 md:col-span-3 lg:col-span-6 xl:col-span-3">
+                                    <div class="relative">
+                                        <img src="../public/img/toeic.jpg">
+                                        <div class="absolute top-0 w-full h-full hover-card">
+                                            <i class="material-icons absolute top-0 right-0 text-white cursor-pointer">close</i>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input value="Bằng toeic" class="w-full p-2 outline-none text-center text-sm font-medium"/>
+                                        <i class="material-icons text-xl text-green-500">edit</i>
+                                    </div>
+                                </div>
+                                <div class="col-span-6 md:col-span-3 lg:col-span-6 xl:col-span-3">
+                                    <div class="relative">
+                                        <img src="../public/img/toeic.jpg">
+                                        <div class="absolute top-0 w-full h-full hover-card">
+                                            <i class="material-icons absolute top-0 right-0 text-white cursor-pointer">close</i>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input value="Bằng toeic" class="w-full p-2 outline-none text-center text-sm font-medium"/>
+                                        <i class="material-icons text-xl text-green-500">edit</i>
+                                    </div>
+                                </div>
+                                <div class="col-span-6 md:col-span-3 lg:col-span-6 xl:col-span-3">
+                                    <div class="relative">
+                                        <img src="../public/img/toeic.jpg">
+                                        <div class="absolute top-0 w-full h-full hover-card">
+                                            <i class="material-icons absolute top-0 right-0 text-white cursor-pointer">close</i>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input value="Bằng toeic" class="w-full p-2 outline-none text-center text-sm font-medium"/>
+                                        <i class="material-icons text-xl text-green-500">edit</i>
+                                    </div>
+                                </div>
+                                <div class="col-span-6 md:col-span-3 lg:col-span-6 xl:col-span-3">
+                                    <div class="relative">
+                                        <img src="../public/img/toeic.jpg">
+                                        <div class="absolute top-0 w-full h-full hover-card">
+                                            <i class="material-icons absolute top-0 right-0 text-white cursor-pointer">close</i>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <input value="Bằng toeic" class="w-full p-2 outline-none text-center text-sm font-medium"/>
+                                        <i class="material-icons text-xl text-green-500">edit</i>
+                                    </div>
                                 </div>
                             </div>
                             <div class="mt-4 flex justify-center">
