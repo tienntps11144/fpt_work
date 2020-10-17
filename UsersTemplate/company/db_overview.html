@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="../public/css/output.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="h-16 w-full bg-blue-purple flex justify-center">
+        <div class="grid grid-cols-12 lg:hidden">
+            <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
+                <i class="material-icons h-16 w-16 flex justify-center items-center text-white text-3xl btn-blue-purple">sort</i>
+                <ul class="w-64 bg-white text-sm font-medium text-gray-800 shadow-bottom b-radi-4 relative left-64 duration-300 z-50">
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">today</i><span>Sản Phẩm & Dịch Vụ</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">person_outline</i><span>Đăng Nhập</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">people_outline</i><span>Đăng Ký</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">rss_feed</i><span>HR Insider</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">date_range</i><span>Giới Thiệu</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">search</i><span>Tìm Việc</span></li>
+                </ul>
+            </div>
+            <div class="col-span-8 h-16 flex items-center justify-center py-2">
+                <img src="../public/img/vnw_logo_white.png" class="h-full object-cover">
+            </div>
+            <div class="col-span-2 h-16">
+    
+            </div>
+        </div>
+        <div class="w-10/12 h-16 hidden grid-cols-12 gap-4 lg:grid">
+            <div class="col-span-9 h-16 flex text-white">
+                <img src="../public/img/vnw_logo_white.png" class="h-full object-cover py-2 mr-12">
+                <a href="#" class="flex items-center mr-8 hover:underline">Việc Làm</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Phỏng Vấn</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Công Ty</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Tuyển Dụng</a>
+            </div>
+            <div class="col-span-3 h-16 flex justify-end items-center text-white">
+                <a class="px-2 border-r border-white text-sm font-medium hover:underline cursor-pointer">Đăng Ký</a>
+                <a class="px-2 text-sm font-medium hover:underline cursor-pointer">Đăng Nhập</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="flex justify-center my-8 px-4">
+            <div class="lg:w-10/12 w-full grid grid-cols-10 gap-8">
+                <div class="lg:col-span-4 xl:col-span-3 col-span-10">
+                    <div class="w-full shadow-bottom bg-white b-radi-4">
+                        <div class="p-4 border-b-2 border-gray-200">
+                            <div class="flex justify-center">
+                                <div class="relative">
+                                    <img src="../public/img/google.png" class="rounded-full p-2 shadow-bottom size-165x" id="preview-avatar"/>
+                                    <input id="file-avatar" type="file" class="hidden" accept="image/*" onchange="preview(this, 'preview-avatar')">
+                                    <label for="file-avatar" title="Cập nhật hình ảnh" class="absolute material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600 bottom-0 right-20px-plus">edit</label>
+                                </div>
+                            </div>
+                            <p class="font-medium text-xl text-center mt-4">Google Inc</p>
+                        </div>
+                        <div class="text-gray-800">
+                            <div class="px-4 py-3 flex items-center cursor-pointer select-row">
+                                <a class="block w-full flex items-center" href="db_overview.html">
+                                    <i class="material-icons pr-4 text-gray-600">assessment</i>
+                                    <span>Tổng quan</span>
+                                </a>
+                            </div>
+                            <div class="px-4 py-3 flex items-center cursor-pointer select-row">
+                                <a class="block w-full flex items-center" href="db_information.html">
+                                    <i class="material-icons pr-4 text-gray-600">business</i>
+                                    <span>Thông tin doanh nghiệp</span>
+                                </a>
+                            </div>
+                            <div class="px-4 py-3 flex items-center cursor-pointer select-row">
+                                <a class="block w-full flex items-center" href="db_password.html">
+                                    <i class="material-icons pr-4 text-gray-600">lock</i>
+                                    <span>Bảo mật</span>
+                                </a>
+                            </div>
+                            <div class="px-4 py-3 flex items-center cursor-pointer select-row">
+                                <a class="block w-full flex items-center" href="db_work.html">
+                                    <i class="material-icons pr-4 text-gray-600">work</i>
+                                    <span>Quản lý công việc</span>
+                                </a>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 xl:col-span-7 col-span-10">
+                    <div class="grid grid-cols-12 gap-4">
+                        <div class="md:col-span-4 sm:col-span-6 lg:col-span-6 xl:col-span-4 col-span-12 shadow-bottom bg-white b-radi-4 text-center">
+                            <div class="p-4">
+                                <div>
+                                    <p class="text-4xl font-bold text-gray-800">24</p>
+                                    <p class="text-gray-600 limit-row-1 overflow-hidden">VIỆC LÀM</p>
+                                </div>
+                                <i class="material-icons p-6 text-orange-500 bg-orange-100 rounded-full text-3xl mt-4">work</i>
+                            </div>
+                            <button class="p-4 w-full bg-orange-400 text-white b-radi-b-4 font-medium outline-none hover:bg-orange-500">Quản Lý Việc Làm</button>
+                        </div>
+                        <div class="md:col-span-4 sm:col-span-6 lg:col-span-6 xl:col-span-4 col-span-12 shadow-bottom bg-white b-radi-4 text-center">
+                            <div class="p-4">
+                                <div>
+                                    <p class="text-4xl font-bold text-gray-800">0</p>
+                                    <p class="text-gray-600 limit-row-1 overflow-hidden">ỨNG VIÊN</p>
+                                </div>
+                                <i class="material-icons p-6 text-blue-500 bg-blue-100 rounded-full text-3xl mt-4">supervisor_account</i>
+                            </div>
+                            <button class="p-4 w-full bg-blue-400 text-white b-radi-b-4 font-medium outline-none hover:bg-blue-500">Quản Lý Ứng Viên</button>
+                        </div>
+                        <div class="md:col-span-4 sm:col-span-12 lg:col-span-12 xl:col-span-4 col-span-12 shadow-bottom bg-white b-radi-4 text-center">
+                            <div class="p-4">
+                                <div>
+                                    <p class="text-4xl font-bold text-gray-800">1</p>
+                                    <p class="text-gray-600 limit-row-1 overflow-hidden">HỒ SƠ ĐÃ XEM</p>
+                                </div>
+                                <i class="material-icons p-6 text-green-500 bg-green-100 rounded-full text-3xl mt-4">assignment</i>
+                            </div>
+                            <button class="p-4 w-full bg-green-400 text-white b-radi-b-4 font-medium outline-none hover:bg-green-500">Xem Hồ Sơ</button>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white flex justify-center">
+        <div class="grid grid-cols-12 gap-4 py-6 px-4 w-full lg:w-10/12">
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Về FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Giới Thiệu</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Bảo Mật Thông Tin</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Tư Vấn Tuyển Dụng</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Quy Định Sử Dụng</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Về FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Giới Thiệu</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Bảo Mật Thông Tin</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Tư Vấn Tuyển Dụng</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Quy Định Sử Dụng</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Kết Nối FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Facebook</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Zalo</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">FptWork App</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Appstore</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Google Play</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../public/js/index.js"></script>
+</body>
+</html>

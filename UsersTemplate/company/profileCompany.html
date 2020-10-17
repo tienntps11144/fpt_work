@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../public/css/index.css">
     <title>Document</title>
 </head>
-<body x-data="{ open: false }">
+<body>
     <header class="h-16 w-full bg-blue-purple flex justify-center">
         <div class="grid grid-cols-12 lg:hidden">
             <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
@@ -70,7 +70,6 @@
                             </div>
                             <div class="text-center text-2xl font-medium">
                                 <span class="pr-2">Bbv Vietnam Co., Ltd</span>
-                                <i title="Chỉnh sửa thông tin" @click="open = true" class="material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600">edit</i>
                             </div>
                             <p class="text-center mt-1 italic text-gray-700">With LG, It’s All Possible. When It’s All Possible, Life’s Good</p>
                         </div>
@@ -184,125 +183,29 @@
                     <span class="text-xl font-medium">Việc làm</span>
                 </div>
                 <div>
-                    <div class="py-4 w-full px-4 overflow-hidden border-b border-gray-200">
-                        <div class="absolute">
-                            <img src="../public/img/google.png" class="rounded-full" width="50" height="50">
-                        </div>
-                        <div class="w-full pl-70 overflow-hidden">
-                            <div class="float-left">
-                                <p class="font-medium text-black text-lg">Python Developers (Salary Up to $2000 Gross / $1700 Net)</p>
-                                <p class="text-sm font-medium text-gray-700">Bbv Vietnam Co., Ltd</p>
-                                <div class="mt-1 text-gray-700">
-                                    <span class="pr-2">Mức lương:</span><span class="font-medium">5.000.000 VND</span>
+                    <div>
+                        <div class="w-full overflow-hidden border-b border-gray-200 grid grid-cols-12">
+                            <div class="col-span-12 flex p-4 border-r border-b">
+                                <div class="pr-4">
+                                    <img src="../public/img/google.png" class="rounded-full" width="50" height="50">
                                 </div>
-                                <div class="text-gray-700 flex items-center mb-1">
-                                    <span class="pr-2">Địa điểm:</span>
-                                    <p class="font-medium text-sm">
-                                        <span>Hồ Chí Minh</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="float-right h-full">
-                                <button class="px-5 py-1 radius-2 bg-green-500 text-white outline-none font-medium text-sm hover:bg-green-600">Ứng tuyển</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="py-4 w-full px-4 overflow-hidden border-b border-gray-200">
-                        <div class="absolute">
-                            <img src="../public/img/google.png" class="rounded-full" width="50" height="50">
-                        </div>
-                        <div class="w-full pl-70 overflow-hidden">
-                            <div class="float-left">
-                                <p class="font-medium text-black text-lg">Python Developers (Salary Up to $2000 Gross / $1700 Net)</p>
-                                <p class="text-sm font-medium text-gray-700">Bbv Vietnam Co., Ltd</p>
-                                <div class="mt-1 text-gray-700">
-                                    <span class="pr-2">Mức lương:</span><span class="font-medium">5.000.000 VND</span>
-                                </div>
-                                <div class="text-gray-700 flex items-center mb-1">
-                                    <span class="pr-2">Địa điểm:</span>
-                                    <p class="font-medium text-sm">
-                                        <span>Hồ Chí Minh</span>
-                                    </p>
+                                <div class="w-full overflow-hidden">
+                                    <div class="float-left">
+                                        <p class="font-medium text-black text-lg limit-row-1 overflow-hidden">Python Developers (Salary Up to $2000 Gross / $1700 Net)</p>
+                                        <p class="text-sm font-medium text-gray-700 limit-row-1 overflow-hidden">Bbv Vietnam Co., Ltd</p>
+                                        <div class="mt-1 text-gray-700 limit-row-1 overflow-hidden">
+                                            <span class="pr-2">Lương mong muốn:</span><span class="font-medium">10.000.000 VND</span>
+                                        </div>
+                                        <div class="text-gray-700 flex items-center mb-1 limit-row-1 overflow-hidden">
+                                            <span class="pr-2">Địa điểm:</span><span class="font-medium">TP.Hồ Chí Minh</span>
+                                        </div>
+                                    </div>
+                                    <div class="float-right h-full">
+                                        <button class="px-5 py-1 radius-2 bg-green-500 text-white outline-none font-medium text-sm hover:bg-green-600">Ứng Tuyển</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="float-right h-full">
-                                <button class="px-5 py-1 radius-2 bg-green-500 text-white outline-none font-medium text-sm hover:bg-green-600">Ứng tuyển</button>
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50" x-show="open" @click.away="open = false">
-            <div class="bg-white w-screen h-screen lg:w-1/2 overflow-scroll scroll-w-0 maw-700">
-                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200 cursor-pointer" @click="open = false">
-                    <i class="material-icons mr-4">chevron_left</i>
-                    <span class="text-xl font-medium">Chỉnh sửa thông tin</span>
-                </div>
-                <div class="p-12">
-                    <div class="flex justify-center mb-4">
-                        <div class="relative">
-                            <img src="../public/img/google.png" class="p-1 rounded-full border-4 border-white shadow-bottom w-160 h-160" id="preview-avatar">
-                            <input id="file-avatar" type="file" id="file-avatar" class="hidden" accept="image/*" onchange="preview(this, 'preview-avatar')">
-                            <label for="file-avatar" title="Cập nhật hình ảnh" class="absolute material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600 bottom-0 right-20px-plus">edit</label>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Tên Doanh Nghiệp</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Nhập tên doanh nghiệp">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium">Lĩnh Vực</p>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer">
-                            <option>Chọn lĩnh vực</option>
-                            <option>CNTT</option>
-                            <option>Thiet Ke Web</option>
-                        </select>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Địa Điểm</p>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer">
-                            <option>Quốc gia</option>
-                            <option>CNTT</option>
-                            <option>Thiet Ke Web</option>
-                        </select>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer mt-4">
-                            <option>Tỉnh/Thành Phố</option>
-                            <option>CNTT</option>
-                            <option>Thiet Ke Web</option>
-                        </select>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer mt-4">
-                            <option>Quận Huyện</option>
-                            <option>CNTT</option>
-                            <option>Thiet Ke Web</option>
-                        </select>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700 mt-4" placeholder="Số nhà, đường">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Ngày Thành Lập</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700 cursor-pointer" type="date">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Quy Mô</p>
-                        <select class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none cursor-pointer">
-                            <option>100-- nhân viên</option>
-                            <option>100-200 nhân viên</option>
-                            <option>300-500 nhân viên</option>
-                            <option>600-800 nhân viên</option>
-                            <option>900++ nhân viên</option>
-                        </select>
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Sologan Doanh Nghiệp</p>
-                        <input class="py-3 w-full px-2 border-2 b-radi-4 font-medium text-sm outline-none placeholder-gray-700" placeholder="Nhập sologan của doanh nghiệp">
-                    </div>
-                    <div class="mt-4">
-                        <p class="mb-2 font-medium mb-2">Bài giới thiệu ngắn</p>
-                        <div id="description" class="h-160"></div>
-                    </div>
-                    <div class="mt-4 flex justify-end">
-                        <button class="px-10 py-2 radius-2 text-gray-600 bg-gray-300 mr-4 outline-none hover:bg-gray-400" @click="open = false">Cancel</button>
-                        <button class="px-10 py-2 radius-2 text-white bg-green-500 outline-none hover:bg-green-600">Save</button>
                     </div>
                 </div>
             </div>
