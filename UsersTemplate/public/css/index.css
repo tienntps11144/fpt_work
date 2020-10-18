@@ -275,7 +275,7 @@ body{
     height: 0;
   }
   
-  .slider {
+  .slider-btn {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -287,7 +287,7 @@ body{
     transition: .4s;
   }
   
-  .slider:before {
+  .slider-btn:before {
     position: absolute;
     content: "";
     height: 23px;
@@ -299,24 +299,24 @@ body{
     transition: .4s;
   }
   
-  input:checked + .slider {
+  input:checked + .slider-btn {
     background-color: #48bb78;
   }
   
-  input:focus + .slider {
+  input:focus + .slider-btn {
     box-shadow: 0 0 1px #48bb78;
   }
   
-  input:checked + .slider:before {
+  input:checked + .slider-btn:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
-  .slider.round {
+  .slider-btn.round {
     border-radius: 34px;
   }
   
-  .slider.round:before {
+  .slider-btn.round:before {
     border-radius: 50%;
   }
 /*css ckeditor*/
