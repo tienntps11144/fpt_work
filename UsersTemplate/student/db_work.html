@@ -172,19 +172,39 @@
                         <div class="p-8">
                             <div class="mt-4 overflow-hidden">
                                 <p class="mb-2 font-medium mb-2">Hồ sơ CV tiếng việt</p>
-                                <input type="file" id="file-cv-vn" class="hidden" accept="application/pdf" onchange="preview(this, 'preview-cv-vn')">
+                                <input type="file" id="file-cv-vn" class="hidden" accept="application/pdf">
                                 <label for="file-cv-vn" class="float-left h-16 mr-4 w-full block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer flex items-center justify-center text-gray-500"><i class="material-icons pr-1">attach_file</i>Nhấn vào đây để tải file lên</label>
-                            </div>
-                            <div class="mt-4 relative">
-                                <iframe id="preview-cv-vn" class="w-full hidden" height="500"></iframe>
                             </div>
                             <div class="mt-4 overflow-hidden">
                                 <p class="mb-2 font-medium mb-2">Hồ sơ CV tiếng anh</p>
-                                <input type="file" id="file-cv-en" class="hidden" accept="application/pdf" onchange="preview(this, 'preview-cv-en')">
+                                <input type="file" id="file-cv-en" class="hidden" accept="application/pdf">
                                 <label for="file-cv-en" class="float-left h-16 mr-4 w-full block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer flex items-center justify-center text-gray-500"><i class="material-icons pr-1">attach_file</i>Nhấn vào đây để tải file lên</label>
                             </div>
-                            <div class="mt-4 relative">
-                                <iframe id="preview-cv-en" class="w-full hidden" height="500"></iframe>
+                            <div class="w-full mt-4">
+                                <div class="b-radi-b-4 grid grid-cols-12 overflow-hidden">
+                                    <a href="#" class="block duration-200 col-span-12 md:col-span-6 grid grid-cols-12 gap-4 sm:gap-0 bg-white h-70 px-4 py-4 cursor-pointer border">
+                                        <div class="col-span-12 flex items-center relative">
+                                            <div class="rounded-full p-2 bg-white">
+                                                <img src="../public/img/pdflogo.png" class="rounded-full size-50x">
+                                            </div>
+                                            <div class="ml-4 mr-6">
+                                                <p class="font-medium flex items-center">Hồ sơ CV tiếng việt</p>
+                                            </div>
+                                            <i class="material-icons text-green-500 absolute right-0">check_circle</i>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="block duration-200 col-span-12 md:col-span-6 grid grid-cols-12 gap-4 sm:gap-0 bg-white h-70 px-4 py-4 cursor-pointer border">
+                                        <div class="col-span-12 flex items-center relative">
+                                            <div class="rounded-full p-2 bg-white">
+                                                <img src="../public/img/pdflogo.png" class="rounded-full size-50x">
+                                            </div>
+                                            <div class="ml-4 mr-6">
+                                                <p class="font-medium flex items-center">Hồ sơ CV tiếng anh</p>
+                                            </div>
+                                            <i class="material-icons text-green-500 absolute right-0">check_circle</i>
+                                        </div>
+                                    </a>
+                                </div>                    
                             </div>
                             <div class="mt-4 flex justify-center">
                                 <button class="w-64 py-2 radius-2 text-white bg-green-500 outline-none hover:bg-green-600">Lưu hồ sơ</button>
