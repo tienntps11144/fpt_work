@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js" defer></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../public/css/output.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="h-16 w-full bg-blue-purple flex justify-center">
+        <div class="grid grid-cols-12 lg:hidden">
+            <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
+                <i class="material-icons h-16 w-16 flex justify-center items-center text-white text-3xl btn-blue-purple">sort</i>
+                <ul class="w-64 bg-white text-sm font-medium text-gray-800 shadow-bottom b-radi-4 relative left-64 duration-300 z-50">
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">today</i><span>Sản Phẩm & Dịch Vụ</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">person_outline</i><span>Đăng Nhập</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">people_outline</i><span>Đăng Ký</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">rss_feed</i><span>HR Insider</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">date_range</i><span>Giới Thiệu</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">search</i><span>Tìm Việc</span></li>
+                </ul>
+            </div>
+            <div class="col-span-8 h-16 flex items-center justify-center py-2">
+                <img src="../public/img/vnw_logo_white.png" class="h-full object-cover">
+            </div>
+            <div class="col-span-2 h-16">
+    
+            </div>
+        </div>
+        <div class="w-10/12 h-16 hidden grid-cols-12 gap-4 lg:grid">
+            <div class="col-span-9 h-16 flex text-white">
+                <img src="../public/img/vnw_logo_white.png" class="h-full object-cover py-2 mr-12">
+                <a href="#" class="flex items-center mr-8 hover:underline">Việc Làm</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Phỏng Vấn</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Công Ty</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Tuyển Dụng</a>
+            </div>
+            <div class="col-span-3 h-16 flex justify-end items-center text-white">
+                <a class="px-2 border-r border-white text-sm font-medium hover:underline cursor-pointer">Đăng Ký</a>
+                <a class="px-2 text-sm font-medium hover:underline cursor-pointer">Đăng Nhập</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="flex justify-center my-8 px-4">
+            <div class="lg:w-10/12 w-full grid grid-cols-12 gap-4">
+                <div class="col-span-12 flex bg-white b-radi-4 shadow-bottom items-center">
+                    <div class="flex items-center justify-end relative p-4">
+                        <div class="block flex items-center cursor-pointer"><span>Tất cả ngành nghề</span> <i class="material-icons">arrow_drop_down</i></div>
+                        <div class="px-4 absolute bg-white shadow-black b-radi-4 z-10 mw-250 left-0" style="top:56px;">
+                            <div class="flex items-center py-2 bg-gray-200 my-2 b-radi-4">
+                                <i class="material-icons px-2 text-xl text-gray-700">search</i><input class="outline-none bg-transparent text-sm" placeholder="Tìm ngành nghề..."/>
+                            </div>
+                            <div style="max-height:218px;" class="overflow-scroll scroll-hidden">
+                                <a class="block px-2 py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                    <span>Mặc định</span>
+                                    <i class="material-icons text-lg absolute right-0">check</i>
+                                </a>
+                                <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                                <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                                <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                                <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end relative p-4">
+                        <div class="block flex items-center cursor-pointer"><span>Tất cả cấp bậc</span> <i class="material-icons">arrow_drop_down</i></div>
+                        <div class="px-8 absolute bg-white shadow-black b-radi-4 z-10 mw-250 left-0 hidden" style="top:56px;">
+                            <a class="block py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                <span>Mặc định</span>
+                                <i class="material-icons text-lg absolute right-0">check</i>
+                            </a>
+                            <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                            <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                            <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                            <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end relative p-4">
+                        <div class="block flex items-center cursor-pointer"><span>Tất cả mức lương</span> <i class="material-icons">arrow_drop_down</i></div>
+                        <div class="px-8 absolute bg-white shadow-black b-radi-4 z-10 mw-250 left-0 hidden" style="top:56px;">
+                            <a class="block py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                <span>Mặc định</span>
+                                <i class="material-icons text-lg absolute right-0">check</i>
+                            </a>
+                            <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                            <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                            <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                            <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end relative p-4">
+                        <div class="block flex items-center cursor-pointer"><span>Khác</span> <i class="material-icons">arrow_drop_down</i></div>
+                        <div class="px-4 absolute bg-white shadow-black b-radi-4 z-10 mw-500 left-0" style="top:56px;">
+                           <p class="my-3 font-medium text-sm">LOẠI HÌNH CÔNG VIỆC</p>
+                           <div class="relative">
+                                <div class="flex items-center py-2 bg-gray-200 my-2 b-radi-4">
+                                    <i class="material-icons px-2 text-xl text-gray-700">search</i><input class="outline-none bg-transparent text-sm" placeholder="Tất cả loại hình"/>
+                                </div>
+                                <div class="px-4 absolute bg-white shadow-black b-radi-4 z-10 mw-250 left-0" style="top:36.8px;">
+                                    <div style="max-height:218px;" class="overflow-scroll scroll-hidden hidden">
+                                        <a class="block px-2 py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                            <span>Mặc định</span>
+                                            <i class="material-icons text-lg absolute right-0">check</i>
+                                        </a>
+                                        <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                                        <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                                        <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                                        <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="my-3 font-medium text-sm">PHÚC LỢI CÔNG TY</p>
+                            <div class="grid grid-cols-12 gap-2 mb-4">
+                                <div class="col-span-3 border bg-gray-100 text-center p-2 cursor-pointer">
+                                    <i class="material-icons block text-xl text-gray-700">attach_money</i>
+                                    <span class="block text-sm mt-1 text-gray-700">Thưởng</span>
+                                </div>
+                                <div class="col-span-3 border bg-gray-100 text-center p-2 cursor-pointer">
+                                    <i class="material-icons block text-xl text-gray-700">favorite_border</i>
+                                    <span class="block text-sm mt-1 text-gray-700">Y tế</span>
+                                </div>
+                                <div class="col-span-3 border bg-gray-100 text-center p-2 cursor-pointer">
+                                    <i class="material-icons block text-xl text-gray-700">insert_invitation</i>
+                                    <span class="block text-sm mt-1 text-gray-700">Nghỉ phép</span>
+                                </div>
+
+                                <div class="col-span-3 border bg-gray-100 text-center p-2 cursor-pointer">
+                                    <i class="material-icons block text-xl text-gray-700">flight</i>
+                                    <span class="block text-sm mt-1 text-gray-700">Du lịch</span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex justify-center my-8 px-4">
+            <div class="lg:w-10/12 w-full grid grid-cols-12 gap-4">
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-white shadow-bottom b-radi-4">
+                    <div class="block flex justify-center bg-cover bg-center relative w-full h-160 b-radi-t-4" style="background-image: url('../public/img/bg.jpg');">
+                        <img src="../public/img/google.png" class="size-50x box-content p-2 rounded-full bg-white shadow-black absolute bottom-20px">
+                    </div>
+                    <div class="p-4 mt-4">
+                        <a href="#" class="font-medium text-base hover:underline pr-6">Engineering Sales Representative</a>
+                        <p class="text-sm text-gray-600">Hồ Chí Minh</p>
+                        <p class="font-medium text-red-500">5.000.000 VND</p>
+                        <p class="text-sm text-gray-600">Hết hạn trong 5 ngày</p>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-white shadow-bottom b-radi-4">
+                    <div class="block flex justify-center bg-cover bg-center relative w-full h-160 b-radi-t-4" style="background-image: url('../public/img/bg.jpg');">
+                        <img src="../public/img/google.png" class="size-50x box-content p-2 rounded-full bg-white shadow-black absolute bottom-20px">
+                    </div>
+                    <div class="p-4 mt-4">
+                        <a href="#" class="font-medium text-base hover:underline pr-6">Engineering Sales Representative</a>
+                        <p class="text-sm text-gray-600">Hồ Chí Minh</p>
+                        <p class="font-medium text-red-500">5.000.000 VND</p>
+                        <p class="text-sm text-gray-600">Hết hạn trong 5 ngày</p>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-white shadow-bottom b-radi-4">
+                    <div class="block flex justify-center bg-cover bg-center relative w-full h-160 b-radi-t-4" style="background-image: url('../public/img/bg.jpg');">
+                        <img src="../public/img/google.png" class="size-50x box-content p-2 rounded-full bg-white shadow-black absolute bottom-20px">
+                    </div>
+                    <div class="p-4 mt-4">
+                        <a href="#" class="font-medium text-base hover:underline pr-6">Engineering Sales Representative</a>
+                        <p class="text-sm text-gray-600">Hồ Chí Minh</p>
+                        <p class="font-medium text-red-500">5.000.000 VND</p>
+                        <p class="text-sm text-gray-600">Hết hạn trong 5 ngày</p>
+                    </div>
+                </div>
+                <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-white shadow-bottom b-radi-4">
+                    <div class="block flex justify-center bg-cover bg-center relative w-full h-160 b-radi-t-4" style="background-image: url('../public/img/bg.jpg');">
+                        <img src="../public/img/google.png" class="size-50x box-content p-2 rounded-full bg-white shadow-black absolute bottom-20px">
+                    </div>
+                    <div class="p-4 mt-4">
+                        <a href="#" class="font-medium text-base hover:underline pr-6">Engineering Sales Representative</a>
+                        <p class="text-sm text-gray-600">Hồ Chí Minh</p>
+                        <p class="font-medium text-red-500">5.000.000 VND</p>
+                        <p class="text-sm text-gray-600">Hết hạn trong 5 ngày</p>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section class="flex justify-center my-8 px-4">
+            <div class="lg:w-10/12 w-full grid grid-cols-12 gap-4">
+                <div class="col-span-12 lg:col-span-9">
+                    <div class="flex bg-white b-radi-4 shadow-bottom items-center grid grid-cols-12">
+                        <div class="col-span-6 p-4">
+                            <span class="font-medium">841</span>
+                            <span>công việc</span>
+                            <span class="font-medium">"Sale"</span>
+                        </div>
+                        <div class="flex items-center col-span-6 justify-end relative p-4">
+                            <span class="pr-1">Sắp xếp: </span>
+                            <div class="block flex items-center font-medium cursor-pointer"> Mặc định <i class="material-icons">arrow_drop_down</i></div>
+                            <div class="px-8 absolute bg-white shadow-black b-radi-4 z-10" style="top: 56px;">
+                                <a class="block py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                    <span>Mặc định</span>
+                                    <i class="material-icons text-lg absolute right-0">check</i>
+                                </a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <div class="w-full bg-white shadow-bottom b-radi-4 p-4 flex mt-4">
+                            <img src="../public/img/google.png" class="size-50x m-2 md:m8">
+                            <div class="ml-4 relative w-full">
+                                <div>
+                                    <a href="#" class="font-medium text-xl hover:underline pr-6">Engineering Sales Representative</a>
+                                    <p class="mt-1 text-sm font-medium text-gray-800">Công Ty TNHH YKK Việt Nam</p>
+                                    <p class="mt-2 text-gray-600 text-sm">Hồ Chí Minh</p>
+                                    <p class="mt-2 text-gray-700 text-sm">Cập nhật: 19/10/2020 - Bạn còn 29 ngày để ứng tuyển</p>
+                                </div>
+                                <div class="flex sm:mt-2 grid grid-cols-12">
+                                   <div class="sm:flex col-span-12 md:col-span-8">
+                                        <div class="flex items-center mr-3 mt-2 sm:mt-0">
+                                            <i class="material-icons pr-1 text-lg text-red-500">favorite_border</i>
+                                            <span class="text-sm text-red-500 font-medium">Khám sức khỏe</span>
+                                        </div>
+                                        <div class="flex items-center mt-2 sm:mt-0">
+                                            <i class="material-icons pr-1 text-lg text-orange-400">attach_money</i>
+                                            <span class="text-sm text-orange-400 font-medium">Thưởng</span>
+                                        </div>
+                                   </div>
+                                   <div class="col-span-12 md:col-span-4 flex justify-end mt-2 md:mt-0 font-medium text-red-500 sm:text-lg text-base">
+                                        5.000.000 VND
+                                   </div>
+                                </div>
+                                <i class="material-icons absolute top-0 right-0 cursor-pointer text-blue-600">turned_in_not</i>
+                            </div>
+                        </div>
+                        <div class="w-full bg-white shadow-bottom b-radi-4 p-4 flex mt-4">
+                            <img src="../public/img/google.png" class="size-50x m-2 md:m8">
+                            <div class="ml-4 relative w-full">
+                                <div>
+                                    <a href="#" class="font-medium text-xl hover:underline pr-6">Engineering Sales Representative</a>
+                                    <p class="mt-1 text-sm font-medium text-gray-800">Công Ty TNHH YKK Việt Nam</p>
+                                    <p class="mt-2 text-gray-600 text-sm">Hồ Chí Minh</p>
+                                    <p class="mt-2 text-gray-700 text-sm">Cập nhật: 19/10/2020 - Bạn còn 29 ngày để ứng tuyển</p>
+                                </div>
+                                <div class="flex sm:mt-2 grid grid-cols-12">
+                                   <div class="sm:flex col-span-12 md:col-span-8">
+                                        <div class="flex items-center mr-3 mt-2 sm:mt-0">
+                                            <i class="material-icons pr-1 text-lg text-red-500">favorite_border</i>
+                                            <span class="text-sm text-red-500 font-medium">Khám sức khỏe</span>
+                                        </div>
+                                        <div class="flex items-center mt-2 sm:mt-0">
+                                            <i class="material-icons pr-1 text-lg text-orange-400">attach_money</i>
+                                            <span class="text-sm text-orange-400 font-medium">Thưởng</span>
+                                        </div>
+                                   </div>
+                                   <div class="col-span-12 md:col-span-4 flex justify-end mt-2 md:mt-0 font-medium text-red-500 sm:text-lg text-base">
+                                        5.000.000 VND
+                                   </div>
+                                </div>
+                                <i class="material-icons absolute top-0 right-0 cursor-pointer text-blue-600">turned_in_not</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-0 hidden lg:col-span-3 lg:block">
+                    <a href="#" class="bg-white b-radi-4 overflow-hidden cursor block">
+                        <img src="../public/img/500x600_113097.jpg"/>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white flex justify-center">
+        <div class="grid grid-cols-12 gap-4 py-6 px-4 w-full lg:w-10/12">
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Về FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Giới Thiệu</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Bảo Mật Thông Tin</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Tư Vấn Tuyển Dụng</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Quy Định Sử Dụng</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Về FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Giới Thiệu</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Bảo Mật Thông Tin</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Tư Vấn Tuyển Dụng</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Quy Định Sử Dụng</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Kết Nối FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Facebook</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Zalo</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">FptWork App</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Appstore</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Google Play</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="../public/js/index.js"></script>
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="../public/js/quill.js"></script>
+</html>
