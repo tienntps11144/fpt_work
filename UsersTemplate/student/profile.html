@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,55 +11,65 @@
     <link rel="stylesheet" type="text/css" href="../public/css/index.css">
     <title>Document</title>
 </head>
+
 <body>
-    <header class="h-16 w-full bg-blue-purple flex justify-center">
+    <header class="h-16 w-full bg-white flex justify-center shadow-black sticky top-0 z-50">
         <div class="grid grid-cols-12 lg:hidden">
             <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
-                <i class="material-icons h-16 w-16 flex justify-center items-center text-white text-3xl btn-blue-purple">sort</i>
-                <ul class="w-64 bg-white text-sm font-medium text-gray-800 shadow-bottom b-radi-4 relative left-64 duration-300 z-50">
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">today</i><span>Sản Phẩm & Dịch Vụ</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">person_outline</i><span>Đăng Nhập</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">people_outline</i><span>Đăng Ký</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">rss_feed</i><span>HR Insider</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">date_range</i><span>Giới Thiệu</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i class="material-icons pr-4">search</i><span>Tìm Việc</span></li>
+                <i
+                    class="material-icons h-16 w-16 flex justify-center items-center text-white text-3xl btn-blue-purple">sort</i>
+                <ul
+                    class="w-64 bg-white text-sm font-medium text-gray-800 shadow-bottom b-radi-4 relative left-64 duration-300 z-50">
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">today</i><span>Sản Phẩm & Dịch Vụ</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">person_outline</i><span>Đăng Nhập</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">people_outline</i><span>Đăng Ký</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">rss_feed</i><span>HR Insider</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">date_range</i><span>Giới Thiệu</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">search</i><span>Tìm Việc</span></li>
                 </ul>
             </div>
             <div class="col-span-8 h-16 flex items-center justify-center py-2">
-                <img src="../public/img/vnw_logo_white.png" class="h-full object-cover">
+                <img src="../public/img/logo-fpt-shop.png" class="h-full object-cover">
             </div>
             <div class="col-span-2 h-16">
-    
+
             </div>
         </div>
         <div class="w-10/12 h-16 hidden grid-cols-12 gap-4 lg:grid">
-            <div class="col-span-9 h-16 flex text-white">
-                <img src="../public/img/vnw_logo_white.png" class="h-full object-cover py-2 mr-12">
+            <div class="col-span-9 h-16 flex text-gray-800">
+                <img src="../public/img/logo-fpt-shop.png" class="h-full object-cover py-2 mr-12">
                 <a href="#" class="flex items-center mr-8 hover:underline">Sản Phẩm</a>
                 <a href="#" class="flex items-center mr-8 hover:underline">HR Insider</a>
                 <a href="#" class="flex items-center mr-8 hover:underline">Giới Thiệu</a>
                 <a href="#" class="flex items-center mr-8 hover:underline">Tìm Việc</a>
             </div>
-            <div class="col-span-3 h-16 flex justify-end items-center text-white">
-                <a class="px-2 border-r border-white text-sm font-medium hover:underline cursor-pointer">Đăng Ký</a>
+            <div class="col-span-3 h-16 flex justify-end items-center text-gray-800">
+                <a class="px-2 border-r border-gray-800 text-sm font-medium hover:underline cursor-pointer">Đăng Ký</a>
                 <a class="px-2 text-sm font-medium hover:underline cursor-pointer">Đăng Nhập</a>
             </div>
         </div>
     </header>
     <main class="relative" x-data="{zoom: false}">
         <section class="absolute right-0 w-full">
-            <input id="file-bg" type="file" class="hidden" onchange="preview(this, 'preview-bg')"/>
-            <label for="file-bg" class="absolute px-4 py-2 flex justify-center items-center bg-black-fade text-white mt-4 ml-4 cursor-pointer z-40 radius-2">
+            <input id="file-bg" type="file" class="hidden" onchange="preview(this, 'preview-bg')" />
+            <label for="file-bg"
+                class="absolute px-4 py-2 flex justify-center items-center bg-black-fade text-white mt-4 ml-4 cursor-pointer z-40 radius-2">
                 <i class="material-icons pr-2">add_a_photo</i>
                 <span class="font-medium">Cập nhật ảnh bìa</span>
             </label>
             <div class="relative z-0 w-full">
-                <img src="../public/img/bg.jpg" class="h-300 w-full object-cover" id="preview-bg"/>
+                <img src="../public/img/bg.jpg" class="h-300 w-full object-cover" id="preview-bg" />
             </div>
         </section>
         <section class="flex justify-center mb-8 px-4 pt-56 relative">
             <div class="lg:w-10/12 w-full bg-white shadow-bottom b-radi-4">
-                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300">
                     <i class="material-icons mr-4">content_paste</i>
                     <span class="text-xl font-medium">Thông tin chung</span>
                 </div>
@@ -66,19 +77,22 @@
                     <div class="lg:col-span-4">
                         <div class="lg:col-span-4 px-4 pt-4 lg:p-4">
                             <div class="flex justify-center mb-4">
-                                <img src="../public/img/avatar-1.jpg" width="160" height="160" class="p-1 rounded-full border-4 border-white shadow-bottom"/>
+                                <img src="../public/img/avatar-1.jpg" width="160" height="160"
+                                    class="p-1 rounded-full border-4 border-white shadow-black" />
                             </div>
                             <div class="text-center text-2xl font-medium">
                                 <span class="pr-2">Nguyễn Thanh Tiến</span>
                             </div>
-    
+
                         </div>
                     </div>
                     <div class="lg:col-span-6">
                         <div class="lg:col-span-8 p-4">
                             <div class="grid grid-cols-12 gap-4">
-                                <button class="col-span-8 p-2 b-radi-4 text-white outline-none btn-blue-purple">Tuyển Dụng</button>
-                                <button class="col-span-4 p-2 b-radi-4 bg-gray-200 outline-none flex items-center justify-center hover:bg-gray-300">
+                                <button class="col-span-8 p-2 b-radi-4 text-white outline-none btn-blue-purple">Tuyển
+                                    Dụng</button>
+                                <button
+                                    class="col-span-4 p-2 b-radi-4 bg-gray-200 outline-none flex items-center justify-center hover:bg-gray-300">
                                     <p class="truncate flex items-center">
                                         <i class="material-icons pr-1">bookmark_border</i> <span>Lưu Hồ Sơ</span>
                                     </p>
@@ -88,7 +102,8 @@
                                 <div class="flex items-center py-1">
                                     <i class="material-icons text-gray-600 pr-4">work</i>
                                     <div class="limit-row-1 overflow-hidden">
-                                        <span class="text-17 pr-2">Chuyên ngành</span><span class="text-17 font-medium">Thiết Kế Website</span>
+                                        <span class="text-17 pr-2">Chuyên ngành</span><span
+                                            class="text-17 font-medium">Thiết Kế Website</span>
                                     </div>
                                 </div>
                                 <div class="flex items-center py-1">
@@ -100,19 +115,29 @@
                                 <div class="flex items-center py-1">
                                     <i class="material-icons text-gray-600 pr-4">pin_drop</i>
                                     <div class="limit-row-1 overflow-hidden">
-                                        <span class="text-17 pr-2">Đang sống tại</span><span class="font-medium">Thành Phố Hồ Chí Minh</span>
+                                        <span class="text-17 pr-2">Đang sống tại</span><span class="font-medium">Thành
+                                            Phố Hồ Chí Minh</span>
                                     </div>
                                 </div>
                                 <div class="flex items-center py-1">
                                     <i class="material-icons text-gray-600 pr-4">call</i>
                                     <div class="limit-row-1 overflow-hidden">
-                                        <span class="text-17 pr-2">Liên hệ</span><span class="font-medium">0865985475</span>
+                                        <span class="text-17 pr-2">Liên hệ</span><span
+                                            class="font-medium">0865985475</span>
                                     </div>
                                 </div>
                                 <div class="flex items-center py-1">
                                     <i class="material-icons text-gray-600 pr-4">email</i>
                                     <div class="limit-row-1 overflow-hidden">
-                                        <span class="text-17 pr-2">Email</span><span class="font-medium">tienntps1144@fpt.edu.vn</span>
+                                        <span class="text-17 pr-2">Email</span><span
+                                            class="font-medium">tienntps1144@fpt.edu.vn</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center py-1">
+                                    <i class="material-icons text-gray-600 pr-4">g_translate</i>
+                                    <div class="limit-row-1 overflow-hidden">
+                                        <span class="text-17 pr-2">Ngoại ngữ</span>
+                                        <span class="font-medium">English, Chinese</span>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +149,7 @@
         <section class="flex justify-center my-8 px-4">
             <div class="lg:w-10/12 w-full grid grid-cols-12 gap-8">
                 <div class="col-span-12 lg:col-span-6 bg-white shadow-bottom b-radi-4">
-                    <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200">
+                    <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300">
                         <i class="material-icons mr-4">format_list_bulleted</i>
                         <span class="text-xl font-medium">Giới thiệu ngắn</span>
                     </div>
@@ -142,7 +167,8 @@
                             ✔️ Bỏ túi cực nhiều kinh nghiệm bán hàng đỉnh cao.
                         </p>
                         <p class="py-1">
-                            🔔🔔🔔 Cùng chờ đón livestream “Đẳng cấp bán hàng” do bộ môn Kinh tế - FPT Polytechnic cơ sở Hồ Chí Minh tổ chức nhé!
+                            🔔🔔🔔 Cùng chờ đón livestream “Đẳng cấp bán hàng” do bộ môn Kinh tế - FPT Polytechnic cơ sở
+                            Hồ Chí Minh tổ chức nhé!
                         </p>
                         <p class="py-1">
                             🔹 Thời gian: 8h30 ngày 05/10/2020
@@ -156,7 +182,7 @@
                     </div>
                 </div>
                 <div class="col-span-12 lg:col-span-6 bg-white shadow-bottom b-radi-4">
-                    <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200">
+                    <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300">
                         <i class="material-icons mr-4">extension</i>
                         <span class="text-xl font-medium">Kỹ năng</span>
                     </div>
@@ -174,7 +200,8 @@
                             ✔️ Bỏ túi cực nhiều kinh nghiệm bán hàng đỉnh cao.
                         </p>
                         <p class="py-1">
-                            🔔🔔🔔 Cùng chờ đón livestream “Đẳng cấp bán hàng” do bộ môn Kinh tế - FPT Polytechnic cơ sở Hồ Chí Minh tổ chức nhé!
+                            🔔🔔🔔 Cùng chờ đón livestream “Đẳng cấp bán hàng” do bộ môn Kinh tế - FPT Polytechnic cơ sở
+                            Hồ Chí Minh tổ chức nhé!
                         </p>
                         <p class="py-1">
                             🔹 Thời gian: 8h30 ngày 05/10/2020
@@ -187,18 +214,100 @@
                         </p>
                     </div>
                 </div>
-                
+
+            </div>
+        </section>
+        <section class="flex justify-center my-8 px-4">
+            <div class="lg:w-10/12 w-full gap-4 bg-white bg-white shadow-bottom b-radi-4">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300">
+                    <i class="material-icons mr-4">gps_fixed</i>
+                    <span class="text-xl font-medium">Mục tiêu nghề nghiệp</span>
+                </div>
+                <div class="overflow-hidden b-radi-4">
+                    <div class="w-full p-4">
+                        <!--text ví dụ-->
+                        <div>
+                            <div>
+                                <div>
+                                    <p><strong><em><span>a) Sales support, customer
+                                                    service, delivery coordinator task:</span></em></strong></p>
+                                                    <br>
+                                    <p>- Work as a window person, keep the smooth
+                                        information flow between Vietnam customers, foreign factories, forwader, head
+                                        quarter as well as foreign branchs in the Group.</p>
+                                    <p>- Use English to communicate and work with all
+                                        members and foreign partners in Singapore, Malaysia, Japan, Korea, Taiwan,
+                                        Hongkong, Thailand.. via email, phone call, and skype chat…</p>
+                                    <p>- Go business trip (overseas and domestic
+                                        trip) when assigned.</p>
+                                    <p>- Build and maintain the good relationship
+                                        with customers, take care and try best to get customer's maximum satisfaction.
+                                    </p>
+                                    <p>- Visit customer to have face to face meeting
+                                        when neccessary.</p>
+                                    <p>- Coordinate closely with related members to
+                                        find the best solution for any arising issue like NG goods, shortage quantity...
+                                    </p>
+                                    <p>&nbsp;- Negotiate, persuade customer and
+                                        factory for any changing or urgent customer request like increase or decrease
+                                        quantity, pull in or postpone shipment, combine or partial shipment with the
+                                        short lead time as well as other customer special request..</p>
+                                    <p>- Support to prepare sales contract,
+                                        quotation...</p>
+                                    <p>- Follow customer new orders, sales contracts
+                                        and forcasts, check to make sure the accuracy of price, delivery term ...before
+                                        making order to factory.</p>
+                                    <p>&nbsp;- Manage delivery schedules tightly
+                                        (EXW, ETD, ETA), get vessel booking confirmation, advise customer and
+                                        communicate relevant information.</p>
+                                    <p>&nbsp;- Handle the processing of all orders
+                                        and shipments with accuracy and timeliness.</p>
+                                    <p>&nbsp;- Inform clients of unforeseen delays or
+                                        problems.</p>
+                                    <p>&nbsp;- Collect and check the set of shipping
+                                        docs for Sea, Air, and Truck shipment (Invoice, packing list, C/O, C/Q, COC, BL,
+                                        AWB, Proof of delivery...), provide customer for doing customs clearance.</p>
+                                        <br>
+
+                                        <p><em><strong>b) Admin task:</strong></em></p>
+                                    <br>
+
+                                    <p>- Assist to obtain Visa, work permit,
+                                        temporary resident card for expatriates as well as hotel, flight booking.</p>
+                                    <p>- Recieve and answer comming call to office.
+                                    </p>
+                                    <p>- Send and receive parcel.</p>
+                                    <p>-Manage file, stationary and other admin tasks
+                                        when assigned.</p>
+                                        <br>
+
+                                    <p><strong><em>c) Account task:</em></strong></p>
+                                    <br>
+
+                                    <p>&nbsp;- Assist for account tasks (collect,
+                                        check the accuracy and proper of red invoice and the other account supporting
+                                        docs.</p>
+                                    <p>- Check bank statement, staff’s claims...</p>
+                                    <p>- Prepare payment voucher to make payment to
+                                        supplier on time.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end text-->
+                    </div>
+                </div>
             </div>
         </section>
         <section class="flex justify-center mt-8 px-4">
             <div class="lg:w-10/12 w-full gap-4 bg-white bg-white shadow-bottom b-radi-4">
-                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300">
                     <i class="material-icons mr-4">attach_file</i>
                     <span class="text-xl font-medium">Hồ sơ ứng tuyển</span>
                 </div>
                 <div class="w-full">
                     <div class="b-radi-b-4 grid grid-cols-12 overflow-hidden">
-                        <a href="#" class="block duration-200 col-span-12 md:col-span-6 grid grid-cols-12 gap-4 sm:gap-0 bg-white h-70 px-4 py-4 cursor-pointer border-b border-r">
+                        <a href="#"
+                            class="block duration-200 col-span-12 md:col-span-6 grid grid-cols-12 gap-4 sm:gap-0 bg-white h-70 px-4 py-4 cursor-pointer fake-border">
                             <div class="col-span-12 flex items-center relative">
                                 <div class="rounded-full p-2 bg-white">
                                     <img src="../public/img/pdflogo.png" class="rounded-full size-50x">
@@ -209,7 +318,8 @@
                                 <i class="material-icons text-green-500 absolute right-0">check_circle</i>
                             </div>
                         </a>
-                        <a href="#" class="block duration-200 col-span-12 md:col-span-6 grid grid-cols-12 gap-4 sm:gap-0 bg-white h-70 px-4 py-4 cursor-pointer border-b border-r">
+                        <a href="#"
+                            class="block duration-200 col-span-12 md:col-span-6 grid grid-cols-12 gap-4 sm:gap-0 bg-white h-70 px-4 py-4 cursor-pointer fake-border">
                             <div class="col-span-12 flex items-center relative">
                                 <div class="rounded-full p-2 bg-white">
                                     <img src="../public/img/pdflogo.png" class="rounded-full size-50x">
@@ -220,17 +330,52 @@
                                 <i class="material-icons text-green-500 absolute right-0">check_circle</i>
                             </div>
                         </a>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="flex justify-center px-4">
-            <div class="lg:w-10/12 w-full gap-4 b-radi-4">
-                <div class="mt-4 grid grid-cols-12 gap-4">
-                    <div class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 bg-white shadow-bottom b-radi-4 p-4">
+        <section class="flex justify-center px-4 mt-8">
+            <div class="lg:w-10/12 w-full gap-4 b-radi-4 bg-white shadow-bottom">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300">
+                    <i class="material-icons mr-4">school</i>
+                    <span class="text-xl font-medium">Bằng cấp liên quan</span>
+                </div>
+                <div class="grid grid-cols-12 overflow-hidden">
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 bg-white p-4 fake-border">
                         <div class="relative zoom-box">
                             <img src="../public/img/toeic.jpg" class="h-160 w-full object-cover">
-                            <div @click="zoom = true" onclick="zoomIn(this.previousElementSibling,'zoom-in')" class="w-full h-full absolute top-0 bg-modal flex justify-center items-center cursor-pointer hidden">
+                            <div @click="zoom = true" onclick="zoomIn(this.previousElementSibling,'zoom-in')"
+                                class="w-full h-full absolute top-0 bg-modal flex justify-center items-center cursor-pointer hidden">
+                                <i class="material-icons text-white text-4xl">search</i>
+                            </div>
+                        </div>
+                        <p class="mt-3 font-medium cursor-pointer">Chứng chỉ Toeic</p>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 bg-white p-4 fake-border">
+                        <div class="relative zoom-box">
+                            <img src="../public/img/toeic.jpg" class="h-160 w-full object-cover">
+                            <div @click="zoom = true" onclick="zoomIn(this.previousElementSibling,'zoom-in')"
+                                class="w-full h-full absolute top-0 bg-modal flex justify-center items-center cursor-pointer hidden">
+                                <i class="material-icons text-white text-4xl">search</i>
+                            </div>
+                        </div>
+                        <p class="mt-3 font-medium cursor-pointer">Chứng chỉ Toeic</p>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 bg-white p-4 fake-border">
+                        <div class="relative zoom-box">
+                            <img src="../public/img/toeic.jpg" class="h-160 w-full object-cover">
+                            <div @click="zoom = true" onclick="zoomIn(this.previousElementSibling,'zoom-in')"
+                                class="w-full h-full absolute top-0 bg-modal flex justify-center items-center cursor-pointer hidden">
+                                <i class="material-icons text-white text-4xl">search</i>
+                            </div>
+                        </div>
+                        <p class="mt-3 font-medium cursor-pointer">Chứng chỉ Toeic</p>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 lg:col-span-4 xl:col-span-3 bg-white p-4 fake-border">
+                        <div class="relative zoom-box">
+                            <img src="../public/img/toeic.jpg" class="h-160 w-full object-cover">
+                            <div @click="zoom = true" onclick="zoomIn(this.previousElementSibling,'zoom-in')"
+                                class="w-full h-full absolute top-0 bg-modal flex justify-center items-center cursor-pointer hidden">
                                 <i class="material-icons text-white text-4xl">search</i>
                             </div>
                         </div>
@@ -241,109 +386,118 @@
         </section>
         <section class="flex justify-center my-8 px-4">
             <div class="lg:w-10/12 w-full gap-4 bg-white bg-white shadow-bottom b-radi-4">
-                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200 relative">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 relative">
                     <i class="material-icons mr-4">star</i>
                     <span class="text-xl font-medium">Dự án đã tham gia</span>
                 </div>
                 <div class="w-full grid grid-cols-12 p-4 gap-4 bg-white b-radi-4">
-                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 radius-2 product poshadow-effect shadow-bottom">
+                    <div
+                        class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 radius-2 product poshadow-effect shadow-bottom">
                         <div class="overflow-hidden b-radi-4">
                             <div class="w-full bg-white relative">
-                                <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png" class="w-full h-220 object-cover">
+                                <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png"
+                                    class="w-full h-220 object-cover">
                             </div>
                             <div class="w-full bg-white p-4">
-                                <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục hướng nghiệp</a></p>
-                                <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ lập trình C++.</p>
-                                <p class="mt-2 font-medium text-green-500">Designer</p>
+                                <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục
+                                        hướng nghiệp</a></p>
+                                <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới
+                                    bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ
+                                    lập trình C++.</p>
+                                <p class="mt-2 font-medium text-red-500">Designer</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 radius-2 product poshadow-effect shadow-bottom">
+                    <div
+                        class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 radius-2 product poshadow-effect shadow-bottom">
                         <div class="overflow-hidden b-radi-4">
                             <div class="w-full bg-white relative">
-                                <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png" class="w-full h-220 object-cover">
+                                <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png"
+                                    class="w-full h-220 object-cover">
                             </div>
                             <div class="w-full bg-white p-4">
-                                <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục hướng nghiệp</a></p>
-                                <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ lập trình C++.</p>
-                                <p class="mt-2 font-medium text-green-500">Designer</p>
+                                <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục
+                                        hướng nghiệp</a></p>
+                                <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới
+                                    bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ
+                                    lập trình C++.</p>
+                                <p class="mt-2 font-medium text-red-500">Designer</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 radius-2 product poshadow-effect shadow-bottom">
+                    <div
+                        class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 radius-2 product poshadow-effect shadow-bottom">
                         <div class="overflow-hidden b-radi-4">
                             <div class="w-full bg-white relative">
-                                <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png" class="w-full h-220 object-cover">
+                                <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png"
+                                    class="w-full h-220 object-cover">
                             </div>
                             <div class="w-full bg-white p-4">
-                                <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục hướng nghiệp</a></p>
-                                <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ lập trình C++.</p>
-                                <p class="mt-2 font-medium text-green-500">Designer</p>
+                                <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục
+                                        hướng nghiệp</a></p>
+                                <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới
+                                    bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ
+                                    lập trình C++.</p>
+                                <p class="mt-2 font-medium text-red-500">Designer</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 radius-2 product poshadow-effect shadow-bottom">
+                    <div
+                        class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 radius-2 product poshadow-effect shadow-bottom">
                         <div class="overflow-hidden b-radi-4">
                             <div class="w-full bg-white relative">
-                                <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png" class="w-full h-220 object-cover">
+                                <img src="../public/img/ec5c9eda632842eb9ad3146b4521e11a.png"
+                                    class="w-full h-220 object-cover">
                             </div>
                             <div class="w-full bg-white p-4">
-                                <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục hướng nghiệp</a></p>
-                                <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ lập trình C++.</p>
-                                <p class="mt-2 font-medium text-green-500">Designer</p>
+                                <p class="text-base font-medium"><a href="#" class="hover:underline">Website giáo dục
+                                        hướng nghiệp</a></p>
+                                <p class="mt-2 limit-row-3 overflow-hidden">Khóa học lập trình C++ cơ bản cho người mới
+                                    bắt đầu. Khóa học này sẽ cung cấp những kiến thức cơ bản, dễ hiểu nhất về ngôn ngữ
+                                    lập trình C++.</p>
+                                <p class="mt-2 font-medium text-red-500">Designer</p>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
         <section class="flex justify-center my-8 px-4">
             <div class="lg:w-10/12 w-full gap-4 bg-white bg-white shadow-bottom b-radi-4">
-                <div class="py-4 flex items-center px-4 text-gray-800 border-b-2 border-gray-200">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300">
                     <i class="material-icons mr-4">info_outline</i>
                     <span class="text-xl font-medium">Gợi ý ứng viên cho bạn</span>
                 </div>
-                <div>
-                    <div class="w-full overflow-hidden border-b border-gray-200 grid grid-cols-12">
-                        <div class="col-span-12 md:col-span-6 flex p-4 border-r border-b">
-                            <div class="pr-4">
-                                <img src="../public/img/avatar-1.jpg" class="rounded-full" width="50" height="50">
-                            </div>
-                            <div class="w-full overflow-hidden">
-                                <div class="float-left">
-                                    <p class="font-medium text-black text-lg limit-row-1 overflow-hidden">Nguyễn Thanh Tiến</p>
-                                    <p class="text-sm font-medium text-gray-700 limit-row-1 overflow-hidden">Operation Manager</p>
-                                    <div class="mt-1 text-gray-700 limit-row-1 overflow-hidden">
-                                        <span class="pr-2">Lương mong muốn:</span><span class="font-medium">10.000.000 VND</span>
-                                    </div>
-                                    <div class="text-gray-700 flex items-center mb-1 limit-row-1 overflow-hidden">
-                                        <span class="pr-2">Địa điểm:</span><span class="font-medium">TP.Hồ Chí Minh</span>
-                                    </div>
+                <div class="overflow-hidden b-radi-4">
+                    <div class="w-full">
+                        <div class="w-full bg-white p-4 flex fake-border">
+                            <img src="../public/img/avatar-1.jpg"
+                                class="size-50x m-2 md:m8 rounded-full shadow-black p-1 box-content bg-white">
+                            <div class="ml-4 relative w-full">
+                                <div>
+                                    <a href="#" class="font-medium text-xl hover:underline pr-6">Nguyen Thanh Tien</a>
+                                    <p class="mt-1 text-sm font-medium text-gray-800">Designer</p>
+                                    <p class="mt-2 text-gray-600 text-sm">Hồ Chí Minh</p>
+                                    <p class="mt-2 text-gray-700 text-sm">Bạn còn 29 ngày để tuyển dụng</p>
                                 </div>
-                                <div class="float-right h-full">
-                                    <button class="px-5 py-1 radius-2 bg-green-500 text-white outline-none font-medium text-sm hover:bg-green-600">Xem CV</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-span-12 md:col-span-6 flex p-4 border-r border-b">
-                            <div class="pr-4">
-                                <img src="../public/img/avatar-1.jpg" class="rounded-full" width="50" height="50">
-                            </div>
-                            <div class="w-full overflow-hidden">
-                                <div class="float-left">
-                                    <p class="font-medium text-black text-lg limit-row-1 overflow-hidden">Nguyễn Thanh Tiến</p>
-                                    <p class="text-sm font-medium text-gray-700 limit-row-1 overflow-hidden">Operation Manager</p>
-                                    <div class="mt-1 text-gray-700 limit-row-1 overflow-hidden">
-                                        <span class="pr-2">Lương mong muốn:</span><span class="font-medium">10.000.000 VND</span>
+                                <div class="flex sm:mt-2 grid grid-cols-12">
+                                    <div class="sm:flex col-span-12 md:col-span-8">
+                                        <div class="flex items-center mr-3 mt-2 sm:mt-0">
+                                            <i class="material-icons pr-1 text-lg text-red-500">local_offer</i>
+                                            <span class="text-sm text-red-500 font-medium"><a
+                                                    class="px-1 hover:underline cursor-pointer">PHP</a>,<a
+                                                    class="px-1 hover:underline cursor-pointer">C++</a>,<a
+                                                    class="px-1 hover:underline cursor-pointer">C#</a></span>
+                                        </div>
                                     </div>
-                                    <div class="text-gray-700 flex items-center mb-1 limit-row-1 overflow-hidden">
-                                        <span class="pr-2">Địa điểm:</span><span class="font-medium">TP.Hồ Chí Minh</span>
+                                    <div
+                                        class="col-span-12 md:col-span-4 flex justify-end mt-2 md:mt-0 font-medium text-red-500 sm:text-lg text-base">
+                                        5.000.000 VND
                                     </div>
                                 </div>
-                                <div class="float-right h-full">
-                                    <button class="px-5 py-1 radius-2 bg-green-500 text-white outline-none font-medium text-sm hover:bg-green-600">Xem CV</button>
-                                </div>
+                                <i
+                                    class="material-icons absolute top-0 right-0 cursor-pointer text-gray-600">turned_in_not</i>
                             </div>
                         </div>
                     </div>
@@ -351,9 +505,10 @@
             </div>
         </section>
         <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50" x-show="zoom">
-            <i class="material-icons text-white absolute top-0 right-0 cursor-pointer p-4" @click="zoom = false">close</i>
+            <i class="material-icons text-white absolute top-0 right-0 cursor-pointer p-4"
+                @click="zoom = false">close</i>
             <div class="flex items-center">
-                <img id="zoom-in" class="object-contain" @click.away="zoom = false"/>
+                <img id="zoom-in" class="object-contain" @click.away="zoom = false" />
             </div>
         </section>
     </main>
@@ -397,4 +552,5 @@
 <script src="../public/js/index.js"></script>
 <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 <script src="../public/js/quill.js"></script>
+
 </html>
