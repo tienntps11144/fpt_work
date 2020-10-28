@@ -15,3 +15,16 @@ ckeditorSimple("request_work");
 ckeditorSimple("description_work_edit");
 ckeditorSimple("request_work_edit");
 
+
+function ckeditorFull(id){
+    if(document.getElementById(id)){
+        new Quill(`#${id}`, {
+            modules: { toolbar: '#toolbar' },
+            theme: 'snow'
+          });
+    }
+}
+ckeditorFull('create_post');
+
+
+

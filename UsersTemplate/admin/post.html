@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js" defer></script>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"/>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+    
+
+    <link rel="stylesheet" type="text/css" href="../public/css/output.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="h-16 w-full bg-white flex justify-center shadow-black sticky top-0 z-50">
+        <div class="grid grid-cols-12 lg:hidden">
+            <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
+                <i
+                    class="material-icons h-16 w-16 flex justify-center items-center text-white text-3xl btn-blue-purple">sort</i>
+                <ul
+                    class="w-64 bg-white text-sm font-medium text-gray-800 shadow-bottom b-radi-4 relative left-64 duration-300 z-50">
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">today</i><span>Sản Phẩm & Dịch Vụ</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">person_outline</i><span>Đăng Nhập</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">people_outline</i><span>Đăng Ký</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">rss_feed</i><span>HR Insider</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">date_range</i><span>Giới Thiệu</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">search</i><span>Tìm Việc</span></li>
+                </ul>
+            </div>
+            <div class="col-span-8 h-16 flex items-center justify-center py-2">
+                <img src="../public/img/logo-fpt-shop.png" class="h-full object-cover">
+            </div>
+            <div class="col-span-2 h-16">
+
+            </div>
+        </div>
+        <div class="w-full h-16 hidden grid-cols-12 gap-4 lg:grid px-6">
+            <div class="col-span-9 h-16 flex text-gray-800">
+                <img src="../public/img/logo-fpt-shop.png" class="h-full object-cover py-2 mr-12">
+            </div>
+            <div class="col-span-3 h-16 flex justify-end items-center text-gray-800">
+                <a class="px-2 border-r border-gray-800 text-sm font-medium hover:underline cursor-pointer">Đăng Ký</a>
+                <a class="px-2 text-sm font-medium hover:underline cursor-pointer">Đăng Nhập</a>
+            </div>
+        </div>
+    </header>
+    <main class="flex">
+        <div class="w-64 bg-white py-3 h-screen fixed z-40 text-sm">
+            <div>
+                <a class="flex items-center py-3 px-6 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer block" href="overview.html">
+                    <div class="relative w-full flex items-center">
+                        <i class="material-icons pr-4 color-purple-fade">home</i>
+                        <span>Tổng quan</span>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <div class="flex items-center py-3 px-6 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer">
+                    <div class="relative w-full flex items-center">
+                        <i class="material-icons pr-4 color-purple-fade">person</i>
+                        <span class="text-gray-700">Người dùng</span>
+                        <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                    </div>
+                </div>
+                <div class="text-gray-800">
+                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade" href="users_student.html">Sinh Viên</a>
+                    </div>
+                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade" href="users_company.html">Doanh nghiệp</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center py-3 px-6 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer">
+                    <div class="relative w-full flex items-center">
+                        <i class="material-icons pr-4 color-purple-fade">apps</i>
+                        <span>Tiện ích</span>
+                        <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                    </div>
+                </div>
+                <div class="text-gray-800">
+                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade" href="tag.html">Kỹ năng</a>
+                    </div>
+                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade" href="category.html">Ngành nghề</a>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center py-3 px-6 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer">
+                    <div class="relative w-full flex items-center">
+                        <i class="material-icons pr-4 color-purple-fade">assignment</i>
+                        <span>Quản lý bài viết</span>
+                        <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                    </div>
+                </div>
+                <div class="text-gray-800">
+                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade" href="post.html">Xem bài viết</a>
+                    </div>
+                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade" href="create_post.html">Tạo bài viết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full m-8 pl-64">
+            <section class="flex justify-center mb-8 px-4 pt-4">
+                <div class="w-full">
+                    <div class="py-4 flex items-center bg-white b-radi-4 px-4 text-gray-800 border-b border-gray-300 grid grid-cols-12">
+                        <div class="col-span-6 flex items-center">
+                            <i class="material-icons mr-4">date_range</i>
+                            <span class="text-xl font-medium">Danh sách bài viết</span>
+                        </div>
+                        <div class="col-span-6 flex items-center justify-end">
+                            <button class="block px-6 h-8 bg-green-500 text-sm font-medium text-white shadow-green rounded-sm outline-none">Thêm bài viết</button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="w-full mt-4 grid gap-4 grid-cols-1 md:grid-cols-2">
+                            <div class="p-4 box-content bg-white shadow-bottom b-radi-4 flex items-center">
+                                <div class="size-128-fixed h-full">
+                                    <img src="../public/img/google.png" class="w-full h-full object-cover b-radi-4">
+                                </div>
+                                <div class="w-full h-full">
+                                    <div class="h-full">
+                                        <div class="pl-4">
+                                            <h1 class="limit-row-2 font-medium text-lg overflow-hidden">Responsive and pseudo-class variants</h1>
+                                            <p class="pt-2 limit-row-3 overflow-hidden">
+                                                By default, only responsive variants are generated for word break utilities.
+        
+                                                You can control which variants are generated for the word break utilities by modifying the wordBreak property in the variants section of your tailwind.config.js file.
+                                                
+                                                For example, this config will also generate hover and focus variants:
+                                            </p>
+                                            <div class="overflow-hidden">
+                                                <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
+                                                <div class="float-right pt-2 text-white">
+                                                    <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
+                                                    <button class="w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full">mode_edit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 box-content bg-white shadow-bottom b-radi-4 flex items-center">
+                                <div class="size-128-fixed h-full">
+                                    <img src="../public/img/google.png" class="w-full h-full object-cover b-radi-4">
+                                </div>
+                                <div class="w-full h-full">
+                                    <div class="h-full">
+                                        <div class="pl-4">
+                                            <h1 class="limit-row-2 font-medium text-lg overflow-hidden">Responsive and pseudo-class variants</h1>
+                                            <p class="pt-2 limit-row-3 overflow-hidden">
+                                                By default, only responsive variants are generated for word break utilities.
+        
+                                                You can control which variants are generated for the word break utilities by modifying the wordBreak property in the variants section of your tailwind.config.js file.
+                                                
+                                                For example, this config will also generate hover and focus variants:
+                                            </p>
+                                            <div class="overflow-hidden">
+                                                <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
+                                                <div class="float-right pt-2 text-white">
+                                                    <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
+                                                    <button class="w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full">mode_edit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 box-content bg-white shadow-bottom b-radi-4 flex items-center">
+                                <div class="size-128-fixed h-full">
+                                    <img src="../public/img/google.png" class="w-full h-full object-cover b-radi-4">
+                                </div>
+                                <div class="w-full h-full">
+                                    <div class="h-full">
+                                        <div class="pl-4">
+                                            <h1 class="limit-row-2 font-medium text-lg overflow-hidden">Responsive and pseudo-class variants</h1>
+                                            <p class="pt-2 limit-row-3 overflow-hidden">
+                                                By default, only responsive variants are generated for word break utilities.
+        
+                                                You can control which variants are generated for the word break utilities by modifying the wordBreak property in the variants section of your tailwind.config.js file.
+                                                
+                                                For example, this config will also generate hover and focus variants:
+                                            </p>
+                                            <div class="overflow-hidden">
+                                                <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
+                                                <div class="float-right pt-2 text-white">
+                                                    <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
+                                                    <button class="w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full">mode_edit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4 box-content bg-white shadow-bottom b-radi-4 flex items-center">
+                                <div class="size-128-fixed h-full">
+                                    <img src="../public/img/google.png" class="w-full h-full object-cover b-radi-4">
+                                </div>
+                                <div class="w-full h-full">
+                                    <div class="h-full">
+                                        <div class="pl-4">
+                                            <h1 class="limit-row-2 font-medium text-lg overflow-hidden">Responsive and pseudo-class variants</h1>
+                                            <p class="pt-2 limit-row-3 overflow-hidden">
+                                                By default, only responsive variants are generated for word break utilities.
+        
+                                                You can control which variants are generated for the word break utilities by modifying the wordBreak property in the variants section of your tailwind.config.js file.
+                                                
+                                                For example, this config will also generate hover and focus variants:
+                                            </p>
+                                            <div class="overflow-hidden">
+                                                <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
+                                                <div class="float-right pt-2 text-white">
+                                                    <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
+                                                    <button class="w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full">mode_edit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+           
+        </div>
+    </main>
+</body>
+<script src="../public/js/chart.js"></script>
+<script src="../public/js/datatable.js"></script>
+
+</html>
