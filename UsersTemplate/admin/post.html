@@ -68,7 +68,7 @@
             </div>
         </div>
     </header>
-    <main class="flex">
+    <main class="flex" x-data="{Career: false, Level:false, Wage:false, More:false, Order:false}">
         <div class="w-16 bg-white py-3 h-screen fixed z-40 text-sm overflow-hidden duration-200 shadow-bottom menu-side" data-type="0" id="menuSide">
             <div>
                 <a onclick="extandMenu(this, 'menuSide', '16rem')" data-status="false" class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer block">
@@ -178,131 +178,264 @@
         </div>
         <div class="w-full lg:pl-16 duration-300" id="box-side">
             <section class="flex justify-center lg:m-8 px-4 pt-4">
-                <div class="w-full">
-                    <div class="py-4 flex items-center bg-white b-radi-4 px-4 text-gray-800 border-b border-gray-300 grid grid-cols-12">
-                        <div class="col-span-6 flex items-center">
-                            <i class="material-icons mr-4">date_range</i>
-                            <span class="text-xl font-medium">Danh sách bài viết</span>
-                        </div>
-                        <div class="col-span-6 flex items-center justify-end">
-                            <button class="block px-6 h-8 bg-green-500 text-sm font-medium text-white shadow-green rounded-sm outline-none">Thêm bài viết</button>
+                <div class="grid grid-cols-12 w-full gap-4">
+                    <div class="col-span-12 sm:col-span-6">
+                        <div class="flex items-center bg-white b-radi-4 shadow-bottom">
+                            <i class="material-icons px-4 text-gray-600">search</i>
+                            <input class="w-full py-3 pr-4 outline-none bg-transparent placeholder-gray-700" placeholder="Tìm kiếm">
                         </div>
                     </div>
-                    <div>
-                        <div class="w-full mt-4 grid gap-4 grid-cols-1 md:grid-cols-2">
-                            <div class="p-4 box-content bg-white shadow-bottom b-radi-4 flex items-center">
-                                <div class="size-128-fixed h-full">
-                                    <img src="../public/img/500x600_113097.jpg" class="size-128-fixed b-radi-4 object-cover">
+                    <div class="col-span-6 sm:col-span-3">
+                        <select class="w-full py-3 px-4 outline-none bg-white b-radi-4 shadow-bottom text-gray-700">
+                            <option>Tất Cả</option>
+                            <option>Ngành nghề</option>
+                            <option>Địa điểm</option>
+                        </select>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <button class="py-3 px-4 w-full text-white bg-white b-radi-4 shadow-green outline-none bg-green-500 hover:bg-green-600">TÌM KIẾM</button>
+                    </div>
+                </div>
+            </section>
+            <section class="flex justify-center lg:m-8 px-4">
+                <div class="w-full grid grid-cols-12 gap-4">
+                    <div class="col-span-12 flex bg-white b-radi-4 shadow-bottom items-center">
+                        <div class="flex items-center justify-end relative p-4" @click="Career=true" @click.away="Career=false">
+                            <div class="block flex items-center cursor-pointer whitespace-no-wrap"><span>Tất cả ngành nghề</span> <i class="material-icons">arrow_drop_down</i></div>
+                            <div class="px-4 absolute bg-white shadow-black b-radi-4 z-10 mw-250 left-0" style="top:56px;" x-show="Career">
+                                <div class="flex items-center py-2 bg-gray-200 my-2 b-radi-4">
+                                    <i class="material-icons px-2 text-xl text-gray-700">search</i><input class="outline-none bg-transparent text-sm" placeholder="Tìm ngành nghề...">
                                 </div>
-                                <div class="w-full h-full">
-                                    <div class="h-full">
-                                        <div class="pl-4">
-                                            <h1 class="limit-row-2 font-medium text-lg overflow-hidden">Responsive and pseudo-class variants</h1>
-                                            <p class="pt-2 limit-row-3 overflow-hidden">
-                                                By default, only responsive variants are generated for word break utilities.
-        
-                                                You can control which variants are generated for the word break utilities by modifying the wordBreak property in the variants section of your tailwind.config.js file.
-                                                
-                                                For example, this config will also generate hover and focus variants:
-                                            </p>
-                                            <div class="overflow-hidden">
-                                                <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
-                                                <div class="float-right pt-2 text-white">
-                                                    <div class="flex">
-                                                        <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
-                                                        <a class="flex items-center justify-center w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full block" href='edit_post.html'>mode_edit</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-4 box-content bg-white shadow-bottom b-radi-4 flex items-center">
-                                <div class="size-128-fixed h-full">
-                                    <img src="../public/img/500x600_113097.jpg" class="size-128-fixed b-radi-4 object-cover">
-                                </div>
-                                <div class="w-full h-full">
-                                    <div class="h-full">
-                                        <div class="pl-4">
-                                            <h1 class="limit-row-2 font-medium text-lg overflow-hidden">Responsive and pseudo-class variants</h1>
-                                            <p class="pt-2 limit-row-3 overflow-hidden">
-                                                By default, only responsive variants are generated for word break utilities.
-        
-                                                You can control which variants are generated for the word break utilities by modifying the wordBreak property in the variants section of your tailwind.config.js file.
-                                                
-                                                For example, this config will also generate hover and focus variants:
-                                            </p>
-                                            <div class="overflow-hidden">
-                                                <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
-                                                <div class="float-right pt-2 text-white">
-                                                    <div class="flex">
-                                                        <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
-                                                        <a class="flex items-center justify-center w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full block" href='edit_post.html'>mode_edit</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-4 box-content bg-white shadow-bottom b-radi-4 flex items-center">
-                                <div class="size-128-fixed h-full">
-                                    <img src="../public/img/Lam.jpg" class="size-128-fixed b-radi-4 object-cover">
-                                </div>
-                                <div class="w-full h-full">
-                                    <div class="h-full">
-                                        <div class="pl-4">
-                                            <h1 class="limit-row-2 font-medium text-lg overflow-hidden">Responsive and pseudo-class variants</h1>
-                                            <p class="pt-2 limit-row-3 overflow-hidden">
-                                                By default, only responsive variants are generated for word break utilities.
-        
-                                                You can control which variants are generated for the word break utilities by modifying the wordBreak property in the variants section of your tailwind.config.js file.
-                                                
-                                                For example, this config will also generate hover and focus variants:
-                                            </p>
-                                            <div class="overflow-hidden">
-                                                <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
-                                                <div class="float-right pt-2 text-white">
-                                                    <div class="flex">
-                                                        <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
-                                                        <a class="flex items-center justify-center w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full block" href='edit_post.html'>mode_edit</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-4 box-content bg-white shadow-bottom b-radi-4 flex items-center">
-                                <div class="size-128-fixed h-full">
-                                    <img src="../public/img/z2066016694623_8ccb5e1fdad8041d943165ef64aa78d1.jpg" class="size-128-fixed b-radi-4 object-cover">
-                                </div>
-                                <div class="w-full h-full">
-                                    <div class="h-full">
-                                        <div class="pl-4">
-                                            <h1 class="limit-row-2 font-medium text-lg overflow-hidden">Responsive and pseudo-class variants</h1>
-                                            <p class="pt-2 limit-row-3 overflow-hidden">
-                                                By default, only responsive variants are generated for word break utilities.
-        
-                                                You can control which variants are generated for the word break utilities by modifying the wordBreak property in the variants section of your tailwind.config.js file.
-                                                
-                                                For example, this config will also generate hover and focus variants:
-                                            </p>
-                                            <div class="overflow-hidden">
-                                                <a class="block float-left cursor-pointer hover:underline pt-2">Xem thêm...</a>
-                                                <div class="float-right pt-2 text-white">
-                                                    <div class="flex">
-                                                        <button class="w-6 h-6 outline-none mr-1 material-icons text-base bg-red-500 rounded-full">clear</button>
-                                                        <a class="flex items-center justify-center w-6 h-6 outline-none material-icons text-base bg-green-500 rounded-full block" href='edit_post.html'>mode_edit</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div style="max-height:218px;" class="overflow-scroll scroll-hidden">
+                                    <a class="block px-2 py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                        <span>Mặc định</span>
+                                        <i class="material-icons text-lg absolute right-0">check</i>
+                                    </a>
+                                    <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                                    <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                                    <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                                    <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
                                 </div>
                             </div>
                         </div>
+                        <div class="flex items-center justify-end relative p-4" @click="Level=true" @click.away="Level=false">
+                            <div class="block flex items-center cursor-pointer whitespace-no-wrap"><span>Tất cả cấp bậc</span> <i class="material-icons">arrow_drop_down</i></div>
+                            <div class="px-8 absolute bg-white shadow-black b-radi-4 z-10 mw-250 left-0" x-show="Level" style="top:56px;">
+                                <a class="block py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                    <span>Mặc định</span>
+                                    <i class="material-icons text-lg absolute right-0">check</i>
+                                </a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end relative p-4" @click="Wage=true" @click.away="Wage=false">
+                            <div class="block flex items-center cursor-pointer whitespace-no-wrap"><span>Tất cả mức lương</span> <i class="material-icons">arrow_drop_down</i></div>
+                            <div class="px-8 absolute bg-white shadow-black b-radi-4 z-10 mw-250 left-0" x-show="Wage" style="top:56px;">
+                                <a class="block py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                    <span>Mặc định</span>
+                                    <i class="material-icons text-lg absolute right-0">check</i>
+                                </a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-end relative p-4 w-full z-40" @click="More=true" @click.away="More=false">
+                            <div class="block flex items-center cursor-pointer"><i class="material-icons">more_horiz</i></div>
+                            <div class="px-4 absolute bg-white shadow-black b-radi-4 z-10 mw-500 right-0" x-show="More" style="top:56px;">
+                               <p class="my-3 font-medium text-sm">LOẠI HÌNH CÔNG VIỆC</p>
+                               <div class="relative">
+                                    <div class="flex items-center py-2 bg-gray-200 my-2 b-radi-4">
+                                        <i class="material-icons px-2 text-xl text-gray-700">search</i><input class="outline-none bg-transparent text-sm w-full" placeholder="Tất cả loại hình">
+                                    </div>
+                                    <div class="px-4 absolute bg-white shadow-black b-radi-4 z-10 mw-250 left-0" style="top:36.8px;">
+                                        <div style="max-height:218px;" class="overflow-scroll scroll-hidden hidden">
+                                            <a class="block px-2 py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                                <span>Mặc định</span>
+                                                <i class="material-icons text-lg absolute right-0">check</i>
+                                            </a>
+                                            <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                                            <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                                            <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                                            <a class="block px-2 py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="my-3 font-medium text-sm">PHÚC LỢI CÔNG TY</p>
+                                <div class="grid grid-cols-12 gap-2 mb-4">
+                                    <div class="col-span-3 border bg-gray-100 text-center p-2 cursor-pointer">
+                                        <i class="material-icons block text-xl text-gray-700">attach_money</i>
+                                        <span class="block text-sm mt-1 text-gray-700">Thưởng</span>
+                                    </div>
+                                    <div class="col-span-3 border bg-gray-100 text-center p-2 cursor-pointer">
+                                        <i class="material-icons block text-xl text-gray-700">favorite_border</i>
+                                        <span class="block text-sm mt-1 text-gray-700">Y tế</span>
+                                    </div>
+                                    <div class="col-span-3 border bg-gray-100 text-center p-2 cursor-pointer">
+                                        <i class="material-icons block text-xl text-gray-700">insert_invitation</i>
+                                        <span class="block text-sm mt-1 text-gray-700">Nghỉ phép</span>
+                                    </div>
+    
+                                    <div class="col-span-3 border bg-gray-100 text-center p-2 cursor-pointer">
+                                        <i class="material-icons block text-xl text-gray-700">flight</i>
+                                        <span class="block text-sm mt-1 text-gray-700">Du lịch</span>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="flex justify-center lg:m-8 px-4">
+                <div class="w-full grid grid-cols-12 gap-4">
+                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-white shadow-bottom b-radi-4">
+                        <div class="block flex justify-center bg-cover bg-center relative w-full h-160 b-radi-t-4" style="background-image: url('../public/img/bg.jpg');">
+                            <img src="../public/img/google.png" class="size-50x box-content p-2 rounded-full bg-white shadow-black absolute bottom-20px">
+                        </div>
+                        <div class="p-4 mt-4">
+                            <a href="#" class="font-medium text-base hover:underline pr-6">Engineering Sales Representative</a>
+                            <p class="text-sm text-gray-600">Hồ Chí Minh</p>
+                            <p class="font-medium text-red-500">5.000.000 VND</p>
+                            <p class="text-sm text-gray-600">Hết hạn trong 5 ngày</p>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-white shadow-bottom b-radi-4">
+                        <div class="block flex justify-center bg-cover bg-center relative w-full h-160 b-radi-t-4" style="background-image: url('../public/img/bg.jpg');">
+                            <img src="../public/img/google.png" class="size-50x box-content p-2 rounded-full bg-white shadow-black absolute bottom-20px">
+                        </div>
+                        <div class="p-4 mt-4">
+                            <a href="#" class="font-medium text-base hover:underline pr-6">Engineering Sales Representative</a>
+                            <p class="text-sm text-gray-600">Hồ Chí Minh</p>
+                            <p class="font-medium text-red-500">5.000.000 VND</p>
+                            <p class="text-sm text-gray-600">Hết hạn trong 5 ngày</p>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-white shadow-bottom b-radi-4">
+                        <div class="block flex justify-center bg-cover bg-center relative w-full h-160 b-radi-t-4" style="background-image: url('../public/img/bg.jpg');">
+                            <img src="../public/img/google.png" class="size-50x box-content p-2 rounded-full bg-white shadow-black absolute bottom-20px">
+                        </div>
+                        <div class="p-4 mt-4">
+                            <a href="#" class="font-medium text-base hover:underline pr-6">Engineering Sales Representative</a>
+                            <p class="text-sm text-gray-600">Hồ Chí Minh</p>
+                            <p class="font-medium text-red-500">5.000.000 VND</p>
+                            <p class="text-sm text-gray-600">Hết hạn trong 5 ngày</p>
+                        </div>
+                    </div>
+                    <div class="col-span-12 sm:col-span-6 md:col-span-4 xl:col-span-3 bg-white shadow-bottom b-radi-4">
+                        <div class="block flex justify-center bg-cover bg-center relative w-full h-160 b-radi-t-4" style="background-image: url('../public/img/bg.jpg');">
+                            <img src="../public/img/google.png" class="size-50x box-content p-2 rounded-full bg-white shadow-black absolute bottom-20px">
+                        </div>
+                        <div class="p-4 mt-4">
+                            <a href="#" class="font-medium text-base hover:underline pr-6">Engineering Sales Representative</a>
+                            <p class="text-sm text-gray-600">Hồ Chí Minh</p>
+                            <p class="font-medium text-red-500">5.000.000 VND</p>
+                            <p class="text-sm text-gray-600">Hết hạn trong 5 ngày</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+            <section class="flex justify-center lg:m-8 px-4">
+                <div class="w-full">
+                    <div class="flex bg-white b-radi-4 shadow-bottom items-center grid grid-cols-12">
+                        <div class="col-span-6 p-4">
+                            <span class="font-medium">841</span>
+                            <span>công việc</span>
+                            <span class="font-medium">"Sale"</span>
+                        </div>
+                        <div class="flex items-center col-span-6 justify-end relative p-4" @click="Order=true" @click.away="Order=false">
+                            <span class="pr-1">Sắp xếp: </span>
+                            <div class="block flex items-center font-medium cursor-pointer"> Mặc định <i class="material-icons">arrow_drop_down</i></div>
+                            <div class="px-8 absolute bg-white shadow-black b-radi-4 z-10" x-show="Order" style="top: 56px;">
+                                <a class="block py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                    <span>Mặc định</span>
+                                    <i class="material-icons text-lg absolute right-0">check</i>
+                                </a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Liên quan</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Lương cao thấp</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(mới nhất)</a>
+                                <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Theo ngày đăng(cữ nhất)</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <div class="w-full bg-white shadow-bottom b-radi-4 p-4 flex mt-4">
+                            <img src="../public/img/google.png" class="size-50x m-2 md:m8">
+                            <div class="ml-4 relative w-full">
+                                <div>
+                                    <a href="#" class="font-medium text-xl hover:underline pr-6">Engineering Sales Representative</a>
+                                    <p class="mt-1 text-sm font-medium text-gray-800">Công Ty TNHH YKK Việt Nam</p>
+                                    <p class="mt-2 text-gray-600 text-sm">Hồ Chí Minh</p>
+                                    <p class="mt-2 text-gray-700 text-sm">Cập nhật: 19/10/2020 - Bạn còn 29 ngày để ứng tuyển</p>
+                                </div>
+                                <div class="flex sm:mt-2 grid grid-cols-12">
+                                   <div class="sm:flex col-span-12 md:col-span-8">
+                                        <div class="flex items-center mr-3 mt-2 sm:mt-0">
+                                            <i class="material-icons pr-1 text-lg text-red-500">favorite_border</i>
+                                            <span class="text-sm text-red-500 font-medium">Khám sức khỏe</span>
+                                        </div>
+                                        <div class="flex items-center mt-2 sm:mt-0">
+                                            <i class="material-icons pr-1 text-lg text-orange-400">attach_money</i>
+                                            <span class="text-sm text-orange-400 font-medium">Thưởng</span>
+                                        </div>
+                                   </div>
+                                   <div class="col-span-12 md:col-span-4 flex justify-end mt-2 md:mt-0 font-medium text-red-500 sm:text-lg text-base">
+                                        5.000.000 VND
+                                   </div>
+                                </div>
+                                <div class="absolute top-0 right-0 cursor-pointer text-gray-600"> 
+                                    <a class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2 mb-2 shadow-green" href="edit_post.html">edit</a>
+                                    <button class="p-1 bg-red-500 text-white text-base rounded-full outline-none hover:bg-red-600 material-icons block shadow-red">close</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full bg-white shadow-bottom b-radi-4 p-4 flex mt-4">
+                            <img src="../public/img/google.png" class="size-50x m-2 md:m8">
+                            <div class="ml-4 relative w-full">
+                                <div>
+                                    <a href="#" class="font-medium text-xl hover:underline pr-6">Engineering Sales Representative</a>
+                                    <p class="mt-1 text-sm font-medium text-gray-800">Công Ty TNHH YKK Việt Nam</p>
+                                    <p class="mt-2 text-gray-600 text-sm">Hồ Chí Minh</p>
+                                    <p class="mt-2 text-gray-700 text-sm">Cập nhật: 19/10/2020 - Bạn còn 29 ngày để ứng tuyển</p>
+                                </div>
+                                <div class="flex sm:mt-2 grid grid-cols-12">
+                                   <div class="sm:flex col-span-12 md:col-span-8">
+                                        <div class="flex items-center mr-3 mt-2 sm:mt-0">
+                                            <i class="material-icons pr-1 text-lg text-red-500">favorite_border</i>
+                                            <span class="text-sm text-red-500 font-medium">Khám sức khỏe</span>
+                                        </div>
+                                        <div class="flex items-center mt-2 sm:mt-0">
+                                            <i class="material-icons pr-1 text-lg text-orange-400">attach_money</i>
+                                            <span class="text-sm text-orange-400 font-medium">Thưởng</span>
+                                        </div>
+                                   </div>
+                                   <div class="col-span-12 md:col-span-4 flex justify-end mt-2 md:mt-0 font-medium text-red-500 sm:text-lg text-base">
+                                        5.000.000 VND
+                                   </div>
+                                </div>
+                                <div class="absolute top-0 right-0 cursor-pointer text-gray-600"> 
+                                    <a class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2 mb-2 shadow-green" href="edit_post.html">edit</a>
+                                    <button class="p-1 bg-red-500 text-white text-base rounded-full outline-none hover:bg-red-600 material-icons block shadow-red">close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center mt-4 justify-center text-gray-700">
+                        <button class="material-icons size-40x b-radi-4 bg-white shadow-black outline-none mx-2 btn-hover-red">first_page</button>
+                        <button class="material-icons size-40x b-radi-4 bg-white shadow-black outline-none mx-2 hidden sm:block btn-hover-red">keyboard_arrow_left</button>
+                        <div>
+                            <button class="size-40x b-radi-4 bg-white shadow-bottom outline-none mx-1 btn-hover-red">1</button>
+                            <button class="size-40x b-radi-4 bg-white shadow-bottom outline-none mx-1 btn-hover-red">2</button>
+                            <button class="size-40x b-radi-4 bg-white shadow-bottom outline-none mx-1 btn-hover-red">3</button>
+                            <button class="size-40x b-radi-4 bg-white shadow-bottom outline-none mx-1 btn-hover-red">...</button>
+                        </div>
+                        <button class="material-icons size-40x b-radi-4 bg-white shadow-black outline-none mx-2 hidden sm:block btn-hover-red">keyboard_arrow_right</button>
+                        <button class="material-icons size-40x b-radi-4 bg-white shadow-black outline-none mx-2 btn-hover-red">last_page</button>
                     </div>
                 </div>
             </section>

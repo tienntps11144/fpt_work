@@ -188,66 +188,49 @@
                                     <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 grid grid-cols-12">
                                         <div class="col-span-12 flex items-center">
                                             <i class="material-icons mr-4">date_range</i>
-                                            <span class="text-xl font-medium">Thông tin bài viết</span>
+                                            <span class="text-xl font-medium">Thông tin công việc</span>
                                         </div>
                                     </div>
-                                    <div class="p-4">
-                                        <p class="mb-2 text-gray-700 font-medium">Tiêu Đề</p>
-                                        <input class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700" placeholder="Nhập tiêu đề cho bài viết...">                                
-                                        
-                                        <p class="mb-2 text-gray-700 font-medium mt-4">Hình ảnh mô tả</p>
-                                        <div class="overflow-hidden">
-                                            <label for="file" class="float-left h-32 mr-4 text-gray-600 w-32 block border-dashed border-2 b-radi-4 border-gray-400 cursor-pointer material-icons flex items-center justify-center">add</label>
-                                            <img id="boxPreview" class="float-left h-32 w-32 hidden object-cover">
-                                            <input id="file" type="file" class="hidden" onchange="preview(this, 'boxPreview')">
-                                        </div>     
-                                        <p class="mb-2 text-gray-700 font-medium mt-4">Nội dung</p>
-                                        <div id="toolbar">
-                                            <span class="ql-formats">
-                                                <select class="ql-header">
-                                                  <option value="1">Heading</option>
-                                                  <option value="2">Subheading</option>
-                                                  <option selected>Normal</option>
-                                                </select>
-                                                <select class="ql-font">
-                                                  <option selected>Sans Serif</option>
-                                                  <option value="serif">Serif</option>
-                                                  <option value="monospace">Monospace</option>
-                                                </select>
-                                              </span>
-                                              <span class="ql-formats">
-                                                <button class="ql-bold"></button>
-                                                <button class="ql-italic"></button>
-                                                <button class="ql-underline"></button>
-                                                <button class="ql-strike"></button>
-                                              </span>
-                                              <span class="ql-formats">
-                                                <select class="ql-color"></select>
-                                                <select class="ql-background"></select>
-                                              </span>
-                                              <span class="ql-formats">
-                                                <button class="ql-list" value="ordered"></button>
-                                                <button class="ql-list" value="bullet"></button>
-                                                <select class="ql-align">
-                                                  <option selected></option>
-                                                  <option value="center"></option>
-                                                  <option value="right"></option>
-                                                  <option value="justify"></option>
-                                                </select>
-                                              </span>
-                                              <span class="ql-formats">
-                                                <button class="ql-blockquote"></button>
-                                                <button class="ql-link"></button>
-                                                <button class="ql-image"></button>
-                                                <button class="ql-code-block"></button>
-                                                <button class="ql-video"></button>
-                                              </span>
-                                              <span class="ql-formats">
-                                                <button class="ql-clean"></button>
-                                              </span>
+                                    <div class="p-8">
+                                        <div>
+                                            <p class="mb-2 font-medium">Tiêu đề</p>
+                                            <input class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700" placeholder="Nhập tiêu đề cho công việc">
                                         </div>
-                                        <div id="create_post" class="h-300">
-    
+                                        <div class="mt-4">
+                                            <p class="mb-2 font-medium">Mức lương</p>
+                                            <div class="flex items-center grid grid-cols-12 gap-4">
+                                                <input type="number" class="col-span-6 py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700" placeholder="Nhập mức lương tối thiểu">
+                                                <input type="number" class="col-span-6 py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700" placeholder="Nhập mức lương tối đa">
+                                            </div>
+                                            <div class="mt-4 flex items-center">
+                                                <label class="switch mr-4">
+                                                    <input type="checkbox" checked>
+                                                    <span class="slider-btn round"></span>
+                                                </label>
+                                                <span>Hiển thị mức lương</span>
+                                            </div>                                
+                                        </div>
+                                        <div class="mt-4">
+                                            <p class="mb-2 font-medium mb-2">Địa điểm</p>
+                                            <select class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none cursor-pointer">
+                                                <option>Tỉnh/Thành Phố</option>
+                                                <option>CNTT</option>
+                                                <option>Thiet Ke Web</option>
+                                            </select>
+                                            <select class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none cursor-pointer mt-4">
+                                                <option>Quận Huyện</option>
+                                                <option>CNTT</option>
+                                                <option>Thiet Ke Web</option>
+                                            </select>
+                                            <input class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700 mt-4" placeholder="Số nhà, đường">
+                                        </div>
+                                        <div class="mt-4">
+                                            <p class="mb-2 font-medium">Mô tả</p>
+                                            <div id="description_work" class="h-160"></div>
+                                        </div>
+                                        <div class="mt-4">
+                                            <p class="mb-2 font-medium">Yêu cầu</p>
+                                            <div id="request_work" class="h-160"></div>
                                         </div>
                                     </div>
                                 </div> 
@@ -257,7 +240,7 @@
                                     <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 grid grid-cols-12">
                                         <div class="col-span-12 flex items-center">
                                             <i class="material-icons mr-4">spellcheck</i>
-                                            <span class="text-xl font-medium">Thuộc tính bài viết</span>
+                                            <span class="text-xl font-medium">Thông tin thêm</span>
                                         </div>
                                     </div>
                                     <div class="p-4">
@@ -267,21 +250,17 @@
                                             
                                         </div>
 
-                                        <p class="mb-2 text-gray-700 font-medium mt-4">Ngành nghề</p>
-                                        <select class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700">
-                                            <option>Vui lòng chọn ngành nghề</option>
-                                            <option>PHP</option>
-                                            <option>C++</option>
-                                            <option>C#</option>
+                                        <p class="mb-2 text-gray-700 font-medium mt-4">Phúc lợi</p>
+                                        <select onchange="appendTag(this.value, 'tag-search')" class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700">
+                                            <option value="-1">Vui lòng chọn ngành nghề</option>
+                                            <option>Y tế</option>
+                                            <option>Thưởng</option>
+                                            <option>Nghỉ phép</option>
                                         </select>  
-                                        <p class="mb-2 text-gray-700 font-medium mt-4">Kỹ năng cần có</p>
-                                        <select class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700">
-                                            <option>Vui lòng chọn kỹ năng</option>
-                                            <option>PHP</option>
-                                            <option>C++</option>
-                                            <option>C#</option>
-                                        </select>                  
-                                        <button class=" shadow-green mt-4 w-full h-10 text-white bg-green-500 b-radi-4 outline-none hover:bg-green-600">Lưu Bài Viết</button>              
+                                        <div id="tag-search" class="mt-2 hidden">
+
+                                        </div>
+                                        <button class=" shadow-green mt-4 w-full h-10 text-white bg-green-500 b-radi-4 outline-none hover:bg-green-600">Đăng Bài</button>              
                                     </div>
                                 </div>
                             </div>
