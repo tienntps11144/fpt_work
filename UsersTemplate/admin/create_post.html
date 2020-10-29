@@ -22,7 +22,7 @@
     <header class="h-16 w-full bg-white flex justify-center shadow-black sticky top-0 z-50">
         <div class="grid grid-cols-12 lg:hidden">
             <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
-                <i
+                <i onclick="slideMenu(this, 'menuSide', '0rem', '-16rem')" data-status="false"
                     class="material-icons h-16 w-16 flex justify-center items-center text-white text-3xl btn-blue-purple">sort</i>
                 <ul
                     class="w-64 bg-white text-sm font-medium text-gray-800 shadow-bottom b-radi-4 relative left-64 duration-300 z-50">
@@ -36,20 +36,44 @@
 
             </div>
         </div>
-        <div class="w-full h-16 hidden grid-cols-12 gap-4 lg:grid px-6">
+        <div class="w-full h-16 hidden grid-cols-12 gap-4 lg:grid px-12">
             <div class="col-span-9 h-16 flex text-gray-800">
                 <img src="../public/img/logo-fpt-shop.png" class="h-full object-cover py-2 mr-12">
             </div>
-            <div class="col-span-3 h-16 flex justify-end items-center text-gray-800">
-                <a class="px-2 border-r border-gray-800 text-sm font-medium hover:underline cursor-pointer">Đăng Ký</a>
-                <a class="px-2 text-sm font-medium hover:underline cursor-pointer">Đăng Nhập</a>
+            <div class="col-span-3 h-16 flex justify-end items-center text-gray-800 relative">
+                <div class="h-full show-child-hover">
+                    <div class="h-full flex items-center">
+                        <div class="flex text-sm items-center p-2 hover:bg-gray-200 b-radi-4 cursor-pointer">
+                            <p class="pr-1 text-gray-600 text-xs">Xin chào,</p>
+                            <span>Tiến</span>
+                        </div>
+                    </div>
+                    <div class="absolute top-64px-plus bg-white shadow-black b-radi-4 right-0 hidden child-hover"> 
+                        <div class="px-8 py-6 w-64 text-white box-content" style='background-image: url("https://ap.poly.edu.vn/theme/student_v2/media/misc/bg-1.jpg");'>
+                            Nguyễn Thanh Tiến
+                        </div>
+                        <div class="flex py-6 border-b border-gray-200">
+                            <i class="material-icons text-green-500 px-5 flex items-center">person_outline</i>
+                            <div class="flex items-center">
+                                <div class="text-sm">
+                                    <p class="hover:underline cursor-pointer">Hồ sơ cá nhân</p>
+                                    <p class="text-gray-600">Thông tin cá nhân</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex p-6">
+                            <button class=" shadow-red w-1/2 text-sm h-8 text-white bg-red-500 b-radi-4 outline-none hover:bg-red-600">Đăng xuất</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
+    <!--https://dashboardpack.com/live-demo-preview/?livedemo=290%3Futm_source%3Dcolorlib&utm_medium=reactlist&utm_campaign=architecthtml&v=e14da64a5617-->
     <main class="flex">
-        <div class="w-16 lg:w-64 bg-white py-3 h-screen fixed z-40 text-sm overflow-hidden">
+        <div class="w-16 bg-white py-3 h-screen fixed z-40 text-sm overflow-hidden duration-200 shadow-bottom menu-side" data-type="0" id="menuSide">
             <div>
-                <a class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer block">
+                <a onclick="extandMenu(this, 'menuSide', '16rem')" data-status="false" class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer block">
                     <div class="relative w-full flex items-center">
                         <i class="material-icons pr-6 color-purple-fade">play_arrow</i>
                         <div class="w-full relative whitespace-no-wrap">
@@ -69,7 +93,7 @@
                 </a>
             </div>
             <div>
-                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer">
+                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer" data-status="false" onclick="dropDown(this, this.nextElementSibling)">
                     <div class="relative w-full flex items-center">
                         <i class="material-icons pr-6 color-purple-fade">person</i>
                         <div class="w-full relative whitespace-no-wrap">
@@ -78,7 +102,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-gray-800">
+                <div class="text-gray-800 hidden">
                     <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
                         <i class="material-icons block rounded-full dot-purple mr-3"></i>
                         <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="users_student.html">Sinh Viên</a>
@@ -90,7 +114,7 @@
                 </div>
             </div>
             <div>
-                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer">
+                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer" data-status="false" onclick="dropDown(this, this.nextElementSibling)">
                     <div class="relative w-full flex items-center">
                         <i class="material-icons pr-6 color-purple-fade">apps</i>
                         <div class="w-full relative whitespace-no-wrap">
@@ -100,7 +124,7 @@
                         
                     </div>
                 </div>
-                <div class="text-gray-800">
+                <div class="text-gray-800 hidden">
                     <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
                         <i class="material-icons block rounded-full dot-purple mr-3"></i>
                         <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="tag.html">Kỹ năng</a>
@@ -112,7 +136,7 @@
                 </div>
             </div>
             <div>
-                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer">
+                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer" data-status="false" onclick="dropDown(this, this.nextElementSibling)">
                     <div class="relative w-full flex items-center">
                         <i class="material-icons pr-6 color-purple-fade">assignment</i>
                         <div class="w-full relative whitespace-no-wrap">
@@ -121,7 +145,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-gray-800">
+                <div class="text-gray-800 hidden">
                     <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
                         <i class="material-icons block rounded-full dot-purple mr-3"></i>
                         <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="post.html">Xem bài viết</a>
@@ -132,13 +156,34 @@
                     </div>
                 </div>
             </div>
+            <div class="lg:hidden">
+                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer" data-status="false" onclick="dropDown(this, this.nextElementSibling)">
+                    <div class="relative w-full flex items-center">
+                        <i class="material-icons pr-6 color-purple-fade">lock</i>
+                        <div class="w-full relative whitespace-no-wrap">
+                            <span>Thiết lập tài khoản</span>
+                            <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-gray-800 hidden">
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="post.html">Thông tin cá nhân</a>
+                    </div>
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="create_post.html">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="w-full md:m-8 md:pl-16 lg:pl-64">
-            <section class="flex justify-center mb-8 px-4 pt-4">
+        <div class="w-full lg:pl-16 duration-300" id="box-side">
+            <section class="flex justify-center lg:m-8 px-4 pt-4">
                 <div class="w-full">
                     <div>
                         <div class="grid grid-cols-12 gap-8">
-                            <div class="xl:col-span-7 col-span-12 bg-white bg-white b-radi-4">
+                            <div class="lg:col-span-7 col-span-12 bg-white bg-white b-radi-4">
                                 <div class="bg-white b-radi-4 shadow-bottom">
                                     <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 grid grid-cols-12">
                                         <div class="col-span-12 flex items-center">
@@ -207,7 +252,7 @@
                                     </div>
                                 </div> 
                             </div>
-                            <div class="xl:col-span-5 col-span-12">
+                            <div class="lg:col-span-5 col-span-12">
                                 <div class="bg-white b-radi-4 shadow-bottom">
                                     <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 grid grid-cols-12">
                                         <div class="col-span-12 flex items-center">
@@ -217,20 +262,9 @@
                                     </div>
                                     <div class="p-4">
                                         <p class="mb-2 text-gray-700 font-medium">Từ khóa liên quan</p>
-                                        <input class="block h-10 w-full b-radi-4 border border-gray-400 px-4 text-sm outline-none" placeholder="Nhập từ khóa cho bài viết">
-                                        <div class="w-full overflow-hidden mt-2">
-                                            <div class="px-5 py-1 float-left text-sm bg-gray-200 text-gray-500 relative mr-2 b-radi-4">
-                                                <span class="text-gray-600">Languages</span>
-                                                <i class="material-icons text-sm absolute top-0 right-0 cursor-pointer opacity-0 hover:opacity-100">close</i>
-                                            </div>
-                                            <div class="px-5 py-1 float-left text-sm bg-gray-200 text-gray-500 relative mr-2 b-radi-4">
-                                                <span class="text-gray-600">AI</span>
-                                                <i class="material-icons text-sm absolute top-0 right-0 cursor-pointer opacity-0 hover:opacity-100">close</i>
-                                            </div>
-                                            <div class="px-5 py-1 float-left text-sm bg-gray-200 text-gray-500 relative mr-2 b-radi-4">
-                                                <span class="text-gray-600">Window</span>
-                                                <i class="material-icons text-sm absolute top-0 right-0 cursor-pointer opacity-0 hover:opacity-100">close</i>
-                                            </div>
+                                        <input class="block h-10 w-full b-radi-4 border border-gray-400 px-4 text-sm outline-none" onkeydown="enterTag(event, this, 'key_relative')" placeholder="Nhập từ khóa cho bài viết">
+                                        <div class="w-full overflow-scroll mt-2 hidden pb-2" id="key_relative">
+                                            
                                         </div>
 
                                         <p class="mb-2 text-gray-700 font-medium mt-4">Ngành nghề</p>

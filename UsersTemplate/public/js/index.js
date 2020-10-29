@@ -42,6 +42,13 @@ function removeTag(e, value, boxId){
         document.getElementById(`${boxId}`).style.display="";
     }
 }
+function enterTag(ev, e, boxId){
+    var key = ev.which || ev.keyCode;
+    if(key==13){
+        appendTag(e.value, boxId);
+        e.value='';
+    }
+}
 //slideshow
 var SlideCount=0;
 function slide(boxId, direct){
@@ -59,5 +66,46 @@ function slide(boxId, direct){
             SlideCount++;
             boxSlide.style.left=`-${SlideCount*everX}%`;
         }
+    }
+}
+// slide menu
+function extandMenu(e, menuId, widthMenu){
+    if(e.dataset.status=='false'){
+        document.getElementById(`${menuId}`).style.width=widthMenu;
+        e.dataset.status='true';
+        document.getElementById(`${menuId}`).dataset.type='1';
+    }
+    else{
+        document.getElementById(`${menuId}`).style.width='';
+        e.dataset.status='false';
+        document.getElementById(`${menuId}`).dataset.type='0';
+    }
+}
+function slideMenu(e, menuId, leftMenu, leftHidden){
+    var boxMenu=document.getElementById(`${menuId}`);
+    if(e.dataset.status=='false'){
+        boxMenu.style.left=leftMenu;
+        e.dataset.status='true';
+    }
+    else{
+        if(boxMenu.dataset.type=0){
+            boxMenu.style.left='';
+            e.dataset.status='false';
+        }
+        else{
+            boxMenu.style.left=leftHidden;
+            e.dataset.status='false';
+        }
+        
+    }
+}
+function dropDown(e, boxChild){
+    if(e.dataset.status=='false'){
+        boxChild.style.display='block';
+        e.dataset.status='true';
+    }
+    else{
+        boxChild.style.display='';
+        e.dataset.status='false';
     }
 }

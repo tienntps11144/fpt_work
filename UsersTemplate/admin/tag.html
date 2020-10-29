@@ -21,22 +21,11 @@
     <header class="h-16 w-full bg-white flex justify-center shadow-black sticky top-0 z-50">
         <div class="grid grid-cols-12 lg:hidden">
             <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
-                <i
+                <i onclick="slideMenu(this, 'menuSide', '0rem', '-16rem')" data-status="false"
                     class="material-icons h-16 w-16 flex justify-center items-center text-white text-3xl btn-blue-purple">sort</i>
                 <ul
                     class="w-64 bg-white text-sm font-medium text-gray-800 shadow-bottom b-radi-4 relative left-64 duration-300 z-50">
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
-                            class="material-icons pr-4">today</i><span>Sản Phẩm & Dịch Vụ</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
-                            class="material-icons pr-4">person_outline</i><span>Đăng Nhập</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
-                            class="material-icons pr-4">people_outline</i><span>Đăng Ký</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
-                            class="material-icons pr-4">rss_feed</i><span>HR Insider</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
-                            class="material-icons pr-4">date_range</i><span>Giới Thiệu</span></li>
-                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
-                            class="material-icons pr-4">search</i><span>Tìm Việc</span></li>
+                    
                 </ul>
             </div>
             <div class="col-span-8 h-16 flex items-center justify-center py-2">
@@ -46,103 +35,174 @@
 
             </div>
         </div>
-        <div class="w-full h-16 hidden grid-cols-12 gap-4 lg:grid px-6">
+        <div class="w-full h-16 hidden grid-cols-12 gap-4 lg:grid px-12">
             <div class="col-span-9 h-16 flex text-gray-800">
                 <img src="../public/img/logo-fpt-shop.png" class="h-full object-cover py-2 mr-12">
             </div>
-            <div class="col-span-3 h-16 flex justify-end items-center text-gray-800">
-                <a class="px-2 border-r border-gray-800 text-sm font-medium hover:underline cursor-pointer">Đăng Ký</a>
-                <a class="px-2 text-sm font-medium hover:underline cursor-pointer">Đăng Nhập</a>
+            <div class="col-span-3 h-16 flex justify-end items-center text-gray-800 relative">
+                <div class="h-full show-child-hover">
+                    <div class="h-full flex items-center">
+                        <div class="flex text-sm items-center p-2 hover:bg-gray-200 b-radi-4 cursor-pointer">
+                            <p class="pr-1 text-gray-600 text-xs">Xin chào,</p>
+                            <span>Tiến</span>
+                        </div>
+                    </div>
+                    <div class="absolute top-64px-plus bg-white shadow-black b-radi-4 right-0 hidden child-hover"> 
+                        <div class="px-8 py-6 w-64 text-white box-content" style='background-image: url("https://ap.poly.edu.vn/theme/student_v2/media/misc/bg-1.jpg");'>
+                            Nguyễn Thanh Tiến
+                        </div>
+                        <div class="flex py-6 border-b border-gray-200">
+                            <i class="material-icons text-green-500 px-5 flex items-center">person_outline</i>
+                            <div class="flex items-center">
+                                <div class="text-sm">
+                                    <p class="hover:underline cursor-pointer">Hồ sơ cá nhân</p>
+                                    <p class="text-gray-600">Thông tin cá nhân</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex p-6">
+                            <button class=" shadow-red w-1/2 text-sm h-8 text-white bg-red-500 b-radi-4 outline-none hover:bg-red-600">Đăng xuất</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
-    <main class="flex">
-        <div class="w-64 bg-white py-3 h-screen fixed z-40 text-sm">
+    <main class="flex" x-data="{Tag:false, Etag:false}">
+        <div class="w-16 bg-white py-3 h-screen fixed z-40 text-sm overflow-hidden duration-200 shadow-bottom menu-side" data-type="0" id="menuSide">
             <div>
-                <a class="flex items-center py-3 px-6 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer block" href="overview.html">
+                <a onclick="extandMenu(this, 'menuSide', '16rem')" data-status="false" class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer block">
                     <div class="relative w-full flex items-center">
-                        <i class="material-icons pr-4 color-purple-fade">home</i>
-                        <span>Tổng quan</span>
+                        <i class="material-icons pr-6 color-purple-fade">play_arrow</i>
+                        <div class="w-full relative whitespace-no-wrap">
+                            <span>Thu nhỏ</span>
+                        </div>
                     </div>
                 </a>
             </div>
             <div>
-                <div class="flex items-center py-3 px-6 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer">
+                <a class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer block" href="overview.html">
                     <div class="relative w-full flex items-center">
-                        <i class="material-icons pr-4 color-purple-fade">person</i>
-                        <span class="text-gray-700">Người dùng</span>
-                        <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                        <i class="material-icons pr-6 color-purple-fade">home</i>
+                        <div class="w-full relative whitespace-no-wrap">
+                            <span>Tổng quan</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer" data-status="false" onclick="dropDown(this, this.nextElementSibling)">
+                    <div class="relative w-full flex items-center">
+                        <i class="material-icons pr-6 color-purple-fade">person</i>
+                        <div class="w-full relative whitespace-no-wrap">
+                            <span class="text-gray-700">Người dùng</span>
+                            <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                        </div>
                     </div>
                 </div>
-                <div class="text-gray-800">
-                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                <div class="text-gray-800 hidden">
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
                         <i class="material-icons block rounded-full dot-purple mr-3"></i>
-                        <a class="cursor-pointer hover-purple-fade" href="users_student.html">Sinh Viên</a>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="users_student.html">Sinh Viên</a>
                     </div>
-                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
                         <i class="material-icons block rounded-full dot-purple mr-3"></i>
-                        <a class="cursor-pointer hover-purple-fade" href="users_company.html">Doanh nghiệp</a>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="users_company.html">Doanh nghiệp</a>
                     </div>
                 </div>
             </div>
             <div>
-                <div class="flex items-center py-3 px-6 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer">
+                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer" data-status="false" onclick="dropDown(this, this.nextElementSibling)">
                     <div class="relative w-full flex items-center">
-                        <i class="material-icons pr-4 color-purple-fade">apps</i>
-                        <span>Tiện ích</span>
-                        <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                        <i class="material-icons pr-6 color-purple-fade">apps</i>
+                        <div class="w-full relative whitespace-no-wrap">
+                            <span>Tiện ích</span>
+                            <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="text-gray-800">
-                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                <div class="text-gray-800 hidden">
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
                         <i class="material-icons block rounded-full dot-purple mr-3"></i>
-                        <a class="cursor-pointer hover-purple-fade" href="tag.html">Kỹ năng</a>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="tag.html">Kỹ năng</a>
                     </div>
-                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
                         <i class="material-icons block rounded-full dot-purple mr-3"></i>
-                        <a class="cursor-pointer hover-purple-fade" href="category.html">Ngành nghề</a>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="category.html">Ngành nghề</a>
                     </div>
                 </div>
             </div>
             <div>
-                <div class="flex items-center py-3 px-6 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer">
+                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer" data-status="false" onclick="dropDown(this, this.nextElementSibling)">
                     <div class="relative w-full flex items-center">
-                        <i class="material-icons pr-4 color-purple-fade">assignment</i>
-                        <span>Quản lý bài viết</span>
-                        <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                        <i class="material-icons pr-6 color-purple-fade">assignment</i>
+                        <div class="w-full relative whitespace-no-wrap">
+                            <span>Quản lý bài viết</span>
+                            <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                        </div>
                     </div>
                 </div>
-                <div class="text-gray-800">
-                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                <div class="text-gray-800 hidden">
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
                         <i class="material-icons block rounded-full dot-purple mr-3"></i>
-                        <a class="cursor-pointer hover-purple-fade" href="post.html">Xem bài viết</a>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="post.html">Xem bài viết</a>
                     </div>
-                    <div class="w-full pl-16 py-2 pr-6 flex items-center hover-purple-sub-fade">
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
                         <i class="material-icons block rounded-full dot-purple mr-3"></i>
-                        <a class="cursor-pointer hover-purple-fade" href="create_post.html">Tạo bài viết</a>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="create_post.html">Tạo bài viết</a>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:hidden">
+                <div class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer" data-status="false" onclick="dropDown(this, this.nextElementSibling)">
+                    <div class="relative w-full flex items-center">
+                        <i class="material-icons pr-6 color-purple-fade">lock</i>
+                        <div class="w-full relative whitespace-no-wrap">
+                            <span>Thiết lập tài khoản</span>
+                            <i class="material-icons absolute top-0 right-0">keyboard_arrow_down</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-gray-800 hidden">
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="post.html">Thông tin cá nhân</a>
+                    </div>
+                    <div class="w-full pl-16 py-2 pr-5 flex items-center hover-purple-sub-fade">
+                        <i class="material-icons block rounded-full dot-purple mr-3"></i>
+                        <a class="cursor-pointer hover-purple-fade whitespace-no-wrap" href="create_post.html">Đăng xuất</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="w-full m-8 pl-64">
-            <section class="flex justify-center mb-8 px-4 pt-4">
+        <div class="w-full lg:pl-16 duration-300" id="box-side">
+            <section class="px-4 pt-4 md:hidden flex">
+                <select class="block px-6 h-8 bg-red-500 text-sm font-medium text-white shadow-red rounded-sm outline-none mr-4">
+                    <option class="bg-white text-gray-600">CNTT</option>
+                    <option class="bg-white text-gray-600">Quản Trị Kinh Doanh</option>
+                    <option class="bg-white text-gray-600">Du Lịch &amp; Nhà Hàng</option>
+                    <option class="bg-white text-gray-600 ">Cơ Khí</option>
+                </select>
+                <button class="block px-6 h-8 bg-green-500 text-sm font-medium text-white shadow-green rounded-sm outline-none"  @click="Tag = true">Thêm kỹ năng</button>            </section>
+            <section class="flex justify-center lg:m-8 px-4 pt-4">
                 <div class="w-full bg-white shadow-bottom b-radi-4">
                     <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 grid grid-cols-12">
-                        <div class="col-span-6 flex items-center">
+                        <div class="col-span-8 flex items-center">
                             <i class="material-icons mr-4">date_range</i>
-                            <span class="text-xl font-medium">Danh sách kỹ năng</span>
+                            <span class="text-xl font-medium">DS kỹ năng</span>
                         </div>
-                        <div class="col-span-6 flex items-center justify-end">
+                        <div class="col-span-4 items-center justify-end md:flex hidden">
                             <select class="block px-6 h-8 bg-red-500 text-sm font-medium text-white shadow-red rounded-sm outline-none mr-4">
                                 <option class="bg-white text-gray-600">CNTT</option>
                                 <option class="bg-white text-gray-600">Quản Trị Kinh Doanh</option>
                                 <option class="bg-white text-gray-600">Du Lịch &amp; Nhà Hàng</option>
                                 <option class="bg-white text-gray-600 ">Cơ Khí</option>
                             </select>
-                            <button class="block px-6 h-8 bg-green-500 text-sm font-medium text-white shadow-green rounded-sm outline-none">Thêm kỹ năng</button>
+                            <button class="block px-6 h-8 bg-green-500 text-sm font-medium text-white shadow-green rounded-sm outline-none" @click="Tag = true">Thêm kỹ năng</button>
                         </div>
                     </div>
-                    <div class="p-4">
+                    <div class="p-4 overflow-scroll">
                         <table class="w-full text-sm my-2 sm:mb-0 b-radi-4" id="tag-table">
                             <thead>
                                 <tr class="h-10 border border-gray-300">
@@ -158,7 +218,7 @@
                                 <td class="px-2">PHP</td>
                                 <td class="px-2">
                                     <div class="flex">
-                                        <button class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2">edit</button>
+                                        <button class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2" @click="Etag = true">edit</button>
                                         <button class="p-1 bg-red-500 text-white text-base rounded-full outline-none hover:bg-red-600 material-icons block">close</button>
                                     </div>
                                 </td>
@@ -169,7 +229,7 @@
                                 <td class="px-2">PHP</td>
                                 <td class="px-2">
                                     <div class="flex">
-                                        <button class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2">edit</button>
+                                        <button class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2" @click="Etag = true">edit</button>
                                         <button class="p-1 bg-red-500 text-white text-base rounded-full outline-none hover:bg-red-600 material-icons block">close</button>
                                     </div>
                                 </td>
@@ -180,7 +240,7 @@
                                 <td class="px-2">PHP</td>
                                 <td class="px-2">
                                     <div class="flex">
-                                        <button class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2">edit</button>
+                                        <button class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2" @click="Etag = true">edit</button>
                                         <button class="p-1 bg-red-500 text-white text-base rounded-full outline-none hover:bg-red-600 material-icons block">close</button>
                                     </div>
                                 </td>
@@ -191,7 +251,7 @@
                                 <td class="px-2">PHP</td>
                                 <td class="px-2">
                                     <div class="flex">
-                                        <button class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2">edit</button>
+                                        <button class="p-1 bg-green-500 text-white text-base rounded-full outline-none hover:bg-green-600 material-icons block mr-2" @click="Etag = true">edit</button>
                                         <button class="p-1 bg-red-500 text-white text-base rounded-full outline-none hover:bg-red-600 material-icons block">close</button>
                                     </div>
                                 </td>
@@ -203,9 +263,54 @@
             
            
         </div>
+        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50 items-center" x-show="Tag">
+            <div class="w-screen s2m:w-450f bg-white b-radi-4 m-2 shadow absolute text-gray-800">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 cursor-pointer">
+                    <h1 class="text-xl font-medium">Thêm kỹ năng</h1>
+                </div>
+                <div class="p-4">
+                    <p class="mb-2 font-medium">Tên kỹ năng</p>
+                    <input placeholder="VD: PHP, C++, English..." class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700">
+                    <p class="mb-2 font-medium mt-4">Chọn ngành nghề</p>
+                    <select class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700">
+                        <option class="text-gray-600">Chọn thể loại</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                    <div class="mt-4 flex justify-end">
+                        <button class="block px-6 h-8 bg-gray-400 hover:bg-gray-500 text-sm font-medium text-white shadow rounded-sm outline-none mt-4 mr-4" @click="Tag = false">Hủy bỏ</button>
+                        <button class="block px-6 h-8 bg-green-500 hover:bg-green-600 text-sm font-medium text-white shadow-green rounded-sm outline-none mt-4">Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50 items-center" x-show="Etag">
+            <div class="w-screen s2m:w-450f bg-white b-radi-4 m-2 shadow absolute text-gray-800">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 cursor-pointer">
+                    <h1 class="text-xl font-medium">Chỉnh sửa kỹ năng</h1>
+                </div>
+                <div class="p-4">
+                    <p class="mb-2 font-medium">Tên kỹ năng</p>
+                    <input placeholder="VD: PHP, C++, English..." class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700">
+                    <p class="mb-2 font-medium mt-4">Chọn ngành nghề</p>
+                    <select class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700">
+                        <option class="text-gray-600">Chọn thể loại</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                    <div class="mt-4 flex justify-end">
+                        <button class="block px-6 h-8 bg-gray-400 hover:bg-gray-500 text-sm font-medium text-white shadow rounded-sm outline-none mt-4 mr-4" @click="Etag = false">Hủy bỏ</button>
+                        <button class="block px-6 h-8 bg-green-500 hover:bg-green-600 text-sm font-medium text-white shadow-green rounded-sm outline-none mt-4">Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 <script src="../public/js/chart.js"></script>
 <script src="../public/js/datatable.js"></script>
+<script src="../public/js/index.js"></script></body>
 
 </html>
