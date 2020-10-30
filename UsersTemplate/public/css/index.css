@@ -98,6 +98,9 @@ body{
 .shadow-green{
     box-shadow: 1px 1px 4px 1px #4caf5069;
 }
+.shadow-blue{
+    box-shadow: 1px 1px 4px 1px #4c6faf69;
+}
 .shadow-red{
     box-shadow: 1px 1px 4px 1px #f4433652;
 }

@@ -68,7 +68,7 @@
             </div>
         </div>
     </header>
-    <main class="flex" x-data="{Student: false, Estudent:false}">
+    <main class="flex" x-data="{Student: false, Estudent:false, StudentExcel:false}">
         <div class="w-16 bg-white py-3 h-screen fixed z-40 text-sm overflow-hidden duration-200 shadow-bottom menu-side" data-type="0" id="menuSide">
             <div>
                 <a onclick="extandMenu(this, 'menuSide', '16rem')" data-status="false" class="flex items-center py-3 px-5 hover:bg-indigo-100 hover-purple-fade text-gray-800 cursor-pointer block">
@@ -177,7 +177,8 @@
             </div>
         </div>
         <div class="w-full lg:pl-16 duration-300" id="box-side">
-            <section class="px-4 pt-4 md:hidden">
+            <section class="px-4 pt-4 md:hidden flex">
+                <button class="block px-6 h-8 bg-blue-500 text-sm font-medium text-white shadow-blue rounded-sm outline-none mr-4" @click="StudentExcel = true">Thêm bằng Excel</button>
                 <button class="block px-6 h-8 bg-green-500 text-sm font-medium text-white shadow-green rounded-sm outline-none" @click="Student = true">Thêm SV</button>
             </section>
             <section class="flex justify-center lg:m-8 px-4 pt-4">
@@ -188,6 +189,7 @@
                             <span class="text-xl font-medium">DS sinh viên</span>
                         </div>
                         <div class="col-span-4 items-center justify-end hidden md:flex">
+                            <button class="block px-6 h-8 bg-blue-500 text-sm font-medium text-white shadow-blue rounded-sm outline-none mr-4" @click="StudentExcel = true">Thêm bằng Excel</button>
                             <button class="block px-6 h-8 bg-green-500 text-sm font-medium text-white shadow-green rounded-sm outline-none" @click="Student = true">Thêm SV</button>
                         </div>
                     </div>
@@ -276,6 +278,20 @@
                     </select>
                     <div class="mt-4 flex justify-end">
                         <button class="block px-6 h-8 bg-gray-400 hover:bg-gray-500 text-sm font-medium text-white shadow rounded-sm outline-none mt-4 mr-4" @click="Student = false">Hủy bỏ</button>
+                        <button class="block px-6 h-8 bg-green-500 hover:bg-green-600 text-sm font-medium text-white shadow-green rounded-sm outline-none mt-4">Thêm</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50 items-center" x-show="StudentExcel">
+            <div class="w-screen s2m:w-450f bg-white b-radi-4 m-2 shadow absolute text-gray-800">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 cursor-pointer">
+                    <h1 class="text-xl font-medium">Thêm sinh viên bằng Excel</h1>
+                </div>
+                <div class="p-4">
+                    <input type="file" accept=".csv" class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700">
+                    <div class="mt-4 flex justify-end">
+                        <button class="block px-6 h-8 bg-gray-400 hover:bg-gray-500 text-sm font-medium text-white shadow rounded-sm outline-none mt-4 mr-4" @click="StudentExcel = false">Hủy bỏ</button>
                         <button class="block px-6 h-8 bg-green-500 hover:bg-green-600 text-sm font-medium text-white shadow-green rounded-sm outline-none mt-4">Thêm</button>
                     </div>
                 </div>
