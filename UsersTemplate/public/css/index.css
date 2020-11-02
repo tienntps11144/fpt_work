@@ -104,6 +104,9 @@ body{
 .shadow-red{
     box-shadow: 1px 1px 4px 1px #f4433652;
 }
+.shadow-orange{
+    box-shadow: 1px 1px 4px 1px #f49f3652;
+}
 .shadow-extend{
     box-shadow: 0px 1px 10px #ccc;
 }
@@ -125,6 +128,24 @@ body{
 .size-50x{
     width: 50px;
     height: 50px;
+}
+.size-50-fixed{
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 50px;
+    max-height: 50px;
+}
+.size-24-fixed{
+    min-width: 24px;
+    max-width: 24px;
+    min-height: 24px;
+    max-height: 24px;
+}
+.size-30-fixed{
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
 }
 .size-40x{
     width: 40px;
@@ -313,6 +334,9 @@ body{
 .poshadow-effect:hover{
     box-shadow: 0px 1px 10px 0px #ccc;
     right: 5px;
+}
+.hover-notify:hover .icon-notify-option{
+    display: block;
 }
 .hover-card:hover{
     background:#343d4952;

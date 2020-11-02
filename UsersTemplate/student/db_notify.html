@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="../public/css/output.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="h-16 w-full bg-white flex justify-center shadow-black sticky top-0 z-50">
+        <div class="grid grid-cols-12 lg:hidden">
+            <div class="col-span-2 h-16 cursor-pointer menu-transition-left">
+                <i
+                    class="material-icons h-16 w-16 flex justify-center items-center text-white text-3xl btn-blue-purple">sort</i>
+                <ul
+                    class="w-64 bg-white text-sm font-medium text-gray-800 shadow-bottom b-radi-4 relative left-64 duration-300 z-50">
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">today</i><span>Sản Phẩm & Dịch Vụ</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">person_outline</i><span>Đăng Nhập</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">people_outline</i><span>Đăng Ký</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">rss_feed</i><span>HR Insider</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">date_range</i><span>Giới Thiệu</span></li>
+                    <li class="py-3 px-4 hover:bg-gray-100 flex items-center"><i
+                            class="material-icons pr-4">search</i><span>Tìm Việc</span></li>
+                </ul>
+            </div>
+            <div class="col-span-8 h-16 flex items-center justify-center py-2">
+                <img src="../public/img/logo-fpt-shop.png" class="h-full object-cover">
+            </div>
+            <div class="col-span-2 h-16">
+
+            </div>
+        </div>
+        <div class="w-10/12 h-16 hidden grid-cols-12 gap-4 lg:grid">
+            <div class="col-span-9 h-16 flex text-gray-800">
+                <img src="../public/img/logo-fpt-shop.png" class="h-full object-cover py-2 mr-12">
+                <a href="#" class="flex items-center mr-8 hover:underline">Sản Phẩm</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">HR Insider</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Giới Thiệu</a>
+                <a href="#" class="flex items-center mr-8 hover:underline">Tìm Việc</a>
+            </div>
+            <div class="col-span-3 h-16 flex justify-end items-center text-gray-800">
+                <a class="px-2 border-r border-gray-800 text-sm font-medium hover:underline cursor-pointer">Đăng Ký</a>
+                <a class="px-2 text-sm font-medium hover:underline cursor-pointer">Đăng Nhập</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="flex justify-center my-8 px-4">
+            <div class="lg:w-10/12 w-full grid grid-cols-10 gap-8">
+                <div class="lg:col-span-4 xl:col-span-3 col-span-10">
+                    <div class="w-full shadow-bottom bg-white b-radi-4">
+                        <div class="p-4 border-b border-gray-300">
+                            <div class="flex justify-center">
+                                <div class="relative">
+                                    <img src="../public/img/avatar-1.jpg" class="rounded-full p-2 shadow-black size-165x object-cover" id="preview-avatar"/>
+                                    <input id="file-avatar" type="file" class="hidden" accept="image/*" onchange="preview(this, 'preview-avatar')">
+                                    <label for="file-avatar" title="Cập nhật hình ảnh" class="absolute material-icons p-1 text-white bg-green-500 rounded-full text-xl border-4 border-white shadow-bottom cursor-pointer hover:bg-green-600 bottom-0 right-20px-plus">edit</label>
+                                </div>
+                            </div>
+                            <p class="font-medium text-xl text-center mt-4">Nguyễn Thanh Tiến</p>
+                        </div>
+                        <div class="text-gray-800">
+                            <a class="px-4 py-3 flex items-center cursor-pointer select-row block" href="db_overview.html">
+                                <i class="material-icons pr-4 text-gray-600">assessment</i>
+                                <span>Tổng quan</span>
+                            </a>
+                            <a class="px-4 py-3 flex items-center cursor-pointer select-row block" href="db_personal.html">
+                                <i class="material-icons pr-4 text-gray-600">person</i>
+                                <span>Thông tin cá nhân</span>
+                            </a>
+                            <a class="px-4 py-3 flex items-center cursor-pointer select-row block" href="db_password.html">
+                                <i class="material-icons pr-4 text-gray-600">lock</i>
+                                <span>Bảo mật</span>
+                            </a>
+                            <a class="px-4 py-3 flex items-center cursor-pointer select-row block" href="db_project.html">
+                                <i class="material-icons pr-4 text-gray-600">star</i>
+                                <span>Quản lý dự án</span>
+                            </a>
+                            <a class="px-4 py-3 flex items-center cursor-pointer select-row block" href="db_work.html">
+                                <i class="material-icons pr-4 text-gray-600">attach_file</i>
+                                <span>Quản lý hồ sơ xin việc</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6 xl:col-span-7 col-span-10">
+                    <div class="bg-white b-radi-4 shadow-bottom">    
+                        <div class="flex items-center text-gray-800 border-b border-gray-300 grid grid-cols-12">
+                            <div class="col-span-6 flex items-center p-4">
+                                <i class="material-icons mr-4">add_alert</i>
+                                <span class="text-xl font-medium">Thông báo</span>
+                            </div>
+                            <div class="flex items-center col-span-6 justify-end relative p-4">
+                                <span class="pr-1">Sắp xếp: </span>
+                                <div class="block flex items-center font-medium cursor-pointer"> Mới nhất <i class="material-icons">arrow_drop_down</i></div>
+                                <div class="px-8 absolute bg-white shadow-black b-radi-4 z-10 mw-250 hidden" style="top: 56px;">
+                                    <a class="block py-2 text-sm flex items-center relative hover:text-blue-500 cursor-pointer">
+                                        <span>Mới nhất</span>
+                                        <i class="material-icons text-lg absolute right-0">check</i>
+                                    </a>
+                                    <a class="block py-2 text-sm hover:text-blue-500 cursor-pointer">Cũ nhất</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="w-full p-4 flex fake-border-b hover-notify">
+                                <div class="size-50-fixed p-2 bg-white shadow-black rounded-full relative">
+                                    <img src="../public/img/google.png" class="w-full h-full object-cover rounded-full">
+                                    <i class="material-icons text-xs bg-blue-500 text-white p-1 rounded-full absolute top-0 mt-8 ml-5">work</i>
+                                </div>
+                                <div class="ml-4 relative w-full">
+                                    <div class="overflow-hidden text-sm limit-row-1">
+                                        <a class="font-medium pr-1 float-left hover:underline" href="#">Công Ty TNHH YKK Việt Nam</a>
+                                        <span class="pr-1 float-left">đã mời bạn làm công việc</span>
+                                        <a class="font-medium pr-1 float-left hover:underline" href="#">Engineering Sales Representative</a>
+                                        <span class="pr-1 float-left">tại</span>
+                                        <span class="font-medium float-left">Gò Vấp Tp.Hcm</span>
+                                    </div>
+                                    <div class="mt-1 flex items-center">
+                                        <p class="text-gray-600 text-sm">3 tiếng trước</p>
+                                    </div>
+                                </div>
+                                <div class="size-24-fixed">
+                                    <div class="relative hover-drop-menu">
+                                        <i class="material-icons text-gray-700 cursor-pointer icon-notify-option hidden">more_horiz</i>
+                                        <ul class="mw-250 bg-white shadow-black b-radi-4 text-sm absolute right-0 hidden">
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer b-radi-4">Xóa</li>
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer b-radi-4">Tắt thông báo từ người này</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full p-4 flex fake-border-b hover-notify">
+                                <div class="size-50-fixed p-2 bg-white shadow-black rounded-full relative">
+                                    <img src="../public/img/google.png" class="w-full h-full object-cover rounded-full">
+                                    <i class="material-icons text-xs bg-red-500 text-white p-1 rounded-full absolute top-0 mt-8 ml-5">close</i>
+                                </div>
+                                <div class="ml-4 relative w-full">
+                                    <div class="overflow-hidden text-sm limit-row-1">
+                                        <a class="font-medium pr-1 float-left hover:underline" href="#">Công Ty TNHH YKK Việt Nam</a>
+                                        <span class="pr-1 float-left">đã từ chối yêu cầu ứng tuyển của bạn</span>
+                                    </div>
+                                    <div class="mt-1 flex items-center">
+                                        <p class="text-gray-600 text-sm">4 tiếng trước</p>
+                                    </div>
+                                </div>
+                                <div class="size-24-fixed">
+                                    <div class="relative hover-drop-menu">
+                                        <i class="material-icons text-gray-700 cursor-pointer icon-notify-option hidden">more_horiz</i>
+                                        <ul class="mw-250 bg-white shadow-black b-radi-4 text-sm absolute right-0 hidden">
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer b-radi-4">Xóa</li>
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer b-radi-4">Tắt thông báo từ người này</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full p-4 flex fake-border-b hover-notify">
+                                <div class="size-50-fixed p-2 bg-white shadow-black rounded-full relative">
+                                    <img src="../public/img/google.png" class="w-full h-full object-cover rounded-full">
+                                    <i class="material-icons text-xs bg-green-500 text-white p-1 rounded-full absolute top-0 mt-8 ml-5">check</i>
+                                </div>
+                                <div class="ml-4 relative w-full">
+                                    <div class="overflow-hidden text-sm limit-row-1">
+                                        <a class="font-medium pr-1 float-left hover:underline" href="#">Công Ty TNHH YKK Việt Nam</a>
+                                        <span class="pr-1 float-left">đã chấp nhận yêu cầu ứng tuyển của bạn</span>
+                                    </div>
+                                    <div class="mt-1 flex items-center">
+                                        <p class="text-gray-600 text-sm">4 tiếng trước</p>
+                                    </div>
+                                </div>
+                                <div class="size-24-fixed">
+                                    <div class="relative hover-drop-menu">
+                                        <i class="material-icons text-gray-700 cursor-pointer icon-notify-option hidden">more_horiz</i>
+                                        <ul class="mw-250 bg-white shadow-black b-radi-4 text-sm absolute right-0 hidden">
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer b-radi-4">Xóa</li>
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer b-radi-4">Tắt thông báo từ người này</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-full p-4 flex fake-border-b hover-notify">
+                                <div class="size-50-fixed p-2 bg-white shadow-black rounded-full relative">
+                                    <img src="../public/img/google.png" class="w-full h-full object-cover rounded-full">
+                                    <i class="material-icons text-xs bg-orange-400 text-white p-1 rounded-full absolute top-0 mt-8 ml-5">remove</i>
+                                </div>
+                                <div class="ml-4 relative w-full">
+                                    <div class="overflow-hidden text-sm limit-row-1">
+                                        <span class="pr-1 float-left">Bạn đã hủy yêu cầu ứng tuyển tại</span>
+                                        <a class="font-medium pr-1 float-left hover:underline" href="#">Công Ty TNHH YKK Việt Nam</a>
+                                    </div>
+                                    <div class="mt-1 flex items-center">
+                                        <p class="text-gray-600 text-sm">4 tiếng trước</p>
+                                    </div>
+                                </div>
+                                <div class="size-24-fixed">
+                                    <div class="relative hover-drop-menu">
+                                        <i class="material-icons text-gray-700 cursor-pointer icon-notify-option hidden">more_horiz</i>
+                                        <ul class="mw-250 bg-white shadow-black b-radi-4 text-sm absolute right-0 hidden">
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer b-radi-4">Xóa</li>
+                                            <li class="px-4 py-2 hover:bg-gray-200 cursor-pointer b-radi-4">Tắt thông báo từ người này</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-white flex justify-center">
+        <div class="grid grid-cols-12 gap-4 py-6 px-4 w-full lg:w-10/12">
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Về FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Giới Thiệu</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Bảo Mật Thông Tin</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Tư Vấn Tuyển Dụng</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Quy Định Sử Dụng</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Về FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Giới Thiệu</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Bảo Mật Thông Tin</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Tư Vấn Tuyển Dụng</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Quy Định Sử Dụng</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">Kết Nối FptWork</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Facebook</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Zalo</a>
+                </div>
+            </div>
+            <div class="col-span-6 lg:col-span-3">
+                <h1 class="text-xl pb-2">FptWork App</h1>
+                <div class="text-sm">
+                    <a class="my-2 block cursor-pointer hover:underline">Appstore</a>
+                    <a class="my-2 block cursor-pointer hover:underline">Google Play</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../public/js/index.js"></script>
+</body>
+</html>
