@@ -55,7 +55,7 @@
             </div>
         </div>
     </header>
-    <main class="relative" x-data="{zoom: false}">
+    <main class="relative" x-data="{zoom: false, invite:false}">
         <section class="absolute right-0 w-full">
             <input id="file-bg" type="file" class="hidden" onchange="preview(this, 'preview-bg')" />
             <label for="file-bg"
@@ -89,7 +89,7 @@
                     <div class="lg:col-span-6">
                         <div class="lg:col-span-8 p-4">
                             <div class="grid grid-cols-12 gap-4">
-                                <button class="col-span-8 p-2 b-radi-4 text-white outline-none btn-blue-purple">Tuyển
+                                <button class="col-span-8 p-2 b-radi-4 text-white outline-none btn-blue-purple" @click="invite=true">Tuyển
                                     Dụng</button>
                                 <button
                                     class="col-span-4 p-2 b-radi-4 bg-gray-200 outline-none flex items-center justify-center hover:bg-gray-300">
@@ -509,6 +509,29 @@
                 @click="zoom = false">close</i>
             <div class="flex items-center">
                 <img id="zoom-in" class="object-contain" @click.away="zoom = false" />
+            </div>
+        </section>
+        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50 items-center" x-show="invite">
+            <div class="w-screen s2m:w-450f bg-white b-radi-4 m-2 shadow absolute text-gray-800">
+                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 cursor-pointer">
+                    <h1 class="text-xl font-medium">Mời ứng tuyển</h1>
+                </div>
+                <div class="p-4">
+                    <p class="mb-2 font-medium">Vị trí</p>
+                    <select class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700">
+                        <option class="text-gray-600">Chọn công việc</option>
+                        <option>A</option>
+                        <option>B</option>
+                        <option>C</option>
+                    </select>
+                    <p class="mb-2 font-medium mt-4">Thời gian</p>
+                    <input class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700" type="datetime-local"/>
+                    
+                    <div class="mt-4 flex justify-end">
+                        <button class="block px-6 h-8 bg-gray-400 hover:bg-gray-500 text-sm font-medium text-white shadow rounded-sm outline-none mt-4 mr-4" @click="invite = false">Hủy bỏ</button>
+                        <button class="block px-6 h-8 bg-green-500 hover:bg-green-600 text-sm font-medium text-white shadow-green rounded-sm outline-none mt-4">Gửi lời mời</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

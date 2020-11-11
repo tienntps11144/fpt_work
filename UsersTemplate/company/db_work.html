@@ -144,104 +144,10 @@
                                 <div id="request_work" class="h-160"></div>
                             </div>
                             <div class="mt-4 flex justify-center">
-                                <button class="w-64 py-2 radius-2 text-white bg-green-500 outline-none hover:bg-green-600">Thêm công việc</button>
+                                <button class="block w-64 py-2 bg-green-500 hover:bg-green-600 text-sm font-medium text-white shadow-green rounded-sm outline-none">Thêm công việc</button>
                             </div>
                         </div>
-                    </div>    
-                    <div class="bg-white b-radi-4 shadow-bottom mt-8">
-                        <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300">
-                            <i class="material-icons mr-4">star</i>
-                            <span class="text-xl font-medium">Danh sách công việc</span>
-                        </div>
-                        <div class="w-full overflow-hidden b-radi-4">
-                            <div class="w-full bg-white p-4 flex fake-border">
-                                <img src="../public/img/google.png" class="size-50x m-2 md:m8">
-                                <div class="ml-4 relative w-full">
-                                    <div>
-                                        <a href="#" class="font-medium text-xl hover:underline pr-6">Engineering Sales Representative</a>
-                                        <p class="mt-1 text-sm font-medium text-gray-800">Công Ty TNHH YKK Việt Nam</p>
-                                        <p class="mt-2 text-gray-600 text-sm">Hồ Chí Minh</p>
-                                        <p class="mt-2 text-gray-700 text-sm">Cập nhật: 19/10/2020 - Bạn còn 29 ngày để ứng tuyển</p>
-                                    </div>
-                                    <div class="flex sm:mt-2 grid grid-cols-12">
-                                       <div class="sm:flex col-span-12 md:col-span-8">
-                                            <div class="flex items-center mr-3 mt-2 sm:mt-0">
-                                                <i class="material-icons pr-1 text-lg text-red-500">favorite_border</i>
-                                                <span class="text-sm text-red-500 font-medium">Khám sức khỏe</span>
-                                            </div>
-                                            <div class="flex items-center mt-2 sm:mt-0">
-                                                <i class="material-icons pr-1 text-lg text-orange-400">attach_money</i>
-                                                <span class="text-sm text-orange-400 font-medium">Thưởng</span>
-                                            </div>
-                                       </div>
-                                       <div class="col-span-12 md:col-span-4 flex justify-end mt-2 md:mt-0 font-medium text-red-500 sm:text-lg text-base">
-                                            5.000.000 VND
-                                       </div>
-                                    </div>
-                                    <i class="material-icons absolute top-0 right-0 cursor-pointer text-gray-600">turned_in_not</i>
-                                    <div class="flex">
-                                        <button class="block mt-2 mx-1 px-5 py-1 radius-2 bg-green-500 text-white outline-none font-medium text-sm hover:bg-green-600" @click="workEdit = true">Chỉnh sửa</button>
-                                        <button class="block mt-2 mx-1 px-5 py-1 radius-2 bg-red-500 text-white outline-none font-medium text-sm hover:bg-red-600">Xóa</button>
-                                        <button class="block mt-2 mx-1 px-5 py-1 radius-2 bg-blue-500 text-white outline-none font-medium text-sm hover:bg-blue-600">DS ứng viên</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>        
-                </div>
-            </div>
-        </section>
-        <section class="w-screen h-screen flex justify-center fixed top-0 bg-modal z-50" x-show="workEdit">
-            <div class="bg-white w-screen h-screen lg:w-1/2 overflow-scroll scroll-w-0 maw-700">
-                <div class="py-4 flex items-center px-4 text-gray-800 border-b border-gray-300 cursor-pointer" @click="workEdit = false">
-                    <i class="material-icons mr-4">chevron_left</i>
-                    <span class="text-xl font-medium">Chỉnh sửa công việc</span>
-                </div>
-                <div class="p-12">
-                        <div>
-                            <p class="mb-2 font-medium">Tiêu đề</p>
-                            <input class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700" placeholder="Nhập tên dự án bạn đã tham gia">
-                        </div>
-                        <div class="mt-4">
-                            <p class="mb-2 font-medium">Mức lương</p>
-                            <div class="flex items-center grid grid-cols-12 gap-4">
-                                <input type="number" class="col-span-6 py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700" placeholder="Nhập mức lương tối thiểu">
-                                <input type="number" class="col-span-6 py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700" placeholder="Nhập mức lương tối đa">
-                            </div>
-                            <div class="mt-4 flex items-center">
-                                <label class="switch mr-4">
-                                    <input type="checkbox" checked>
-                                    <span class="slider-btn round"></span>
-                                </label>
-                                <span>Hiển thị mức lương</span>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <p class="mb-2 font-medium mb-2">Địa điểm</p>
-                            <select class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none cursor-pointer">
-                                <option>Tỉnh/Thành Phố</option>
-                                <option>CNTT</option>
-                                <option>Thiet Ke Web</option>
-                            </select>
-                            <select class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none cursor-pointer mt-4">
-                                <option>Quận Huyện</option>
-                                <option>CNTT</option>
-                                <option>Thiet Ke Web</option>
-                            </select>
-                            <input class="py-3 w-full px-2 border b-radi-4 text-sm border-gray-400 outline-none placeholder-gray-700 mt-4" placeholder="Số nhà, đường">
-                        </div>
-                        <div class="mt-4">
-                            <p class="mb-2 font-medium">Mô tả</p>
-                            <div id="description_work_edit" class="h-160"></div>
-                        </div>
-                        <div class="mt-4">
-                            <p class="mb-2 font-medium">Yêu cầu</p>
-                            <div id="request_work_edit" class="h-160"></div>
-                        </div>
-                        <div class="mt-4 flex justify-end gap-4">
-                            <button class="px-10 py-2 radius-2 text-gray-600 bg-gray-300 mr-4 outline-none hover:bg-gray-400" @click="workEdit = false">Cancel</button>
-                            <button class="px-10 py-2 radius-2 text-white bg-green-500 outline-none hover:bg-green-600">Save</button>
-                        </div>
+                    </div>           
                 </div>
             </div>
         </section>
